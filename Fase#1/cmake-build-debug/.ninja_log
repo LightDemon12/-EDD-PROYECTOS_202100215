@@ -1,0 +1,6 @@
+# ninja log v6
+12	403	7448697465219839	CMakeFiles/Fase_1.dir/Logica/Usuarios.cpp.obj	faae06d6e946ce63
+21	405	7448697465309822	CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj	c6e9c4d9ce372323
+31	415	7448697465399835	CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj	a7ae93aed7e0cd4a
+3	1375	7448697465119821	CMakeFiles/Fase_1.dir/main.cpp.obj	a6beba8c2c252783
+1376	1485	7448697478859804	Fase_1.exe	9740f885bf560578
