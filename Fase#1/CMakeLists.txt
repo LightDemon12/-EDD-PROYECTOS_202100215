@@ -9,4 +9,6 @@ add_executable(Fase_1 main.cpp
         Logica/InicioSeccion.cpp
         Headers/Usuarios.h
         Headers/ListaEnlazada.h
-        Headers/InicioSeccion.h)
+        Headers/InicioSeccion.h
+        Logica/Registro.cpp
+        Headers/Registro.h)
