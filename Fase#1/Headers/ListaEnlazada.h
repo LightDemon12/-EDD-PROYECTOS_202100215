@@ -4,10 +4,10 @@
 #ifndef LISTAENLAZADA_H
 #define LISTAENLAZADA_H
 
-#include <string> // Incluir el encabezado para std::string
-#include "../Headers/Usuarios.h"
+#include <string>
+#include "Usuarios.h"
 
-using namespace std; // Usar el espacio de nombres std
+using namespace std;
 
 class ListaEnlazada {
 private:
@@ -21,7 +21,7 @@ public:
     void eliminarNodo(const string& correoElectronico);
     void imprimirLista() const;
     Usuario* buscarUsuario(const string& correoElectronico, const string& contrasena) const;
-    int obtenerTamano() const; // Nuevo método para obtener el tamaño de la lista
+    int obtenerTamano() const; // Método para obtener el tamaño de la lista
 };
 
 #endif // LISTAENLAZADA_H

@@ -6,6 +6,7 @@
 #include <iostream>
 using namespace std;
 
+
 // Constructor para inicializar un nodo de usuario
 Usuario::Usuario(int id, string nom, string ape, string fechaNac, string correo, string contra)
     : id(id), nombres(nom), apellidos(ape), fechaNacimiento(fechaNac), correoElectronico(correo), contrasena(contra), siguiente(nullptr) {}
@@ -27,4 +28,8 @@ void imprimirUsuario(const Usuario& usuario) {
         pila.pop();
     }
     cout << endl;
+
+    // Imprimir solicitudes de amistad del usuario
+    cout << "Solicitudes de amistad: " << endl;
+    usuario.listaSolicitudes.mostrarSolicitudes();
 }

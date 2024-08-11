@@ -15,4 +15,8 @@ add_executable(Fase_1 main.cpp
         Headers/Pila.h
         Logica/Pila.cpp
         Headers/MenuUsuario.h
-        Logica/MenuUsuario.cpp)
+        Logica/MenuUsuario.cpp
+        Headers/Solicitud.h
+        Logica/Solicitud.cpp
+        Logica/ListaSolicitud.cpp
+        Headers/ListaSolicitud.h)

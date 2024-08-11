@@ -8,6 +8,7 @@
 
 #include <string>
 #include "Pila.h"
+#include "ListaSolicitud.h"
 
 class Usuario {
 public:
@@ -19,6 +20,7 @@ public:
     std::string contrasena;
     Usuario* siguiente;
     Pila pilaPersonal; // Pila personal para cada usuario
+    ListaSolicitud listaSolicitudes; // Lista de solicitudes de amistad personal para cada usuario
 
     Usuario(int id, std::string nom, std::string ape, std::string fechaNac, std::string correo, std::string contra);
 };

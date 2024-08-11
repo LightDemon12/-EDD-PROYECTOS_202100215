@@ -7,8 +7,10 @@
 #include <iostream>
 using namespace std;
 
+// Constructor para inicializar la lista vacía
 ListaEnlazada::ListaEnlazada() : cabeza(nullptr) {}
 
+// Destructor para liberar la memoria de todos los nodos al destruir la lista
 ListaEnlazada::~ListaEnlazada() {
     Usuario* actual = cabeza;
     while (actual != nullptr) {
@@ -18,11 +20,13 @@ ListaEnlazada::~ListaEnlazada() {
     }
 }
 
+// Método para agregar un nuevo usuario a la lista
 void ListaEnlazada::agregarNodo(Usuario* nuevoUsuario) {
     nuevoUsuario->siguiente = cabeza;
     cabeza = nuevoUsuario;
 }
 
+// Método para eliminar un usuario de la lista por correo electrónico
 void ListaEnlazada::eliminarNodo(const string& correoElectronico) {
     Usuario* actual = cabeza;
     Usuario* anterior = nullptr;
@@ -40,6 +44,7 @@ void ListaEnlazada::eliminarNodo(const string& correoElectronico) {
     }
 }
 
+// Método para imprimir la lista de usuarios
 void ListaEnlazada::imprimirLista() const {
     Usuario* actual = cabeza;
     while (actual != nullptr) {
@@ -48,6 +53,7 @@ void ListaEnlazada::imprimirLista() const {
     }
 }
 
+// Método para buscar un usuario en la lista por correo electrónico y contraseña
 Usuario* ListaEnlazada::buscarUsuario(const string& correoElectronico, const string& contrasena) const {
     Usuario* actual = cabeza;
     while (actual != nullptr) {
@@ -59,6 +65,7 @@ Usuario* ListaEnlazada::buscarUsuario(const string& correoElectronico, const str
     return nullptr;
 }
 
+// Método para obtener el tamaño de la lista
 int ListaEnlazada::obtenerTamano() const {
     int tamano = 0;
     Usuario* actual = cabeza;
