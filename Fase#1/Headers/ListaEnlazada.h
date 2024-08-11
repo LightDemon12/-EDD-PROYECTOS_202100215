@@ -4,7 +4,10 @@
 #ifndef LISTAENLAZADA_H
 #define LISTAENLAZADA_H
 
-#include "Usuarios.h"
+#include <string> // Incluir el encabezado para std::string
+#include "../Headers/Usuarios.h"
+
+using namespace std; // Usar el espacio de nombres std
 
 class ListaEnlazada {
 private:

@@ -1,6 +1,7 @@
 //
 // Created by LightDemon12 on 08/08/2024.
 //
+// Usuarios.cpp
 #include "../Headers/Usuarios.h"
 #include <iostream>
 using namespace std;
@@ -17,4 +18,13 @@ void imprimirUsuario(const Usuario& usuario) {
     cout << "Fecha de Nacimiento: " << usuario.fechaNacimiento << endl;
     cout << "Correo Electrónico: " << usuario.correoElectronico << endl;
     cout << "Contraseña: " << usuario.contrasena << endl;
+
+    // Imprimir elementos de la pila personal del usuario
+    cout << "Elementos en la pila personal: ";
+    Pila pila = usuario.pilaPersonal;
+    while (!pila.empty()) {
+        cout << pila.top() << " ";
+        pila.pop();
+    }
+    cout << endl;
 }

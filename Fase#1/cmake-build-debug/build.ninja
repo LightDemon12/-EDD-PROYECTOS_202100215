@@ -79,6 +79,18 @@ build CMakeFiles/Fase_1.dir/Logica/Registro.cpp.obj: CXX_COMPILER__Fase_1_unscan
   OBJECT_DIR = CMakeFiles\Fase_1.dir
   OBJECT_FILE_DIR = CMakeFiles\Fase_1.dir\Logica
 
+build CMakeFiles/Fase_1.dir/Logica/Pila.cpp.obj: CXX_COMPILER__Fase_1_unscanned_Debug C$:/Users/LightDemon12/Desktop/SEGUNDO$ SEMESTRE$ 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Pila.cpp || cmake_object_order_depends_target_Fase_1
+  DEP_FILE = CMakeFiles\Fase_1.dir\Logica\Pila.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Fase_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fase_1.dir\Logica
+
+build CMakeFiles/Fase_1.dir/Logica/MenuUsuario.cpp.obj: CXX_COMPILER__Fase_1_unscanned_Debug C$:/Users/LightDemon12/Desktop/SEGUNDO$ SEMESTRE$ 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuUsuario.cpp || cmake_object_order_depends_target_Fase_1
+  DEP_FILE = CMakeFiles\Fase_1.dir\Logica\MenuUsuario.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Fase_1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fase_1.dir\Logica
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Fase_1
@@ -87,7 +99,7 @@ build CMakeFiles/Fase_1.dir/Logica/Registro.cpp.obj: CXX_COMPILER__Fase_1_unscan
 #############################################
 # Link the executable Fase_1.exe
 
-build Fase_1.exe: CXX_EXECUTABLE_LINKER__Fase_1_Debug CMakeFiles/Fase_1.dir/main.cpp.obj CMakeFiles/Fase_1.dir/Logica/Usuarios.cpp.obj CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj CMakeFiles/Fase_1.dir/Logica/Registro.cpp.obj
+build Fase_1.exe: CXX_EXECUTABLE_LINKER__Fase_1_Debug CMakeFiles/Fase_1.dir/main.cpp.obj CMakeFiles/Fase_1.dir/Logica/Usuarios.cpp.obj CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj CMakeFiles/Fase_1.dir/Logica/Registro.cpp.obj CMakeFiles/Fase_1.dir/Logica/Pila.cpp.obj CMakeFiles/Fase_1.dir/Logica/MenuUsuario.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Fase_1.dir

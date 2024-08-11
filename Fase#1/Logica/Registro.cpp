@@ -1,8 +1,8 @@
-//
-// Created by LightDemon12 on 09/08/2024.
-//
 #include "../Headers/Registro.h"
 #include <iostream>
+#include <sstream> // Incluir para std::istringstream
+#include <limits>  // Incluir para std::numeric_limits
+
 using namespace std;
 
 // Función para registrar un nuevo usuario
@@ -16,7 +16,12 @@ void registrarUsuario(ListaEnlazada& lista, const string& nombres, const string&
 
     // Validar la fecha de nacimiento
     int anio, mes, dia;
-    sscanf(fechaNacimiento.c_str(), "%d/%d/%d", &anio, &mes, &dia);
+    char sep1, sep2;
+    istringstream fechaStream(fechaNacimiento);
+    if (!(fechaStream >> anio >> sep1 >> mes >> sep2 >> dia) || sep1 != '/' || sep2 != '/' || fechaStream.fail()) {
+        cout << "Formato de fecha de nacimiento inválido. Use el formato YYYY/MM/DD." << endl;
+        return;
+    }
 
     if (anio < 1900 || anio > 2024) {
         cout << "El año de nacimiento debe estar entre 1900 y 2024." << endl;

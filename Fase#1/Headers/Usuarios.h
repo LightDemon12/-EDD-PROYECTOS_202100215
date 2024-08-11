@@ -2,27 +2,27 @@
 // Created by LightDemon12 on 08/08/2024.
 //
 
+// Usuarios.h
 #ifndef USUARIOS_H
 #define USUARIOS_H
 
 #include <string>
-using namespace std;
+#include "Pila.h"
 
-// Declaración de la estructura Usuario
-struct Usuario {
-    int id; // Nuevo campo ID
-    string nombres;
-    string apellidos;
-    string fechaNacimiento;
-    string correoElectronico;
-    string contrasena;
+class Usuario {
+public:
+    int id;
+    std::string nombres;
+    std::string apellidos;
+    std::string fechaNacimiento;
+    std::string correoElectronico;
+    std::string contrasena;
     Usuario* siguiente;
+    Pila pilaPersonal; // Pila personal para cada usuario
 
-    // Constructor para inicializar un nodo de usuario
-    Usuario(int id, string nom, string ape, string fechaNac, string correo, string contra);
+    Usuario(int id, std::string nom, std::string ape, std::string fechaNac, std::string correo, std::string contra);
 };
 
-// Declaración de la función para imprimir la información de un usuario
 void imprimirUsuario(const Usuario& usuario);
 
 #endif // USUARIOS_H
