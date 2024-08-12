@@ -4,82 +4,54 @@
 #include "../Headers/MatrizDispersa.h"
 #include <fstream>
 #include <cstdlib> // Para usar system()
+#include <algorithm> // Para std::find_if
+#include <iostream> // Para std::cout
 
-MatrizDispersa::MatrizDispersa(int f, int c) : filas(f), columnas(c) {
-    cabeza = new NodoMatriz("", ""); // Nodo cabeza
-}
+MatrizDispersa::MatrizDispersa(int f, int c) : filas(f), columnas(c) {}
 
 MatrizDispersa::~MatrizDispersa() {
-    // Liberar memoria de los nodos
-    NodoMatriz* actualFila = cabeza;
-    while (actualFila != nullptr) {
-        NodoMatriz* actualColumna = actualFila->siguienteFila;
-        while (actualColumna != nullptr) {
-            NodoMatriz* temp = actualColumna;
-            actualColumna = actualColumna->siguienteColumna;
-            delete temp;
-        }
-        NodoMatriz* temp = actualFila;
-        actualFila = actualFila->siguienteFila;
-        delete temp;
+    for (NodoMatriz* nodo : nodos) {
+        delete nodo;
     }
 }
 
 void MatrizDispersa::insertar(const std::string& correo, const std::string& nombreCompleto) {
     NodoMatriz* nuevoNodo = new NodoMatriz(correo, nombreCompleto);
+    nodos.push_back(nuevoNodo);
+}
 
-    // Insertar en la fila
-    NodoMatriz* actualFila = cabeza;
-    while (actualFila->siguienteFila != nullptr) {
-        actualFila = actualFila->siguienteFila;
-    }
-    actualFila->siguienteFila = nuevoNodo;
-
-    // Insertar en la columna
-    NodoMatriz* actualColumna = cabeza;
-    while (actualColumna->siguienteColumna != nullptr) {
-        actualColumna = actualColumna->siguienteColumna;
-    }
-    actualColumna->siguienteColumna = nuevoNodo;
+void MatrizDispersa::crearRelacion(const std::string& correo1, const std::string& correo2) {
+    relaciones.push_back({correo1, correo2});
 }
 
 void MatrizDispersa::imprimir() const {
-    NodoMatriz* actualFila = cabeza->siguienteFila;
     std::cout << "Matriz Dispersa de Usuarios:" << std::endl;
 
     // Imprimir encabezados de columnas
     std::cout << "Filas/Columnas\t";
-    NodoMatriz* tempCol = cabeza->siguienteColumna;
-    while (tempCol != nullptr) {
-        std::cout << tempCol->correo << "\t";
-        tempCol = tempCol->siguienteColumna;
+    for (const NodoMatriz* nodo : nodos) {
+        std::cout << nodo->correo << "\t";
     }
     std::cout << std::endl;
 
     // Imprimir filas
-    while (actualFila != nullptr) {
-        std::cout << actualFila->correo << "\t"; // Imprimir encabezado de fila
-        NodoMatriz* actualColumna = cabeza->siguienteColumna;
-        while (actualColumna != nullptr) {
-            NodoMatriz* temp = actualFila->siguienteColumna;
-            bool found = false;
-            while (temp != nullptr) {
-                if (temp->correo == actualColumna->correo) {
-                    std::cout << "1\t";
-                    found = true;
-                    break;
-                }
-                temp = temp->siguienteColumna;
-            }
-            if (!found) {
+    for (const NodoMatriz* nodoFila : nodos) {
+        std::cout << nodoFila->correo << "\t"; // Imprimir encabezado de fila
+        for (const NodoMatriz* nodoColumna : nodos) {
+            auto it = std::find_if(relaciones.begin(), relaciones.end(), [&](const std::pair<std::string, std::string>& relacion) {
+                return (relacion.first == nodoFila->correo && relacion.second == nodoColumna->correo) ||
+                    (relacion.first == nodoColumna->correo && relacion.second == nodoFila->correo);
+            });
+            if (it != relaciones.end()) {
+                std::cout << "1\t";
+            } else {
                 std::cout << "\t";
             }
-            actualColumna = actualColumna->siguienteColumna;
         }
         std::cout << std::endl; // Nueva línea al final de cada fila
-        actualFila = actualFila->siguienteFila;
     }
 }
+
 void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
     std::ofstream archivo(nombreArchivo);
     archivo << "digraph G {" << std::endl;
@@ -89,36 +61,26 @@ void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
 
     // Encabezados de columnas
     archivo << "<tr><td></td>";
-    NodoMatriz* tempCol = cabeza->siguienteColumna;
-    while (tempCol != nullptr) {
-        archivo << "<td>" << tempCol->correo << "</td>";
-        tempCol = tempCol->siguienteColumna;
+    for (const NodoMatriz* nodo : nodos) {
+        archivo << "<td>" << nodo->correo << "</td>";
     }
     archivo << "</tr>" << std::endl;
 
     // Filas
-    NodoMatriz* actualFila = cabeza->siguienteFila;
-    while (actualFila != nullptr) {
-        archivo << "<tr><td>" << actualFila->correo << "</td>";
-        NodoMatriz* actualColumna = cabeza->siguienteColumna;
-        while (actualColumna != nullptr) {
-            NodoMatriz* temp = actualFila->siguienteColumna;
-            bool found = false;
-            while (temp != nullptr) {
-                if (temp->correo == actualColumna->correo) {
-                    archivo << "<td>1</td>";
-                    found = true;
-                    break;
-                }
-                temp = temp->siguienteColumna;
-            }
-            if (!found) {
+    for (const NodoMatriz* nodoFila : nodos) {
+        archivo << "<tr><td>" << nodoFila->correo << "</td>";
+        for (const NodoMatriz* nodoColumna : nodos) {
+            auto it = std::find_if(relaciones.begin(), relaciones.end(), [&](const std::pair<std::string, std::string>& relacion) {
+                return (relacion.first == nodoFila->correo && relacion.second == nodoColumna->correo) ||
+                    (relacion.first == nodoColumna->correo && relacion.second == nodoFila->correo);
+            });
+            if (it != relaciones.end()) {
+                archivo << "<td>1</td>";
+            } else {
                 archivo << "<td></td>";
             }
-            actualColumna = actualColumna->siguienteColumna;
         }
         archivo << "</tr>" << std::endl;
-        actualFila = actualFila->siguienteFila;
     }
 
     archivo << "</table>>];" << std::endl;

@@ -9,13 +9,11 @@
 
 class NodoMatriz {
 public:
+    NodoMatriz(const std::string& correo, const std::string& nombreCompleto)
+        : correo(correo), nombreCompleto(nombreCompleto) {}
+
     std::string correo;
     std::string nombreCompleto;
-    NodoMatriz* siguienteFila;
-    NodoMatriz* siguienteColumna;
-
-    NodoMatriz(const std::string& correo, const std::string& nombreCompleto)
-        : correo(correo), nombreCompleto(nombreCompleto), siguienteFila(nullptr), siguienteColumna(nullptr) {}
 };
 
 #endif // NODOMATRIZ_H
