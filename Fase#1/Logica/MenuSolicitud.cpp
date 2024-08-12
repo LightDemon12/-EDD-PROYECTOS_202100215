@@ -1,9 +1,3 @@
-//
-// Created by LightDemon12 on 11/08/2024.
-//
-//
-// Created by LightDemon12 on 10/08/2024.
-//
 #include <iostream>
 #include "../Headers/MenuSolicitud.h"
 #include "../Headers/Usuarios.h"
@@ -33,81 +27,93 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
         switch(opcion) {
             case 1: {
                 int subopcion;
-                cout << "Ver Solicitudes" << endl;
-                cout << "1. Aceptar solicitud" << endl;
-                cout << "2. Rechazar solicitud" << endl;
-                cout << "Seleccione una opción: ";
-                cin >> subopcion;
+                do {
+                    cout << "Ver Solicitudes" << endl;
+                    // Mostrar el objeto en el tope de la pila
+                    usuario->pilaPersonal.mostrarTop();
+                    cout << "1. Aceptar solicitud" << endl;
+                    cout << "2. Rechazar solicitud" << endl;
+                    cout << "3. Regresar al módulo de solicitudes" << endl;
+                    cout << "Seleccione una opción: ";
+                    cin >> subopcion;
 
-                switch(subopcion) {
-                    case 1: {
-                        // Mostrar el objeto en el tope de la pila
-                        usuario->pilaPersonal.mostrarTop();
+                    switch(subopcion) {
+                        case 1: {
+                            // Verificar si la pila no está vacía
+                            if (!usuario->pilaPersonal.empty()) {
+                                char opcion;
+                                cout << "¿Desea aceptar (A) o rechazar (R) la solicitud? ";
+                                cin >> opcion;
 
-                        // Verificar si la pila no está vacía
-                        if (!usuario->pilaPersonal.empty()) {
-                            char opcion;
-                            cout << "¿Desea aceptar (A) o rechazar (R) la solicitud? ";
-                            cin >> opcion;
+                                // Obtener el objeto en el tope de la pila
+                                NodoPila solicitud = usuario->pilaPersonal.top();
 
-                            // Obtener el objeto en el tope de la pila
-                            NodoPila solicitud = usuario->pilaPersonal.top();
+                                if (opcion == 'A' || opcion == 'a') {
+                                    // Aceptar la solicitud
+                                    solicitud.estado = "Aceptada";
+                                    cout << "Solicitud aceptada." << endl;
+                                } else if (opcion == 'R' || opcion == 'r') {
+                                    // Rechazar la solicitud
+                                    solicitud.estado = "Rechazada";
+                                    cout << "Solicitud rechazada." << endl;
+                                } else {
+                                    cout << "Opción no válida." << endl;
+                                }
 
-                            if (opcion == 'A' || opcion == 'a') {
-                                // Aceptar la solicitud
-                                solicitud.estado = "Aceptada";
-                                cout << "Solicitud aceptada." << endl;
-                            } else if (opcion == 'R' || opcion == 'r') {
-                                // Rechazar la solicitud
-                                solicitud.estado = "Rechazada";
+                                // Actualizar el estado en la pila
+                                usuario->pilaPersonal.pop();
+                                usuario->pilaPersonal.push(solicitud);
+                            } else {
+                                cout << "No hay solicitudes en la pila." << endl;
+                            }
+                            break;
+                        }
+                        case 2: {
+                            string emisor;
+                            cout << "Ingrese el correo del emisor de la solicitud a rechazar: ";
+                            cin >> emisor;
+                            if (usuario->listaSolicitudes.eliminarSolicitud(correoElectronico, emisor)) {
                                 cout << "Solicitud rechazada." << endl;
                             } else {
-                                cout << "Opción no válida." << endl;
+                                cout << "Solicitud no encontrada." << endl;
                             }
-
-                            // Actualizar el estado en la pila
-                            usuario->pilaPersonal.pop();
-                            usuario->pilaPersonal.push(solicitud);
-                        } else {
-                            cout << "No hay solicitudes en la pila." << endl;
+                            break;
                         }
-                        break;
+                        case 3:
+                            cout << "Regresando al módulo de solicitudes..." << endl;
+                            break;
+                        default:
+                            cout << "Opción no válida, por favor intente de nuevo." << endl;
                     }
-                    case 2: {
-                        string emisor;
-                        cout << "Ingrese el correo del emisor de la solicitud a rechazar: ";
-                        cin >> emisor;
-                        if (usuario->listaSolicitudes.eliminarSolicitud(correoElectronico, emisor)) {
-                            cout << "Solicitud rechazada." << endl;
-                        } else {
-                            cout << "Solicitud no encontrada." << endl;
-                        }
-                        break;
-                    }
-                    default:
-                        cout << "Opción no válida, por favor intente de nuevo." << endl;
-                }
+                } while(subopcion != 3);
                 break;
             }
             case 2: {
-                lista.imprimirCorreosYNombres(correoElectronico); // Mostrar correos y nombres antes de solicitar el destinatario
-                string destinatario;
-                cout << "Ingrese el correo del destinatario de la solicitud: ";
-                cin >> destinatario;
-                Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
-                if (destinatarioUsuario != nullptr) {
-                    // Agregar solicitud a la lista de solicitudes del destinatario
-                    destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
-                    cout << "Solicitud enviada." << endl;
+                int subopcion;
+                do {
+                    lista.imprimirCorreosYNombres(correoElectronico); // Mostrar correos y nombres antes de solicitar el destinatario
+                    string destinatario;
+                    cout << "Ingrese el correo del destinatario de la solicitud: ";
+                    cin >> destinatario;
+                    Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
+                    if (destinatarioUsuario != nullptr) {
+                        // Agregar solicitud a la lista de solicitudes del destinatario
+                        destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
+                        cout << "Solicitud enviada." << endl;
 
-                    // Crear el objeto NodoPila para la solicitud
-                    NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
+                        // Crear el objeto NodoPila para la solicitud
+                        NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
 
-                    // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
-                    lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
-                } else {
-                    cout << "Usuario destinatario no encontrado." << endl;
-                }
+                        // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
+                        lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
+                    } else {
+                        cout << "Usuario destinatario no encontrado." << endl;
+                    }
+                    cout << "1. Enviar otra solicitud" << endl;
+                    cout << "2. Regresar al módulo de solicitudes" << endl;
+                    cout << "Seleccione una opción: ";
+                    cin >> subopcion;
+                } while(subopcion != 2);
                 break;
             }
             case 3:

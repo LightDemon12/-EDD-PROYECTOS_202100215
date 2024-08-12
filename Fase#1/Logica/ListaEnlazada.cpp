@@ -6,24 +6,32 @@
 using namespace std;
 
 // Constructor para inicializar la lista vacía
-ListaEnlazada::ListaEnlazada() : cabeza(nullptr) {}
+ListaEnlazada::ListaEnlazada() {
+    cabeza = nullptr;
+    matrizUsuarios = new MatrizDispersa(100, 100); // Tamaño arbitrario
+}
+
 
 // Destructor para liberar la memoria de todos los nodos al destruir la lista
 ListaEnlazada::~ListaEnlazada() {
+    // Liberar memoria de los usuarios
     Usuario* actual = cabeza;
     while (actual != nullptr) {
-        Usuario* siguiente = actual->siguiente;
-        delete actual;
-        actual = siguiente;
+        Usuario* temp = actual;
+        actual = actual->siguiente;
+        delete temp;
     }
+    delete matrizUsuarios;
 }
 
 // Método para agregar un nuevo usuario a la lista
 void ListaEnlazada::agregarNodo(Usuario* nuevoUsuario) {
     nuevoUsuario->siguiente = cabeza;
     cabeza = nuevoUsuario;
-}
 
+    // Insertar en la matriz dispersa
+    matrizUsuarios->insertar(nuevoUsuario->correoElectronico, nuevoUsuario->nombres + " " + nuevoUsuario->apellidos);
+}
 // Método para eliminar un usuario de la lista por correo electrónico
 void ListaEnlazada::eliminarNodo(const string& correoElectronico) {
     Usuario* actual = cabeza;
@@ -83,7 +91,7 @@ Usuario* ListaEnlazada::getCabeza() const {
 void ListaEnlazada::imprimirCorreosYNombres(const string& correoLogueado) const {
     Usuario* actual = cabeza;
     while (actual != nullptr) {
-        if (actual->correoElectronico != correoLogueado) {
+        if (actual->correoElectronico != correoLogueado && actual->correoElectronico != "admin@example.com") {
             cout << "Correo: " << actual->correoElectronico << ", Nombre: " << actual->nombres << " " << actual->apellidos << endl;
         }
         actual = actual->siguiente;
@@ -97,4 +105,17 @@ void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila
     } else {
         std::cout << "Usuario no encontrado con el correo: " << correo << std::endl;
     }
+}
+void ListaEnlazada::imprimirUsuarios() const {
+    std::cout << "Lista Enlazada de Usuarios:" << std::endl;
+    Usuario* actual = cabeza;
+    while (actual != nullptr) {
+        std::cout << "ID: " << actual->id << ", Correo: " << actual->correoElectronico << ", Nombre: " << actual->nombres << " " << actual->apellidos << std::endl;
+        actual = actual->siguiente;
+    }
+
+    // Imprimir la matriz dispersa
+    std::cout << "\nMatriz Dispersa de Usuarios:" << std::endl;
+    matrizUsuarios->imprimir();
+    matrizUsuarios->generarArchivoDOT("matriz_usuarios.dot");
 }

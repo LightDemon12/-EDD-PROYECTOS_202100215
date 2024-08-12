@@ -68,7 +68,7 @@ int main() {
     lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin@example.com", "admin"));
     lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
     lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
-
+    lista.imprimirUsuarios();
     mostrarMenuPrincipal();
 
     return 0;

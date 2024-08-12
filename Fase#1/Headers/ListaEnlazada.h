@@ -5,11 +5,11 @@
 #define LISTAENLAZADA_H
 
 #include "Usuarios.h"
-
+#include "MatrizDispersa.h"
 class ListaEnlazada {
 private:
     Usuario* cabeza;
-
+    MatrizDispersa* matrizUsuarios;
 public:
     ListaEnlazada();
     ~ListaEnlazada();
@@ -21,6 +21,7 @@ public:
     Usuario* getCabeza() const;
     void imprimirCorreosYNombres(const std::string& correoLogueado) const;
     void agregarObjetoAPila(const std::string& correo, const NodoPila& nodo); // Nuevo método
+    void imprimirUsuarios() const;
 };
 
 #endif // LISTAENLAZADA_H
