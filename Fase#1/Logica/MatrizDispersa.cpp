@@ -51,7 +51,6 @@ void MatrizDispersa::imprimir() const {
         std::cout << std::endl; // Nueva línea al final de cada fila
     }
 }
-
 void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
     std::ofstream archivo(nombreArchivo);
     archivo << "digraph G {" << std::endl;
@@ -75,7 +74,7 @@ void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
                     (relacion.first == nodoColumna->correo && relacion.second == nodoFila->correo);
             });
             if (it != relaciones.end()) {
-                archivo << "<td>1</td>";
+                archivo << "<td bgcolor='black'></td>"; // Celda con fondo negro
             } else {
                 archivo << "<td></td>";
             }

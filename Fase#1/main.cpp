@@ -67,8 +67,15 @@ int main() {
     // Agregar usuarios de ejemplo
     lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin@example.com", "admin"));
     lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
-    lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
+    lista.agregarNodo(new Usuario(3, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
+
+    // Crear relación entre usuario@example.com y 1
+    lista.crearRelacion("usuario@example.com", "1");
+
+    // Imprimir usuarios y matriz dispersa
     lista.imprimirUsuarios();
+
+    // Mostrar menú principal
     mostrarMenuPrincipal();
 
     return 0;

@@ -81,3 +81,12 @@
 94	760	7451787219929369	CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj	c646272f170301a8
 7	1601	7451787219069361	CMakeFiles/Fase_1.dir/main.cpp.obj	a6beba8c2c252783
 1601	1760	7451787234999682	Fase_1.exe	d52409254ce75b99
+49	540	7451906490028480	CMakeFiles/Fase_1.dir/Logica/Perfil.cpp.obj	59770c4a49766964
+32	563	7451906489848488	CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj	a7ae93aed7e0cd4a
+20	571	7451906489738489	CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj	c6e9c4d9ce372323
+58	577	7451906490128485	CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj	a9cfedb278b701e3
+40	608	7451906489928493	CMakeFiles/Fase_1.dir/Logica/Registro.cpp.obj	6e37f83857fd937a
+11	1615	7451906489648493	CMakeFiles/Fase_1.dir/main.cpp.obj	a6beba8c2c252783
+1615	1787	7451906505677957	Fase_1.exe	d52409254ce75b99
+7	560	7451907879250832	CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj	c646272f170301a8
+561	714	7451907884790852	Fase_1.exe	d52409254ce75b99

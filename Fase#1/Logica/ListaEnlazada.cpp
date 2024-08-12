@@ -106,6 +106,10 @@ void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila
         std::cout << "Usuario no encontrado con el correo: " << correo << std::endl;
     }
 }
+void ListaEnlazada::crearRelacion(const std::string& correo1, const std::string& correo2) {
+    matrizUsuarios->crearRelacion(correo1, correo2); // Usar operador ->
+}
+
 void ListaEnlazada::imprimirUsuarios() const {
     std::cout << "Lista Enlazada de Usuarios:" << std::endl;
     Usuario* actual = cabeza;
