@@ -4,9 +4,11 @@
 #include "../Headers/ListaSolicitud.h"
 #include "../Headers/ListaEnlazada.h"
 #include "../Headers/Pila.h"
+#include "../Headers/MatrizDispersa.h"
 using namespace std;
 
 extern ListaEnlazada lista;  // Asegúrate de que la lista de usuarios sea accesible
+
 
 void mostrarMenuSolicitud(const std::string& correoElectronico) {
     int opcion;
@@ -51,17 +53,24 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                                     // Aceptar la solicitud
                                     solicitud.estado = "Aceptada";
                                     cout << "Solicitud aceptada." << endl;
+
+                                    // Crear la relación entre los usuarios
+                                    lista.crearRelacion(solicitud.emisor, solicitud.destinatario);
+                                    lista.imprimirUsuarios();
                                 } else if (opcion == 'R' || opcion == 'r') {
                                     // Rechazar la solicitud
                                     solicitud.estado = "Rechazada";
                                     cout << "Solicitud rechazada." << endl;
                                 } else {
                                     cout << "Opción no válida." << endl;
+                                    break;
                                 }
 
-                                // Actualizar el estado en la pila
+                                // Eliminar la solicitud de la lista de solicitudes del destinatario
+                                usuario->listaSolicitudes.eliminarSolicitud(solicitud.destinatario, solicitud.emisor);
+
+                                // Eliminar la solicitud de la pila
                                 usuario->pilaPersonal.pop();
-                                usuario->pilaPersonal.push(solicitud);
                             } else {
                                 cout << "No hay solicitudes en la pila." << endl;
                             }
@@ -85,15 +94,25 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                     cin >> destinatario;
                     Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
                     if (destinatarioUsuario != nullptr) {
-                        // Agregar solicitud a la lista de solicitudes del destinatario
-                        destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
-                        cout << "Solicitud enviada." << endl;
+                        // Verificar si ya existe una relación
+                        if (!lista.existeRelacion(correoElectronico, destinatario)) {
+                            // Verificar si ya existe una solicitud pendiente
+                            if (!destinatarioUsuario->listaSolicitudes.existeSolicitud(destinatario, correoElectronico)) {
+                                // Agregar solicitud a la lista de solicitudes del destinatario
+                                destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
+                                cout << "Solicitud enviada." << endl;
 
-                        // Crear el objeto NodoPila para la solicitud
-                        NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
+                                // Crear el objeto NodoPila para la solicitud
+                                NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
 
-                        // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
-                        lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
+                                // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
+                                lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
+                            } else {
+                                cout << "Ya existe una solicitud pendiente para este destinatario." << endl;
+                            }
+                        } else {
+                            cout << "Ya existe una relación entre el emisor y el destinatario." << endl;
+                        }
                     } else {
                         cout << "Usuario destinatario no encontrado." << endl;
                     }

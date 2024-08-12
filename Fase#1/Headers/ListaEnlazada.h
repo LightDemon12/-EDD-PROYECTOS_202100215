@@ -7,10 +7,14 @@
 #include "Usuarios.h"
 #include "MatrizDispersa.h"
 #include <string>
+
+
+
 class ListaEnlazada {
 private:
     Usuario* cabeza;
     MatrizDispersa* matrizUsuarios;
+
 public:
     ListaEnlazada();
     ~ListaEnlazada();
@@ -24,6 +28,8 @@ public:
     void agregarObjetoAPila(const std::string& correo, const NodoPila& nodo); // Nuevo método
     void imprimirUsuarios() const;
     void crearRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea
+    bool existeRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea
+
 };
 
 #endif // LISTAENLAZADA_H

@@ -17,6 +17,7 @@ public:
     void imprimir() const;
     void generarArchivoDOT(const std::string& nombreArchivo) const;
     void crearRelacion(const std::string& correo1, const std::string& correo2);
+    bool existeRelacion(const std::string& correo1, const std::string& correo2) const; // Nuevo método
 
 private:
     int filas;

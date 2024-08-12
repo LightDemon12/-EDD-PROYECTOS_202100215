@@ -9,6 +9,7 @@ using namespace std;
 ListaEnlazada::ListaEnlazada() {
     cabeza = nullptr;
     matrizUsuarios = new MatrizDispersa(100, 100); // Tamaño arbitrario
+
 }
 
 
@@ -110,6 +111,9 @@ void ListaEnlazada::crearRelacion(const std::string& correo1, const std::string&
     matrizUsuarios->crearRelacion(correo1, correo2); // Usar operador ->
 }
 
+bool ListaEnlazada::existeRelacion(const std::string& correo1, const std::string& correo2) {
+    return matrizUsuarios->existeRelacion(correo1, correo2); // Usar el operador ->
+}
 void ListaEnlazada::imprimirUsuarios() const {
     std::cout << "Lista Enlazada de Usuarios:" << std::endl;
     Usuario* actual = cabeza;

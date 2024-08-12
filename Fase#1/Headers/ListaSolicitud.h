@@ -30,6 +30,9 @@ public:
     // Método para mostrar todas las solicitudes de amistad en la lista
     void mostrarSolicitudes() const; // Declarar como constante
 
+    // Método para verificar si ya existe una solicitud de amistad
+    bool existeSolicitud(std::string destinatario, std::string emisor); // Declaración del nuevo método
+
     // Destructor para liberar la memoria de todos los nodos al destruir la lista
     ~ListaSolicitud();
 };

@@ -69,6 +69,17 @@ void ListaSolicitud::mostrarSolicitudes() const {
         temp = temp->siguiente;
     }
 }
+// Método para verificar si ya existe una solicitud de amistad
+bool ListaSolicitud::existeSolicitud(std::string destinatario, std::string emisor) {
+    Solicitud* temp = cabeza;
+    while (temp != nullptr) {
+        if (temp->destinatario == destinatario && temp->emisor == emisor) {
+            return true;
+        }
+        temp = temp->siguiente;
+    }
+    return false;
+}
 
 // Destructor para liberar la memoria de todos los nodos al destruir la lista
 ListaSolicitud::~ListaSolicitud() {

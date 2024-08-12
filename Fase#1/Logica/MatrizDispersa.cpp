@@ -19,7 +19,13 @@ void MatrizDispersa::insertar(const std::string& correo, const std::string& nomb
     NodoMatriz* nuevoNodo = new NodoMatriz(correo, nombreCompleto);
     nodos.push_back(nuevoNodo);
 }
-
+bool MatrizDispersa::existeRelacion(const std::string& correo1, const std::string& correo2) const {
+    auto it = std::find_if(relaciones.begin(), relaciones.end(), [&](const std::pair<std::string, std::string>& relacion) {
+        return (relacion.first == correo1 && relacion.second == correo2) ||
+            (relacion.first == correo2 && relacion.second == correo1);
+    });
+    return it != relaciones.end();
+}
 void MatrizDispersa::crearRelacion(const std::string& correo1, const std::string& correo2) {
     relaciones.push_back({correo1, correo2});
 }

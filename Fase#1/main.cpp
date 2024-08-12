@@ -7,10 +7,11 @@
 #include "Headers/MenuUsuario.h"
 #include "Headers/InicioSeccion.h"
 #include "Headers/Registro.h"
-
+#include "Headers/MatrizDispersa.h"
 using namespace std;
 
 ListaEnlazada lista;
+
 
 void configurarConsolaUTF8() {
     // Establecer la página de códigos de salida en UTF-8
@@ -70,7 +71,7 @@ int main() {
     lista.agregarNodo(new Usuario(3, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
 
     // Crear relación entre usuario@example.com y 1
-    lista.crearRelacion("usuario@example.com", "1");
+   // lista.crearRelacion("usuario@example.com", "1");
 
     // Imprimir usuarios y matriz dispersa
     lista.imprimirUsuarios();
