@@ -31,9 +31,8 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                     cout << "Ver Solicitudes" << endl;
                     // Mostrar el objeto en el tope de la pila
                     usuario->pilaPersonal.mostrarTop();
-                    cout << "1. Aceptar solicitud" << endl;
-                    cout << "2. Rechazar solicitud" << endl;
-                    cout << "3. Regresar al módulo de solicitudes" << endl;
+                    cout << "1. Aceptar o Rechazar solicitud" << endl;
+                    cout << "2. Regresar al módulo de solicitudes" << endl;
                     cout << "Seleccione una opción: ";
                     cin >> subopcion;
 
@@ -68,24 +67,13 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                             }
                             break;
                         }
-                        case 2: {
-                            string emisor;
-                            cout << "Ingrese el correo del emisor de la solicitud a rechazar: ";
-                            cin >> emisor;
-                            if (usuario->listaSolicitudes.eliminarSolicitud(correoElectronico, emisor)) {
-                                cout << "Solicitud rechazada." << endl;
-                            } else {
-                                cout << "Solicitud no encontrada." << endl;
-                            }
-                            break;
-                        }
-                        case 3:
-                            cout << "Regresando al módulo de solicitudes..." << endl;
-                            break;
+                        case 2:
+                            // Regresar al módulo de solicitudes
+                                break;
                         default:
                             cout << "Opción no válida, por favor intente de nuevo." << endl;
                     }
-                } while(subopcion != 3);
+                } while(subopcion != 2);
                 break;
             }
             case 2: {
