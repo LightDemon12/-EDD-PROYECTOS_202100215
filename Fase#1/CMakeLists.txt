@@ -24,4 +24,6 @@ add_executable(Fase_1 main.cpp
         Logica/Perfil.cpp
         Headers/MenuSolicitud.h
         Logica/MenuSolicitud.cpp
+        Headers/NodoPila.h
+        Logica/NodoPila.cpp
 )

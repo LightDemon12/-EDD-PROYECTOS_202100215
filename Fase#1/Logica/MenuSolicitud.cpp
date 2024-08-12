@@ -9,6 +9,7 @@
 #include "../Headers/Usuarios.h"
 #include "../Headers/ListaSolicitud.h"
 #include "../Headers/ListaEnlazada.h"
+#include "../Headers/Pila.h"
 using namespace std;
 
 extern ListaEnlazada lista;  // Asegúrate de que la lista de usuarios sea accesible
@@ -40,15 +41,35 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
 
                 switch(subopcion) {
                     case 1: {
-                        string emisor;
-                        cout << "Ingrese el correo del emisor de la solicitud a aceptar: ";
-                        cin >> emisor;
-                        Solicitud* solicitud = usuario->listaSolicitudes.buscarSolicitud(correoElectronico, emisor);
-                        if (solicitud != nullptr) {
-                            solicitud->estado = "Aceptada";
-                            cout << "Solicitud aceptada." << endl;
+                        // Mostrar el objeto en el tope de la pila
+                        usuario->pilaPersonal.mostrarTop();
+
+                        // Verificar si la pila no está vacía
+                        if (!usuario->pilaPersonal.empty()) {
+                            char opcion;
+                            cout << "¿Desea aceptar (A) o rechazar (R) la solicitud? ";
+                            cin >> opcion;
+
+                            // Obtener el objeto en el tope de la pila
+                            NodoPila solicitud = usuario->pilaPersonal.top();
+
+                            if (opcion == 'A' || opcion == 'a') {
+                                // Aceptar la solicitud
+                                solicitud.estado = "Aceptada";
+                                cout << "Solicitud aceptada." << endl;
+                            } else if (opcion == 'R' || opcion == 'r') {
+                                // Rechazar la solicitud
+                                solicitud.estado = "Rechazada";
+                                cout << "Solicitud rechazada." << endl;
+                            } else {
+                                cout << "Opción no válida." << endl;
+                            }
+
+                            // Actualizar el estado en la pila
+                            usuario->pilaPersonal.pop();
+                            usuario->pilaPersonal.push(solicitud);
                         } else {
-                            cout << "Solicitud no encontrada." << endl;
+                            cout << "No hay solicitudes en la pila." << endl;
                         }
                         break;
                     }
@@ -75,8 +96,15 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                 cin >> destinatario;
                 Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
                 if (destinatarioUsuario != nullptr) {
+                    // Agregar solicitud a la lista de solicitudes del destinatario
                     destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
                     cout << "Solicitud enviada." << endl;
+
+                    // Crear el objeto NodoPila para la solicitud
+                    NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
+
+                    // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
+                    lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
                 } else {
                     cout << "Usuario destinatario no encontrado." << endl;
                 }

@@ -1,11 +1,8 @@
-//
-// Created by LightDemon12 on 10/08/2024.
-//
-// Pila.cpp
 #include "../Headers/Pila.h"
+#include <iostream>
 
-void Pila::push(const std::string& elemento) {
-    elementos.push_back(elemento);
+void Pila::push(const NodoPila& nodo) {
+    elementos.push_back(nodo);
 }
 
 void Pila::pop() {
@@ -14,11 +11,11 @@ void Pila::pop() {
     }
 }
 
-std::string Pila::top() const {
+NodoPila Pila::top() const {
     if (!elementos.empty()) {
         return elementos.back();
     }
-    return "";
+    return NodoPila("", "", ""); // Devuelve un nodo vacío si la pila está vacía
 }
 
 bool Pila::empty() const {
@@ -27,4 +24,16 @@ bool Pila::empty() const {
 
 size_t Pila::size() const {
     return elementos.size();
+}
+
+void Pila::mostrarTop() const {
+    if (!elementos.empty()) {
+        const NodoPila& nodo = elementos.back();
+        std::cout << "Elemento en el tope:" << std::endl;
+        std::cout << "Destinatario: " << nodo.destinatario << std::endl;
+        std::cout << "Emisor: " << nodo.emisor << std::endl;
+        std::cout << "Estado: " << nodo.estado << std::endl;
+    } else {
+        std::cout << "La pila está vacía." << std::endl;
+    }
 }

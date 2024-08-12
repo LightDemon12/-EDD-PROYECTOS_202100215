@@ -89,3 +89,12 @@ void ListaEnlazada::imprimirCorreosYNombres(const string& correoLogueado) const 
         actual = actual->siguiente;
     }
 }
+void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila& nodo) {
+    Usuario* usuario = buscarUsuario(correo);
+    if (usuario != nullptr) {
+        usuario->pilaPersonal.push(nodo);
+        std::cout << "Objeto agregado a la pila del usuario con correo: " << correo << std::endl;
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correo << std::endl;
+    }
+}
