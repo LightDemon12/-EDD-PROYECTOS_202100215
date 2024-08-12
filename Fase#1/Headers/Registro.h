@@ -6,7 +6,6 @@
 
 #include "ListaEnlazada.h"
 
-// Declaración de la función para registrar un nuevo usuario
-void registrarUsuario(ListaEnlazada& lista, const string& nombres, const string& apellidos, const string& fechaNacimiento, const string& correo, const string& contrasena);
+void registrarUsuario(ListaEnlazada& lista);
 
 #endif // REGISTRO_H

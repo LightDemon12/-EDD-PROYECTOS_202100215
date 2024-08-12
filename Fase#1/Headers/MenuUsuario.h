@@ -5,6 +5,9 @@
 #ifndef MENUUSUARIO_H
 #define MENUUSUARIO_H
 
-void mostrarMenuUsuario();
+#include <string>
+using namespace std;
+
+void mostrarMenuUsuario(const string& correoElectronico);
 
 #endif // MENUUSUARIO_H

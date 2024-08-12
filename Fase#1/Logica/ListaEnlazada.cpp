@@ -1,8 +1,6 @@
 //
 // Created by LightDemon12 on 08/08/2024.
 //
-// ListaEnlazada.cpp
-
 #include "../Headers/ListaEnlazada.h"
 #include <iostream>
 using namespace std;
@@ -74,4 +72,20 @@ int ListaEnlazada::obtenerTamano() const {
         actual = actual->siguiente;
     }
     return tamano;
+}
+
+// Definición del método getCabeza
+Usuario* ListaEnlazada::getCabeza() const {
+    return cabeza;
+}
+
+// Nuevo método para imprimir el correo y nombre completo de cada usuario, omitiendo el usuario logueado
+void ListaEnlazada::imprimirCorreosYNombres(const string& correoLogueado) const {
+    Usuario* actual = cabeza;
+    while (actual != nullptr) {
+        if (actual->correoElectronico != correoLogueado) {
+            cout << "Correo: " << actual->correoElectronico << ", Nombre: " << actual->nombres << " " << actual->apellidos << endl;
+        }
+        actual = actual->siguiente;
+    }
 }

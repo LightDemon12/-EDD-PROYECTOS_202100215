@@ -6,8 +6,9 @@
 #define INICIOSECCION_H
 
 #include "ListaEnlazada.h"
+#include <string>
+using namespace std;
 
-// Declaración de la función para verificar el inicio de sesión
 void iniciarSesion(const ListaEnlazada& lista, const string& correo, const string& contrasena);
 
 #endif // INICIOSECCION_H

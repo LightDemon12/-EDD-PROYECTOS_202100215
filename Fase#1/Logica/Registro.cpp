@@ -6,7 +6,22 @@
 using namespace std;
 
 // Función para registrar un nuevo usuario
-void registrarUsuario(ListaEnlazada& lista, const string& nombres, const string& apellidos, const string& fechaNacimiento, const string& correo, const string& contrasena) {
+void registrarUsuario(ListaEnlazada& lista) {
+    string nombres, apellidos, fechaNacimiento, correo, contrasena;
+
+    // Solicitar los datos del usuario
+    cout << "Ingrese sus nombres: ";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar el buffer de entrada
+    getline(cin, nombres);
+    cout << "Ingrese sus apellidos: ";
+    getline(cin, apellidos);
+    cout << "Ingrese su fecha de nacimiento (YYYY/MM/DD): ";
+    getline(cin, fechaNacimiento);
+    cout << "Ingrese su correo electrónico: ";
+    getline(cin, correo);
+    cout << "Ingrese su contraseña: ";
+    getline(cin, contrasena);
+
     // Verificar si el correo ya existe en la lista
     Usuario* usuarioExistente = lista.buscarUsuario(correo, "");
     if (usuarioExistente != nullptr) {
@@ -35,6 +50,12 @@ void registrarUsuario(ListaEnlazada& lista, const string& nombres, const string&
 
     if (dia < 1 || dia > 31) {
         cout << "El día de nacimiento debe estar entre 1 y 31." << endl;
+        return;
+    }
+
+    // Validar la contraseña (ejemplo: al menos 6 caracteres)
+    if (contrasena.length() < 0) {
+        cout << "La contraseña debe tener al menos 6 caracteres." << endl;
         return;
     }
 

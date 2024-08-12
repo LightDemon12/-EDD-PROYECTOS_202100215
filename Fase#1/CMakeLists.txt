@@ -19,4 +19,9 @@ add_executable(Fase_1 main.cpp
         Headers/Solicitud.h
         Logica/Solicitud.cpp
         Logica/ListaSolicitud.cpp
-        Headers/ListaSolicitud.h)
+        Headers/ListaSolicitud.h
+        Headers/Perfil.h
+        Logica/Perfil.cpp
+        Headers/MenuSolicitud.h
+        Logica/MenuSolicitud.cpp
+)

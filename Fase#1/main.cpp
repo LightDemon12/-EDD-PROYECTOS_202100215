@@ -1,29 +1,30 @@
 #include <iostream>
 #include <windows.h>
-#include "./Headers/Usuarios.h"
-#include "./Headers/ListaEnlazada.h"
-#include "./Headers/InicioSeccion.h"
-#include "./Headers/Registro.h"
-#include "./Headers/MenuUsuario.h" // Incluir el nuevo archivo de cabecera
+#include <locale>
+#include "Headers/Usuarios.h"
+#include "Headers/ListaEnlazada.h"
+#include "Headers/Perfil.h"
+#include "Headers/MenuUsuario.h"
+#include "Headers/InicioSeccion.h"
+#include "Headers/Registro.h"
 
 using namespace std;
 
-int main() {
-    // Configurar la consola para usar UTF-8
+ListaEnlazada lista;
+
+void configurarConsolaUTF8() {
+    // Establecer la página de códigos de salida en UTF-8
     SetConsoleOutputCP(CP_UTF8);
+    // Establecer la página de códigos de entrada en UTF-8
+    SetConsoleCP(CP_UTF8);
+    // Establecer la localización en UTF-8
+    setlocale(LC_ALL, ".UTF-8");
+}
 
-    // Crear la lista enlazada de usuarios
-    ListaEnlazada lista;
-
-    // Agregar usuarios quemados a la lista
-    Usuario* usuario1 = new Usuario(1, "Angel", "Pérez", "2000/01/01", "1", "a");
-    lista.agregarNodo(usuario1);
-    Usuario* usuario2 = new Usuario(2, "Angel", "Pérez", "2000/01/01", "2", "b");
-    lista.agregarNodo(usuario2);
-
+void mostrarMenuPrincipal() {
     int opcion;
     do {
-        cout << "\nMenú Principal" << endl;
+        cout << "Menú Principal" << endl;
         cout << "1. Iniciar sesión" << endl;
         cout << "2. Registrarse" << endl;
         cout << "3. Información" << endl;
@@ -33,48 +34,42 @@ int main() {
 
         switch(opcion) {
             case 1: {
-                cout << "Ingrese el correo electrónico: ";
-                string correo;
+                string correo, contrasena;
+                cout << "Ingrese su correo electrónico: ";
                 cin >> correo;
-                cout << "Ingrese la contraseña: ";
-                string contrasena;
+                cout << "Ingrese su contraseña: ";
                 cin >> contrasena;
-                if (correo != "1" || contrasena != "a") {
-                    iniciarSesion(lista, correo, contrasena);
-                    mostrarMenuUsuario(); // Mostrar el menú del usuario si el inicio de sesión es exitoso
-                } else {
-                    cout << "Bienvenido admin" << endl;
-                }
+                iniciarSesion(lista, correo, contrasena);
                 break;
             }
-            case 2: {
-                cout << "Registro de nuevo usuario" << endl;
-                string nombres, apellidos, fechaNacimiento, correo, contrasena;
-                cout << "Ingrese los nombres: ";
-                cin.ignore();
-                getline(cin, nombres);
-                cout << "Ingrese los apellidos: ";
-                getline(cin, apellidos);
-                cout << "Ingrese la fecha de nacimiento (YYYY/MM/DD): ";
-                getline(cin, fechaNacimiento);
-                cout << "Ingrese el correo electrónico: ";
-                getline(cin, correo);
-                cout << "Ingrese la contraseña: ";
-                getline(cin, contrasena);
-                registrarUsuario(lista, nombres, apellidos, fechaNacimiento, correo, contrasena);
+            case 2:
+                registrarUsuario(lista);
                 break;
-            }
             case 3:
-                cout << "Información" << endl;
-                lista.imprimirLista();
+                cout << "Funcionalidad de información no implementada." << endl;
                 break;
             case 4:
-                cout << "Finalizando" << endl;
+                cout << "Saliendo del programa..." << endl;
                 break;
             default:
                 cout << "Opción no válida, por favor intente de nuevo." << endl;
         }
     } while(opcion != 4);
+}
+
+int main() {
+    // Configurar la consola para usar UTF-8
+    configurarConsolaUTF8();
+
+    // Supongamos que ya tienes una lista de usuarios cargada
+    // Aquí solo se muestra un ejemplo de cómo podrías llamar a las funciones
+
+    // Agregar usuarios de ejemplo
+    lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin@example.com", "admin"));
+    lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
+    lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
+
+    mostrarMenuPrincipal();
 
     return 0;
 }
