@@ -19,6 +19,7 @@ public:
     void clasificarPorCorreo();
     void mostrarPorCorreo(const std::string& correo) const;
     void mostrarPublicacionesFiltradas(const std::vector<std::string>& correosPermitidos) const;
+    void navegarPublicaciones() const; // Asegúrate de declarar la función aquí
 
 private:
     Publicacion* cabeza;

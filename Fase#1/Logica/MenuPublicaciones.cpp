@@ -42,7 +42,7 @@ void MenuPublicaciones::mostrarMenu() {
 }
 
 void MenuPublicaciones::verTodas() {
-    listaPublicaciones.imprimirPublicaciones();
+    listaPublicaciones.navegarPublicaciones();
 }
 
 void MenuPublicaciones::crear() {

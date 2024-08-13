@@ -39,6 +39,45 @@ void ListaDoblePublicaciones::imprimirPublicaciones() const {
     }
 }
 
+void ListaDoblePublicaciones::navegarPublicaciones() const {
+    if (cabeza == nullptr) {
+        std::cout << "No hay publicaciones disponibles." << std::endl;
+        return;
+    }
+
+    Publicacion* actual = cabeza;
+    char opcion;
+
+    while (true) {
+        std::cout << "Correo: " << actual->correoUsuario << std::endl;
+        std::cout << "Contenido: " << actual->contenido << std::endl;
+        std::cout << "Fecha: " << actual->fecha << std::endl;
+        std::cout << "Hora: " << actual->hora << std::endl;
+        std::cout << "-------------------------" << std::endl;
+
+        std::cout << "Presione 'A' para anterior, 'S' para siguiente, 'Q' para salir: ";
+        std::cin >> opcion;
+
+        if (opcion == 'A' || opcion == 'a') {
+            if (actual->anterior != nullptr) {
+                actual = actual->anterior;
+            } else {
+                std::cout << "No hay publicaciones anteriores." << std::endl;
+            }
+        } else if (opcion == 'S' || opcion == 's') {
+            if (actual->siguiente != nullptr) {
+                actual = actual->siguiente;
+            } else {
+                std::cout << "No hay más publicaciones." << std::endl;
+            }
+        } else if (opcion == 'Q' || opcion == 'q') {
+            break;
+        } else {
+            std::cout << "Opción no válida. Intente de nuevo." << std::endl;
+        }
+    }
+}
+
 void ListaDoblePublicaciones::eliminarPublicacion(const std::string& correo, const std::string& fecha, const std::string& hora) {
     Publicacion* actual = cabeza;
     while (actual != nullptr) {
@@ -54,63 +93,7 @@ void ListaDoblePublicaciones::eliminarPublicacion(const std::string& correo, con
                 cola = actual->anterior;
             }
             delete actual;
-            std::cout << "Publicación eliminada." << std::endl;
             return;
-        }
-        actual = actual->siguiente;
-    }
-    std::cout << "Publicación no encontrada." << std::endl;
-}
-
-void ListaDoblePublicaciones::clasificarPorCorreo() {
-    if (cabeza == nullptr) return;
-
-    std::vector<Publicacion*> publicaciones;
-    Publicacion* actual = cabeza;
-    while (actual != nullptr) {
-        publicaciones.push_back(actual);
-        actual = actual->siguiente;
-    }
-
-    std::sort(publicaciones.begin(), publicaciones.end(), [](Publicacion* a, Publicacion* b) {
-        return a->correoUsuario < b->correoUsuario;
-    });
-
-    cabeza = publicaciones[0];
-    cabeza->anterior = nullptr;
-    actual = cabeza;
-    for (size_t i = 1; i < publicaciones.size(); ++i) {
-        actual->siguiente = publicaciones[i];
-        publicaciones[i]->anterior = actual;
-        actual = actual->siguiente;
-    }
-    cola = actual;
-    cola->siguiente = nullptr;
-}
-
-void ListaDoblePublicaciones::mostrarPorCorreo(const std::string& correo) const {
-    Publicacion* actual = cabeza;
-    while (actual != nullptr) {
-        if (actual->correoUsuario == correo) {
-            std::cout << "Correo: " << actual->correoUsuario << std::endl;
-            std::cout << "Contenido: " << actual->contenido << std::endl;
-            std::cout << "Fecha: " << actual->fecha << std::endl;
-            std::cout << "Hora: " << actual->hora << std::endl;
-            std::cout << "-------------------------" << std::endl;
-        }
-        actual = actual->siguiente;
-    }
-}
-
-void ListaDoblePublicaciones::mostrarPublicacionesFiltradas(const std::vector<std::string>& correosPermitidos) const {
-    Publicacion* actual = cabeza;
-    while (actual != nullptr) {
-        if (std::find(correosPermitidos.begin(), correosPermitidos.end(), actual->correoUsuario) != correosPermitidos.end()) {
-            std::cout << "Correo: " << actual->correoUsuario << std::endl;
-            std::cout << "Contenido: " << actual->contenido << std::endl;
-            std::cout << "Fecha: " << actual->fecha << std::endl;
-            std::cout << "Hora: " << actual->hora << std::endl;
-            std::cout << "-------------------------" << std::endl;
         }
         actual = actual->siguiente;
     }
