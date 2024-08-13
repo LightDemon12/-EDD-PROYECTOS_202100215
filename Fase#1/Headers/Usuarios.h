@@ -9,6 +9,7 @@
 #include <string>
 #include "Pila.h"
 #include "ListaSolicitud.h"
+#include "ListaEnlazadaRechazo.h" // Incluir la cabecera de ListaEnlazadaRechazo
 
 class Usuario {
 public:
@@ -21,6 +22,7 @@ public:
     Usuario* siguiente;
     Pila pilaPersonal; // Pila personal para cada usuario
     ListaSolicitud listaSolicitudes; // Lista de solicitudes de amistad personal para cada usuario
+    ListaEnlazadaRechazo listaRechazos; // Lista de rechazos personal para cada usuario
 
     Usuario(int id, std::string nom, std::string ape, std::string fechaNac, std::string correo, std::string contra);
 };

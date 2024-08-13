@@ -29,7 +29,11 @@ public:
     void imprimirUsuarios() const;
     void crearRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea
     bool existeRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea
-
+    // Nuevos métodos para manejar rechazos
+    void agregarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor);
+    bool eliminarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor);
+    Solicitud* buscarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) const;
+    void mostrarRechazos(const std::string& correoUsuario) const;
 };
 
 #endif // LISTAENLAZADA_H

@@ -12,7 +12,7 @@
 using namespace std;
 
 ListaEnlazada lista;
-ListaEnlazadaRechazo listaRechazos;
+
 
 void configurarConsolaUTF8() {
     // Establecer la página de códigos de salida en UTF-8
@@ -76,8 +76,8 @@ int main() {
 
     // Imprimir usuarios y matriz dispersa
     lista.imprimirUsuarios();
-    listaRechazos.agregarRechazo("usuario@example.com", "1");
-    listaRechazos.mostrarRechazos();
+    lista.agregarRechazo("usuario@example.com", "1", "usuario@example.com");
+
     // Mostrar menú principal
     mostrarMenuPrincipal();
 

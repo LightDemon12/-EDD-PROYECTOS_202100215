@@ -91,7 +91,6 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                 break;
             }
 case 2: {
-    ListaEnlazadaRechazo listaRechazos;
     int subopcion;
     do {
         lista.imprimirCorreosYNombres(correoElectronico); // Mostrar correos y nombres antes de solicitar el destinatario
@@ -101,7 +100,7 @@ case 2: {
         Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
         if (destinatarioUsuario != nullptr) {
             // Verificar si ya existe una relación o un rechazo previo
-            if (!lista.existeRelacion(correoElectronico, destinatario) && !listaRechazos.existeRechazo(correoElectronico, destinatario)) {
+            if (!lista.existeRelacion(correoElectronico, destinatario) && !lista.buscarRechazo(correoElectronico, destinatario, correoElectronico)) {
                 // Verificar si ya existe una solicitud pendiente
                 if (!destinatarioUsuario->listaSolicitudes.existeSolicitud(destinatario, correoElectronico)) {
                     // Agregar solicitud a la lista de solicitudes del destinatario
@@ -114,8 +113,8 @@ case 2: {
                     // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
                     lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
 
-                    // Agregar también a la lista de rechazos
-                    listaRechazos.agregarRechazo(destinatario, correoElectronico);
+                    // Agregar también a la lista de rechazos del destinatario
+                    lista.agregarRechazo(destinatario, destinatario, correoElectronico);
                 } else {
                     cout << "Ya existe una solicitud pendiente para este destinatario." << endl;
                 }
@@ -123,7 +122,7 @@ case 2: {
                 if (lista.existeRelacion(correoElectronico, destinatario)) {
                     cout << "Ya existe una relación entre el emisor y el destinatario." << endl;
                 }
-                if (listaRechazos.existeRechazo(correoElectronico, destinatario)) {
+                if (lista.buscarRechazo(correoElectronico, destinatario, correoElectronico)) {
                     cout << "No se puede enviar la solicitud. Existe un rechazo previo entre el emisor y el destinatario." << endl;
                 }
             }

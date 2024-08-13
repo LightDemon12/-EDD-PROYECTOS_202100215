@@ -127,3 +127,43 @@ void ListaEnlazada::imprimirUsuarios() const {
     matrizUsuarios->imprimir();
     matrizUsuarios->generarArchivoDOT("matriz_usuarios.dot");
 }
+// Nuevos métodos para manejar rechazos
+
+void ListaEnlazada::agregarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) {
+    Usuario* usuario = buscarUsuario(correoUsuario);
+    if (usuario != nullptr) {
+        usuario->listaRechazos.agregarRechazo(destinatario, emisor);
+        std::cout << "Rechazo agregado para el usuario con correo: " << correoUsuario << std::endl;
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
+    }
+}
+
+bool ListaEnlazada::eliminarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) {
+    Usuario* usuario = buscarUsuario(correoUsuario);
+    if (usuario != nullptr) {
+        return usuario->listaRechazos.eliminarRechazo(destinatario, emisor);
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
+        return false;
+    }
+}
+
+Solicitud* ListaEnlazada::buscarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) const {
+    Usuario* usuario = buscarUsuario(correoUsuario);
+    if (usuario != nullptr) {
+        return usuario->listaRechazos.buscarRechazo(destinatario, emisor);
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
+        return nullptr;
+    }
+}
+
+void ListaEnlazada::mostrarRechazos(const std::string& correoUsuario) const {
+    Usuario* usuario = buscarUsuario(correoUsuario);
+    if (usuario != nullptr) {
+        usuario->listaRechazos.mostrarRechazos();
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
+    }
+}
