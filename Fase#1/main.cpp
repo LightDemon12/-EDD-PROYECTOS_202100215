@@ -8,10 +8,11 @@
 #include "Headers/InicioSeccion.h"
 #include "Headers/Registro.h"
 #include "Headers/MatrizDispersa.h"
+#include "Headers/ListaEnlazadaRechazo.h"
 using namespace std;
 
 ListaEnlazada lista;
-
+ListaEnlazadaRechazo listaRechazos;
 
 void configurarConsolaUTF8() {
     // Establecer la página de códigos de salida en UTF-8
@@ -75,7 +76,8 @@ int main() {
 
     // Imprimir usuarios y matriz dispersa
     lista.imprimirUsuarios();
-
+    listaRechazos.agregarRechazo("usuario@example.com", "1");
+    listaRechazos.mostrarRechazos();
     // Mostrar menú principal
     mostrarMenuPrincipal();
 

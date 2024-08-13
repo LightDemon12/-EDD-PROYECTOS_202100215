@@ -96,3 +96,45 @@ void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
     std::string comando = "dot -Tpng " + nombreArchivo + " -o matriz_usuarios.png";
     system(comando.c_str());
 }
+void MatrizDispersa::agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora) {
+    publicaciones.emplace_back(correo, contenido, fecha, hora);
+}
+
+void MatrizDispersa::navegarPublicaciones() const {
+    if (publicaciones.empty()) {
+        std::cout << "No hay publicaciones disponibles." << std::endl;
+        return;
+    }
+
+    size_t indice = 0;
+    char opcion;
+    while (true) {
+        const Publicacion& pub = publicaciones[indice];
+        std::cout << "Correo: " << pub.correoUsuario << std::endl;
+        std::cout << "Contenido: " << pub.contenido << std::endl;
+        std::cout << "Fecha: " << pub.fecha << std::endl;
+        std::cout << "Hora: " << pub.hora << std::endl;
+        std::cout << "-------------------------" << std::endl;
+
+        std::cout << "Presione 'A' para anterior, 'S' para siguiente, 'Q' para salir: ";
+        std::cin >> opcion;
+
+        if (opcion == 'A' || opcion == 'a') {
+            if (indice > 0) {
+                --indice;
+            } else {
+                std::cout << "No hay publicaciones anteriores." << std::endl;
+            }
+        } else if (opcion == 'S' || opcion == 's') {
+            if (indice < publicaciones.size() - 1) {
+                ++indice;
+            } else {
+                std::cout << "No hay más publicaciones." << std::endl;
+            }
+        } else if (opcion == 'Q' || opcion == 'q') {
+            break;
+        } else {
+            std::cout << "Opción no válida." << std::endl;
+        }
+    }
+}

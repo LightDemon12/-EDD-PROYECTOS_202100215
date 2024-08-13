@@ -4,6 +4,8 @@
 #include <iostream>
 #include "../Headers/Perfil.h"
 #include "../Headers/MenuSolicitud.h" // Asegúrate de incluir MenuSolicitud.h
+#include "../Headers/MenuPublicaciones.h" // Incluir MenuPublicaciones.h
+#include "../Headers/ListaDoblePublicaciones.h" // Incluir ListaDoblePublicaciones.h
 
 using namespace std;
 
@@ -45,9 +47,13 @@ void mostrarMenuUsuario(const string& correoElectronico) {
                 cout << "Solicitudes" << endl;
                 mostrarMenuSolicitud(correoElectronico); // Llamar al menú de solicitudes
                 break;
-            case 3:
-                cout << "Funcionalidad de publicaciones no implementada." << endl;
+            case 3: {
+                cout << "Publicaciones" << endl;
+                ListaDoblePublicaciones listaPublicaciones;
+                MenuPublicaciones menu(listaPublicaciones, correoElectronico);
+                menu.mostrarMenu();
                 break;
+            }
             case 4:
                 cout << "Funcionalidad de reportes no implementada." << endl;
                 break;

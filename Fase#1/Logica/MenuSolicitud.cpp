@@ -5,6 +5,7 @@
 #include "../Headers/ListaEnlazada.h"
 #include "../Headers/Pila.h"
 #include "../Headers/MatrizDispersa.h"
+#include "../Headers/ListaEnlazadaRechazo.h"
 using namespace std;
 
 extern ListaEnlazada lista;  // Asegúrate de que la lista de usuarios sea accesible
@@ -28,6 +29,7 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
 
         switch(opcion) {
             case 1: {
+                ListaEnlazadaRechazo listaRechazos;
                 int subopcion;
                 do {
                     cout << "Ver Solicitudes" << endl;
@@ -61,6 +63,9 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                                     // Rechazar la solicitud
                                     solicitud.estado = "Rechazada";
                                     cout << "Solicitud rechazada." << endl;
+
+                                    // Agregar los correos a la lista de rechazos
+                                    listaRechazos.agregarRechazo(solicitud.emisor, solicitud.destinatario);
                                 } else {
                                     cout << "Opción no válida." << endl;
                                     break;
@@ -85,44 +90,53 @@ void mostrarMenuSolicitud(const std::string& correoElectronico) {
                 } while(subopcion != 2);
                 break;
             }
-            case 2: {
-                int subopcion;
-                do {
-                    lista.imprimirCorreosYNombres(correoElectronico); // Mostrar correos y nombres antes de solicitar el destinatario
-                    string destinatario;
-                    cout << "Ingrese el correo del destinatario de la solicitud: ";
-                    cin >> destinatario;
-                    Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
-                    if (destinatarioUsuario != nullptr) {
-                        // Verificar si ya existe una relación
-                        if (!lista.existeRelacion(correoElectronico, destinatario)) {
-                            // Verificar si ya existe una solicitud pendiente
-                            if (!destinatarioUsuario->listaSolicitudes.existeSolicitud(destinatario, correoElectronico)) {
-                                // Agregar solicitud a la lista de solicitudes del destinatario
-                                destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
-                                cout << "Solicitud enviada." << endl;
+case 2: {
+    ListaEnlazadaRechazo listaRechazos;
+    int subopcion;
+    do {
+        lista.imprimirCorreosYNombres(correoElectronico); // Mostrar correos y nombres antes de solicitar el destinatario
+        string destinatario;
+        cout << "Ingrese el correo del destinatario de la solicitud: ";
+        cin >> destinatario;
+        Usuario* destinatarioUsuario = lista.buscarUsuario(destinatario, "");
+        if (destinatarioUsuario != nullptr) {
+            // Verificar si ya existe una relación o un rechazo previo
+            if (!lista.existeRelacion(correoElectronico, destinatario) && !listaRechazos.existeRechazo(correoElectronico, destinatario)) {
+                // Verificar si ya existe una solicitud pendiente
+                if (!destinatarioUsuario->listaSolicitudes.existeSolicitud(destinatario, correoElectronico)) {
+                    // Agregar solicitud a la lista de solicitudes del destinatario
+                    destinatarioUsuario->listaSolicitudes.agregarSolicitud(destinatario, correoElectronico, "Pendiente");
+                    cout << "Solicitud enviada." << endl;
 
-                                // Crear el objeto NodoPila para la solicitud
-                                NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
+                    // Crear el objeto NodoPila para la solicitud
+                    NodoPila nuevaSolicitud(destinatario, correoElectronico, "Pendiente");
 
-                                // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
-                                lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
-                            } else {
-                                cout << "Ya existe una solicitud pendiente para este destinatario." << endl;
-                            }
-                        } else {
-                            cout << "Ya existe una relación entre el emisor y el destinatario." << endl;
-                        }
-                    } else {
-                        cout << "Usuario destinatario no encontrado." << endl;
-                    }
-                    cout << "1. Enviar otra solicitud" << endl;
-                    cout << "2. Regresar al módulo de solicitudes" << endl;
-                    cout << "Seleccione una opción: ";
-                    cin >> subopcion;
-                } while(subopcion != 2);
-                break;
+                    // Usar el método agregarObjetoAPila para agregar la solicitud a la pila del destinatario
+                    lista.agregarObjetoAPila(destinatario, nuevaSolicitud);
+
+                    // Agregar también a la lista de rechazos
+                    listaRechazos.agregarRechazo(destinatario, correoElectronico);
+                } else {
+                    cout << "Ya existe una solicitud pendiente para este destinatario." << endl;
+                }
+            } else {
+                if (lista.existeRelacion(correoElectronico, destinatario)) {
+                    cout << "Ya existe una relación entre el emisor y el destinatario." << endl;
+                }
+                if (listaRechazos.existeRechazo(correoElectronico, destinatario)) {
+                    cout << "No se puede enviar la solicitud. Existe un rechazo previo entre el emisor y el destinatario." << endl;
+                }
             }
+        } else {
+            cout << "Usuario destinatario no encontrado." << endl;
+        }
+        cout << "1. Enviar otra solicitud" << endl;
+        cout << "2. Regresar al módulo de solicitudes" << endl;
+        cout << "Seleccione una opción: ";
+        cin >> subopcion;
+    } while(subopcion != 2);
+    break;
+}
             case 3:
                 cout << "Saliendo del módulo solicitudes..." << endl;
                 break;

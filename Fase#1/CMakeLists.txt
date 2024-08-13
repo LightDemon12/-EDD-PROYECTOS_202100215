@@ -29,4 +29,12 @@ add_executable(Fase_1 main.cpp
         Headers/NodoMatriz.h
         Headers/MatrizDispersa.h
         Logica/MatrizDispersa.cpp
+        Headers/ListaEnlazadaRechazo.h
+        Logica/ListaEnlazadaRechazo.cpp
+        Logica/NodoPublicacion.cpp
+        Headers/ListaDoblePublicaciones.h
+        Logica/ListaDoblePublicaciones.cpp
+        Headers/Publicacion.h
+        Headers/MenuPublicaciones.h
+        Logica/MenuPublicaciones.cpp
 )
