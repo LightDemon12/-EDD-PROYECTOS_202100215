@@ -62,13 +62,13 @@ void ListaDoblePublicaciones::navegarPublicaciones() const {
             if (actual->anterior != nullptr) {
                 actual = actual->anterior;
             } else {
-                std::cout << "No hay publicaciones anteriores." << std::endl;
+                actual = cola; // Mover a la última publicación
             }
         } else if (opcion == 'S' || opcion == 's') {
             if (actual->siguiente != nullptr) {
                 actual = actual->siguiente;
             } else {
-                std::cout << "No hay más publicaciones." << std::endl;
+                actual = cabeza; // Mover a la primera publicación
             }
         } else if (opcion == 'Q' || opcion == 'q') {
             break;

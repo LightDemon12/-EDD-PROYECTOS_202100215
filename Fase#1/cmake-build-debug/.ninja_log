@@ -64,3 +64,7 @@
 8	519	7452257096675022	CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj	a7ae93aed7e0cd4a
 35	593	7452257096945029	CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj	6bf342190a54e1b9
 593	765	7452257102535032	Fase_1.exe	a1e1b56754e8ce92
+8	583	7452270704343968	CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj	c646272f170301a8
+584	763	7452270710093966	Fase_1.exe	a1e1b56754e8ce92
+8	403	7452272003983939	CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj	99e5692e6d605aac
+403	575	7452272007933917	Fase_1.exe	a1e1b56754e8ce92
