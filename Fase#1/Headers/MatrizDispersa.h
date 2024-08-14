@@ -9,6 +9,7 @@
 #include "Publicacion.h"
 #include <vector>
 #include <string>
+class ListaEnlazada;
 
 class MatrizDispersa {
 public:
@@ -20,7 +21,8 @@ public:
     void crearRelacion(const std::string& correo1, const std::string& correo2);
     bool existeRelacion(const std::string& correo1, const std::string& correo2) const; // Nuevo método
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
-    void navegarPublicaciones() const;
+    void mostrarPublicacionesRelacionadas(const std::string& correoLogueado, const ListaEnlazada& listaUsuarios) const;
+
 
 private:
     int filas;

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Fase_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Fase_1">
+				<Option output="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Fase_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fase_1"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Fase_1/fast">
+				<Option output="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Fase_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Fase_1/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/InicioSeccion.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaDoblePublicaciones.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaEnlazada.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaEnlazadaRechazo.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaSolicitud.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MatrizDispersa.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuPublicaciones.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuSolicitud.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuUsuario.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/NodoMatriz.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/NodoPila.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Perfil.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Pila.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Publicacion.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Registro.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Solicitud.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Usuarios.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaDoblePublicaciones.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaEnlazada.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaEnlazadaRechazo.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaSolicitud.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MatrizDispersa.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuPublicaciones.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuSolicitud.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuUsuario.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/NodoPila.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/NodoPublicacion.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Perfil.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Pila.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Registro.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Solicitud.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/Usuarios.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/main.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

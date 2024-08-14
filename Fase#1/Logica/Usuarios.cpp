@@ -31,4 +31,9 @@ void imprimirUsuario(const Usuario& usuario) {
     // Imprimir solicitudes de amistad del usuario
     cout << "Solicitudes de amistad: " << endl;
     usuario.listaSolicitudes.mostrarSolicitudes();
+
+    // Imprimir publicaciones del usuario
+    cout << "Publicaciones: " << endl;
+    usuario.listaPublicaciones.imprimirPublicaciones();
 }
+

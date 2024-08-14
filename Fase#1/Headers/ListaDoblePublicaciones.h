@@ -16,9 +16,6 @@ public:
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
     void imprimirPublicaciones() const;
     void eliminarPublicacion(const std::string& correo, const std::string& fecha, const std::string& hora);
-    void clasificarPorCorreo();
-    void mostrarPorCorreo(const std::string& correo) const;
-    void mostrarPublicacionesFiltradas(const std::vector<std::string>& correosPermitidos) const;
     void navegarPublicaciones() const; // Asegúrate de declarar la función aquí
 
 private:

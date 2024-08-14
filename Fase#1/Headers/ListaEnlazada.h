@@ -9,7 +9,7 @@
 #include <string>
 
 
-
+class MatrizDispersa;
 class ListaEnlazada {
 private:
     Usuario* cabeza;

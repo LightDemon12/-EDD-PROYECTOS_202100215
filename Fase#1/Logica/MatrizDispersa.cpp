@@ -2,6 +2,8 @@
 // Created by LightDemon12 on 11/08/2024.
 //
 #include "../Headers/MatrizDispersa.h"
+#include "../Headers/ListaEnlazada.h" // Incluir la cabecera de ListaEnlazada
+#include "../Headers/Usuarios.h" // Incluir la cabecera de Usuario
 #include <fstream>
 #include <cstdlib> // Para usar system()
 #include <algorithm> // Para std::find_if
@@ -100,3 +102,23 @@ void MatrizDispersa::agregarPublicacion(const std::string& correo, const std::st
     publicaciones.emplace_back(correo, contenido, fecha, hora);
 }
 
+void MatrizDispersa::mostrarPublicacionesRelacionadas(const std::string& correoLogueado, const ListaEnlazada& listaUsuarios) const {
+    std::cout << "Publicaciones de usuarios relacionados con " << correoLogueado << ":" << std::endl;
+
+    for (const auto& relacion : relaciones) {
+        std::string correoRelacionado;
+        if (relacion.first == correoLogueado) {
+            correoRelacionado = relacion.second;
+        } else if (relacion.second == correoLogueado) {
+            correoRelacionado = relacion.first;
+        } else {
+            continue;
+        }
+
+        Usuario* usuarioRelacionado = listaUsuarios.buscarUsuario(correoRelacionado);
+        if (usuarioRelacionado) {
+            std::cout << "Publicaciones de " << usuarioRelacionado->correoElectronico << ":" << std::endl;
+            usuarioRelacionado->listaPublicaciones.imprimirPublicaciones();
+        }
+    }
+}
