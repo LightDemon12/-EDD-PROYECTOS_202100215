@@ -1,7 +1,5 @@
-//
-// Created by LightDemon12 on 12/08/2024.
-//
 #include "../Headers/MenuPublicaciones.h"
+#include "../Headers/ListaEnlazada.h"
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -18,7 +16,8 @@ void MenuPublicaciones::mostrarMenu() {
         std::cout << "1. Ver todas" << std::endl;
         std::cout << "2. Crear" << std::endl;
         std::cout << "3. Eliminar" << std::endl;
-        std::cout << "4. Salir" << std::endl;
+        std::cout << "4. Ver publicaciones relacionadas" << std::endl;
+        std::cout << "5. Salir" << std::endl;
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
 
@@ -33,12 +32,15 @@ void MenuPublicaciones::mostrarMenu() {
                 eliminar();
                 break;
             case 4:
+
+                break;
+            case 5:
                 std::cout << "Saliendo del menú de publicaciones." << std::endl;
                 break;
             default:
                 std::cout << "Opción no válida. Intente de nuevo." << std::endl;
         }
-    } while (opcion != 4);
+    } while (opcion != 5);
 }
 
 void MenuPublicaciones::verTodas() {
@@ -69,13 +71,11 @@ void MenuPublicaciones::crear() {
 }
 
 void MenuPublicaciones::eliminar() {
-    std::string correo, fecha, hora;
-    std::cout << "Ingrese el correo del usuario: ";
-    std::cin >> correo;
-    std::cout << "Ingrese la fecha de la publicación (YYYY-MM-DD): ";
-    std::cin >> fecha;
-    std::cout << "Ingrese la hora de la publicación (HH:MM): ";
-    std::cin >> hora;
-
-    listaPublicaciones.eliminarPublicacion(correo, fecha, hora);
+    listaPublicaciones.mostrarPublicacionesConIndice();
+    int indice;
+    std::cout << "Ingrese el índice de la publicación a eliminar: ";
+    std::cin >> indice;
+    listaPublicaciones.eliminarPublicacionPorIndice(indice);
+    std::cout << "Publicación eliminada exitosamente." << std::endl;
 }
+

@@ -9,6 +9,7 @@
 #include "Headers/Registro.h"
 #include "Headers/MatrizDispersa.h"
 #include "Headers/ListaEnlazadaRechazo.h"
+#include "Headers/CargaUsuarios.h"
 using namespace std;
 
 ListaEnlazada lista;
@@ -62,21 +63,21 @@ void mostrarMenuPrincipal() {
 int main() {
     // Configurar la consola para usar UTF-8
     configurarConsolaUTF8();
-
+    cargarUsuariosDesdeJSON(lista);
     // Supongamos que ya tienes una lista de usuarios cargada
     // Aquí solo se muestra un ejemplo de cómo podrías llamar a las funciones
 
     // Agregar usuarios de ejemplo
-    lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin@example.com", "admin"));
-    lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
-    lista.agregarNodo(new Usuario(3, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
+    //lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));
+    //lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
+    //lista.agregarNodo(new Usuario(3, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
 
     // Crear relación entre usuario@example.com y 1
    // lista.crearRelacion("usuario@example.com", "1");
 
     // Imprimir usuarios y matriz dispersa
     lista.imprimirUsuarios();
-    lista.agregarRechazo("usuario@example.com", "1", "usuario@example.com");
+    //lista.agregarRechazo("usuario@example.com", "1", "usuario@example.com");
 
     // Mostrar menú principal
     mostrarMenuPrincipal();

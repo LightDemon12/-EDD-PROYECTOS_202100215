@@ -15,12 +15,12 @@ public:
     ~ListaDoblePublicaciones();
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
     void imprimirPublicaciones() const;
-    void eliminarPublicacion(const std::string& correo, const std::string& fecha, const std::string& hora);
     void navegarPublicaciones() const; // Asegúrate de declarar la función aquí
-
+    void mostrarPublicacionesConIndice() const; // Nuevo método
+    void eliminarPublicacionPorIndice(int indice); // Nuevo método
 private:
-    Publicacion* cabeza;
-    Publicacion* cola;
+    Publicacion* cabeza = nullptr;
+    Publicacion* cola = nullptr;
 };
 
-#endif // LISTADOBLEPUBLICACIONES_H
+#endif // LISTADOBLEPUBLICACIONES_H..

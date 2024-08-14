@@ -167,3 +167,4 @@ void ListaEnlazada::mostrarRechazos(const std::string& correoUsuario) const {
         std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
     }
 }
+

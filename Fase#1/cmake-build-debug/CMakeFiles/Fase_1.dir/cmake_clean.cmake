@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj"
@@ -11,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Fase_1.dir/Logica/ListaSolicitud.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj.d"
+  "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj"

@@ -78,10 +78,20 @@ void ListaDoblePublicaciones::navegarPublicaciones() const {
     }
 }
 
-void ListaDoblePublicaciones::eliminarPublicacion(const std::string& correo, const std::string& fecha, const std::string& hora) {
+void ListaDoblePublicaciones::mostrarPublicacionesConIndice() const {
     Publicacion* actual = cabeza;
+    int indice = 0;
     while (actual != nullptr) {
-        if (actual->correoUsuario == correo && actual->fecha == fecha && actual->hora == hora) {
+        std::cout << indice << ": " << actual->correoUsuario << " - " << actual->contenido << " (" << actual->fecha << " " << actual->hora << ")" << std::endl;
+        actual = actual->siguiente;
+        indice++;
+    }
+}
+void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
+    Publicacion* actual = cabeza;
+    int contador = 0;
+    while (actual != nullptr) {
+        if (contador == indice) {
             if (actual->anterior != nullptr) {
                 actual->anterior->siguiente = actual->siguiente;
             } else {
@@ -96,5 +106,6 @@ void ListaDoblePublicaciones::eliminarPublicacion(const std::string& correo, con
             return;
         }
         actual = actual->siguiente;
+        contador++;
     }
 }

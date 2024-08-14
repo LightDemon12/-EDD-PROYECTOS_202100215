@@ -37,4 +37,8 @@ add_executable(Fase_1 main.cpp
         Headers/Publicacion.h
         Headers/MenuPublicaciones.h
         Logica/MenuPublicaciones.cpp
+        Headers/MenuAdmin.h
+        Logica/MenuAdmin.cpp
+        Logica/CargaUsuarios.cpp
+        Headers/CargaUsuarios.h
 )

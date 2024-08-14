@@ -102,23 +102,3 @@ void MatrizDispersa::agregarPublicacion(const std::string& correo, const std::st
     publicaciones.emplace_back(correo, contenido, fecha, hora);
 }
 
-void MatrizDispersa::mostrarPublicacionesRelacionadas(const std::string& correoLogueado, const ListaEnlazada& listaUsuarios) const {
-    std::cout << "Publicaciones de usuarios relacionados con " << correoLogueado << ":" << std::endl;
-
-    for (const auto& relacion : relaciones) {
-        std::string correoRelacionado;
-        if (relacion.first == correoLogueado) {
-            correoRelacionado = relacion.second;
-        } else if (relacion.second == correoLogueado) {
-            correoRelacionado = relacion.first;
-        } else {
-            continue;
-        }
-
-        Usuario* usuarioRelacionado = listaUsuarios.buscarUsuario(correoRelacionado);
-        if (usuarioRelacionado) {
-            std::cout << "Publicaciones de " << usuarioRelacionado->correoElectronico << ":" << std::endl;
-            usuarioRelacionado->listaPublicaciones.imprimirPublicaciones();
-        }
-    }
-}

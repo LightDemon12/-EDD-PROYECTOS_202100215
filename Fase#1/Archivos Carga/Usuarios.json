@@ -1,0 +1,46 @@
+{
+  "usuarios": [
+    {
+      "nombres": "Juan",
+      "apellidos": "Pérez",
+      "fecha_de_nacimiento": "1990-01-01",
+      "correo": "juan.perez@example.com",
+      "contraseña": "password123"
+    },
+    {
+      "nombres": "María",
+      "apellidos": "García",
+      "fecha_de_nacimiento": "1985-05-15",
+      "correo": "maria.garcia@example.com",
+      "contraseña": "securepassword"
+    },
+    {
+      "nombres": "Carlos",
+      "apellidos": "López",
+      "fecha_de_nacimiento": "1992-08-20",
+      "correo": "carlos.lopez@example.com",
+      "contraseña": "mypassword"
+    },
+    {
+      "nombres": "Admin",
+      "apellidos": "Admin",
+      "fecha_de_nacimiento": "2000-01-01",
+      "correo": "admin",
+      "contraseña": "admin"
+    },
+    {
+      "nombres": "Usuario",
+      "apellidos": "Ejemplo",
+      "fecha_de_nacimiento": "2000-02-02",
+      "correo": "usuario@example.com",
+      "contraseña": "password"
+    },
+    {
+      "nombres": "Usuario",
+      "apellidos": "Ejemplo",
+      "fecha_de_nacimiento": "2000-02-02",
+      "correo": "1",
+      "contraseña": "1"
+    }
+  ]
+}

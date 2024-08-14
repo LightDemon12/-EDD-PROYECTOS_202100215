@@ -128,6 +128,30 @@ Fase_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/build
 .PHONY : Fase_1/fast
 
+Logica/CargaUsuarios.obj: Logica/CargaUsuarios.cpp.obj
+.PHONY : Logica/CargaUsuarios.obj
+
+# target to build an object file
+Logica/CargaUsuarios.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj
+.PHONY : Logica/CargaUsuarios.cpp.obj
+
+Logica/CargaUsuarios.i: Logica/CargaUsuarios.cpp.i
+.PHONY : Logica/CargaUsuarios.i
+
+# target to preprocess a source file
+Logica/CargaUsuarios.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.i
+.PHONY : Logica/CargaUsuarios.cpp.i
+
+Logica/CargaUsuarios.s: Logica/CargaUsuarios.cpp.s
+.PHONY : Logica/CargaUsuarios.s
+
+# target to generate assembly for a file
+Logica/CargaUsuarios.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.s
+.PHONY : Logica/CargaUsuarios.cpp.s
+
 Logica/InicioSeccion.obj: Logica/InicioSeccion.cpp.obj
 .PHONY : Logica/InicioSeccion.obj
 
@@ -271,6 +295,30 @@ Logica/MatrizDispersa.s: Logica/MatrizDispersa.cpp.s
 Logica/MatrizDispersa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.s
 .PHONY : Logica/MatrizDispersa.cpp.s
+
+Logica/MenuAdmin.obj: Logica/MenuAdmin.cpp.obj
+.PHONY : Logica/MenuAdmin.obj
+
+# target to build an object file
+Logica/MenuAdmin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj
+.PHONY : Logica/MenuAdmin.cpp.obj
+
+Logica/MenuAdmin.i: Logica/MenuAdmin.cpp.i
+.PHONY : Logica/MenuAdmin.i
+
+# target to preprocess a source file
+Logica/MenuAdmin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.i
+.PHONY : Logica/MenuAdmin.cpp.i
+
+Logica/MenuAdmin.s: Logica/MenuAdmin.cpp.s
+.PHONY : Logica/MenuAdmin.s
+
+# target to generate assembly for a file
+Logica/MenuAdmin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.s
+.PHONY : Logica/MenuAdmin.cpp.s
 
 Logica/MenuPublicaciones.obj: Logica/MenuPublicaciones.cpp.obj
 .PHONY : Logica/MenuPublicaciones.obj
@@ -545,6 +593,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Fase_1
+	@echo ... Logica/CargaUsuarios.obj
+	@echo ... Logica/CargaUsuarios.i
+	@echo ... Logica/CargaUsuarios.s
 	@echo ... Logica/InicioSeccion.obj
 	@echo ... Logica/InicioSeccion.i
 	@echo ... Logica/InicioSeccion.s
@@ -563,6 +614,9 @@ help:
 	@echo ... Logica/MatrizDispersa.obj
 	@echo ... Logica/MatrizDispersa.i
 	@echo ... Logica/MatrizDispersa.s
+	@echo ... Logica/MenuAdmin.obj
+	@echo ... Logica/MenuAdmin.i
+	@echo ... Logica/MenuAdmin.s
 	@echo ... Logica/MenuPublicaciones.obj
 	@echo ... Logica/MenuPublicaciones.i
 	@echo ... Logica/MenuPublicaciones.s

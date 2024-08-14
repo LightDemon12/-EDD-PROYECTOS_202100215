@@ -105,6 +105,10 @@ CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazada.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Usuarios.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Pila.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/NodoPila.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -150,6 +154,11 @@ CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaSolicitud.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Solicitud.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/MatrizDispersa.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/NodoMatriz.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \

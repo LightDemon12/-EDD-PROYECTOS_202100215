@@ -21,7 +21,8 @@ public:
     void crearRelacion(const std::string& correo1, const std::string& correo2);
     bool existeRelacion(const std::string& correo1, const std::string& correo2) const; // Nuevo método
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
-    void mostrarPublicacionesRelacionadas(const std::string& correoLogueado, const ListaEnlazada& listaUsuarios) const;
+
+
 
 
 private:
@@ -29,7 +30,7 @@ private:
     int columnas;
     std::vector<NodoMatriz*> nodos;
     std::vector<std::pair<std::string, std::string>> relaciones; // Almacena las relaciones
-    std::vector<Publicacion> publicaciones; // Almacena las publicaciones
+    std::vector<std::tuple<std::string, std::string, std::string, std::string>> publicaciones;
 };
 
 #endif // MATRIZDISPERSA_H

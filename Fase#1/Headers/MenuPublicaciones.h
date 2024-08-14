@@ -17,6 +17,7 @@ private:
     void verTodas();
     void crear();
     void eliminar();
+    void mostrarPublicacionesRelacionadas(); // Nuevo método
 
     ListaDoblePublicaciones& listaPublicaciones;
     std::string correoUsuario;

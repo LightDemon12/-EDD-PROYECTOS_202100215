@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/CargaUsuarios.h">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/InicioSeccion.h">
 			<Option target="Fase_1"/>
 		</Unit>
@@ -98,6 +101,9 @@
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MatrizDispersa.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuAdmin.h">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuPublicaciones.h">
@@ -133,6 +139,9 @@
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Usuarios.h">
 			<Option target="Fase_1"/>
 		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaUsuarios.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp">
 			<Option target="Fase_1"/>
 		</Unit>
@@ -149,6 +158,9 @@
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MatrizDispersa.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuAdmin.cpp">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuPublicaciones.cpp">

@@ -8,12 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaUsuarios.cpp" "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp" "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaDoblePublicaciones.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaEnlazada.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaEnlazadaRechazo.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazadaRechazo.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazadaRechazo.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaSolicitud.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaSolicitud.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaSolicitud.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MatrizDispersa.cpp" "CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/MatrizDispersa.cpp.obj.d"
+  "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuAdmin.cpp" "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuPublicaciones.cpp" "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuSolicitud.cpp" "CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuUsuario.cpp" "CMakeFiles/Fase_1.dir/Logica/MenuUsuario.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/MenuUsuario.cpp.obj.d"
