@@ -1,0 +1,19 @@
+{
+  "solicitudes": [
+    {
+      "emisor": "usuario@example.com",
+      "receptor": "carlos.lopez@example.com",
+      "estado": "Rechazada"
+    },
+    {
+      "emisor": "usuario@example.com",
+      "receptor": "1",
+      "estado": "Pendiente"
+    },
+    {
+      "emisor": "usuario@example.com",
+      "receptor": "maria.garcia@example.com",
+      "estado": "Aceptada"
+    }
+  ]
+}

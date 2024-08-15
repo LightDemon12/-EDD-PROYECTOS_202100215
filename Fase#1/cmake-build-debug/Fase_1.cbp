@@ -82,7 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/CargaSolicitudes.h">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/CargaUsuarios.h">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/CargarPublicaciones.h">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/InicioSeccion.h">
@@ -139,7 +145,13 @@
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/Usuarios.h">
 			<Option target="Fase_1"/>
 		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaSolicitudes.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaUsuarios.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargarPublicaciones.cpp">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp">

@@ -419,4 +419,6 @@ CMakeFiles/Fase_1.dir/main.cpp.obj: \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Registro.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/MatrizDispersa.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaEnlazadaRechazo.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargaUsuarios.h
+ C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargaUsuarios.h \
+ C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargaSolicitudes.h \
+ C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargarPublicaciones.h

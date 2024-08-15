@@ -26,6 +26,7 @@ public:
     Usuario* getCabeza() const;
     void imprimirCorreosYNombres(const std::string& correoLogueado) const;
     void agregarObjetoAPila(const std::string& correo, const NodoPila& nodo); // Nuevo método
+    bool existeEmisorEnPila(const std::string& correo, const std::string& emisor);
     void imprimirUsuarios() const;
     void crearRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea
     bool existeRelacion(const std::string& correo1, const std::string& correo2); // Añadir esta línea

@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj.d"
+  "CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj"

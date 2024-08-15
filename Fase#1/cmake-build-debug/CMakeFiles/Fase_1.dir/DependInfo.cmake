@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaSolicitudes.cpp" "CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargaUsuarios.cpp" "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj.d"
+  "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/CargarPublicaciones.cpp" "CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp" "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaDoblePublicaciones.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj.d"
   "C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaEnlazada.cpp" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj" "gcc" "CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj.d"

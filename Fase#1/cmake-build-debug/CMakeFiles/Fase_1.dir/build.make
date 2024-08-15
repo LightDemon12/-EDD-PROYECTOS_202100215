@@ -334,6 +334,34 @@ CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargaUsuarios.cpp" -o CMakeFiles\Fase_1.dir\Logica\CargaUsuarios.cpp.s
 
+CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj: CMakeFiles/Fase_1.dir/flags.make
+CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj: C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Logica/CargaSolicitudes.cpp
+CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj: CMakeFiles/Fase_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj -MF CMakeFiles\Fase_1.dir\Logica\CargaSolicitudes.cpp.obj.d -o CMakeFiles\Fase_1.dir\Logica\CargaSolicitudes.cpp.obj -c "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargaSolicitudes.cpp"
+
+CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargaSolicitudes.cpp" > CMakeFiles\Fase_1.dir\Logica\CargaSolicitudes.cpp.i
+
+CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargaSolicitudes.cpp" -o CMakeFiles\Fase_1.dir\Logica\CargaSolicitudes.cpp.s
+
+CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj: CMakeFiles/Fase_1.dir/flags.make
+CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj: C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Logica/CargarPublicaciones.cpp
+CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj: CMakeFiles/Fase_1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj -MF CMakeFiles\Fase_1.dir\Logica\CargarPublicaciones.cpp.obj.d -o CMakeFiles\Fase_1.dir\Logica\CargarPublicaciones.cpp.obj -c "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargarPublicaciones.cpp"
+
+CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargarPublicaciones.cpp" > CMakeFiles\Fase_1.dir\Logica\CargarPublicaciones.cpp.i
+
+CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\Logica\CargarPublicaciones.cpp" -o CMakeFiles\Fase_1.dir\Logica\CargarPublicaciones.cpp.s
+
 # Object files for target Fase_1
 Fase_1_OBJECTS = \
 "CMakeFiles/Fase_1.dir/main.cpp.obj" \
@@ -354,7 +382,9 @@ Fase_1_OBJECTS = \
 "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj" \
 "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj" \
 "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj" \
-"CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj"
+"CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj" \
+"CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj" \
+"CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj"
 
 # External object files for target Fase_1
 Fase_1_EXTERNAL_OBJECTS =
@@ -378,11 +408,13 @@ Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj
 Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj
 Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj
 Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.obj
+Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj
+Fase_1.exe: CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj
 Fase_1.exe: CMakeFiles/Fase_1.dir/build.make
 Fase_1.exe: CMakeFiles/Fase_1.dir/linkLibs.rsp
 Fase_1.exe: CMakeFiles/Fase_1.dir/objects1.rsp
 Fase_1.exe: CMakeFiles/Fase_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Fase_1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\LightDemon12\Desktop\SEGUNDO SEMESTRE 2024\CODE\-EDD-PROYECTOS_202100215\Fase#1\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable Fase_1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Fase_1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

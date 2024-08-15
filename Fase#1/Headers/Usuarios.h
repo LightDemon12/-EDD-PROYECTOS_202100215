@@ -26,6 +26,9 @@ public:
     ListaEnlazadaRechazo listaRechazos; // Lista de rechazos personal para cada usuario
     ListaDoblePublicaciones listaPublicaciones; // Lista doble de publicaciones para cada usuario
 
+    void agregarSolicitud(const std::string& receptor, const std::string& emisor, const std::string& estado);
+    void agregarRechazo(const std::string& emisor, const std::string& receptor);
+    // Otros métodos y miembros...
     Usuario(int id, std::string nom, std::string ape, std::string fechaNac, std::string correo, std::string contra);
 };
 

@@ -30,6 +30,7 @@ bool MatrizDispersa::existeRelacion(const std::string& correo1, const std::strin
 }
 void MatrizDispersa::crearRelacion(const std::string& correo1, const std::string& correo2) {
     relaciones.push_back({correo1, correo2});
+    std::cout << "Relación agregada a la matriz dispersa: " << correo1 << " - " << correo2 << std::endl; // Mensaje de depuración
 }
 
 void MatrizDispersa::imprimir() const {

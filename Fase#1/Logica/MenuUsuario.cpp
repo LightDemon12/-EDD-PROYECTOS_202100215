@@ -6,6 +6,7 @@
 #include "../Headers/MenuSolicitud.h" // Asegúrate de incluir MenuSolicitud.h
 #include "../Headers/MenuPublicaciones.h" // Incluir MenuPublicaciones.h
 #include "../Headers/ListaDoblePublicaciones.h" // Incluir ListaDoblePublicaciones.h
+#include "../Headers/CargarPublicaciones.h" // Incluir CargarPublicaciones.h
 
 using namespace std;
 
@@ -50,6 +51,7 @@ void mostrarMenuUsuario(const string& correoElectronico) {
             case 3: {
                 cout << "Publicaciones" << endl;
                 ListaDoblePublicaciones listaPublicaciones;
+                cargarPublicacionesDesdeJSON(listaPublicaciones); // Cargar publicaciones desde JSON
                 MenuPublicaciones menu(listaPublicaciones, correoElectronico);
                 menu.mostrarMenu();
                 break;

@@ -36,4 +36,12 @@ void imprimirUsuario(const Usuario& usuario) {
     cout << "Publicaciones: " << endl;
     usuario.listaPublicaciones.imprimirPublicaciones();
 }
+void Usuario::agregarSolicitud(const std::string& receptor, const std::string& emisor, const std::string& estado) {
+    listaSolicitudes.agregarSolicitud(receptor, emisor, estado);
+    std::cout << "Solicitud agregada: Receptor=" << receptor << ", Emisor=" << emisor << ", Estado=" << estado << std::endl; // Mensaje de depuración
+}
 
+void Usuario::agregarRechazo(const std::string& emisor, const std::string& receptor) {
+    listaRechazos.agregarRechazo(receptor, emisor);
+    std::cout << "Rechazo agregado: Emisor=" << emisor << ", Receptor=" << receptor << std::endl; // Mensaje de depuración
+}

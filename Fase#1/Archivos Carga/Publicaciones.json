@@ -1,0 +1,34 @@
+{
+  "publicaciones": [
+    {
+      "correo": "juan.perez@example.com",
+      "contenido": "Este es un contenido de ejemplo para juan.perez@example.com",
+      "fecha": "2023-10-01",
+      "hora": "12:00:00"
+    },
+    {
+      "correo": "maria.garcia@example.com",
+      "contenido": "Este es un contenido de ejemplo para maria.garcia@example.com",
+      "fecha": "2023-10-01",
+      "hora": "12:00:00"
+    },
+    {
+      "correo": "carlos.lopez@example.com",
+      "contenido": "Este es un contenido de ejemplo para carlos.lopez@example.com",
+      "fecha": "2023-10-01",
+      "hora": "12:00:00"
+    },
+    {
+      "correo": "usuario@example.com",
+      "contenido": "Este es un contenido de ejemplo para usuario@example.com",
+      "fecha": "2023-10-01",
+      "hora": "12:00:00"
+    },
+    {
+      "correo": "1",
+      "contenido": "Este es un contenido de ejemplo para 1",
+      "fecha": "2023-10-01",
+      "hora": "12:00:00"
+    }
+  ]
+}

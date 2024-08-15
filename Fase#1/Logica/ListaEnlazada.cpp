@@ -108,9 +108,13 @@ void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila
     }
 }
 void ListaEnlazada::crearRelacion(const std::string& correo1, const std::string& correo2) {
-    matrizUsuarios->crearRelacion(correo1, correo2); // Usar operador ->
+    if (matrizUsuarios != nullptr) {
+        matrizUsuarios->crearRelacion(correo1, correo2);
+        std::cout << "Relación creada en la matriz dispersa entre " << correo1 << " y " << correo2 << std::endl; // Mensaje de depuración
+    } else {
+        std::cerr << "Error: matrizUsuarios es nullptr." << std::endl;
+    }
 }
-
 bool ListaEnlazada::existeRelacion(const std::string& correo1, const std::string& correo2) {
     return matrizUsuarios->existeRelacion(correo1, correo2); // Usar el operador ->
 }

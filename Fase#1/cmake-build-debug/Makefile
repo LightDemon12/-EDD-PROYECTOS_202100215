@@ -128,6 +128,30 @@ Fase_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/build
 .PHONY : Fase_1/fast
 
+Logica/CargaSolicitudes.obj: Logica/CargaSolicitudes.cpp.obj
+.PHONY : Logica/CargaSolicitudes.obj
+
+# target to build an object file
+Logica/CargaSolicitudes.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj
+.PHONY : Logica/CargaSolicitudes.cpp.obj
+
+Logica/CargaSolicitudes.i: Logica/CargaSolicitudes.cpp.i
+.PHONY : Logica/CargaSolicitudes.i
+
+# target to preprocess a source file
+Logica/CargaSolicitudes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.i
+.PHONY : Logica/CargaSolicitudes.cpp.i
+
+Logica/CargaSolicitudes.s: Logica/CargaSolicitudes.cpp.s
+.PHONY : Logica/CargaSolicitudes.s
+
+# target to generate assembly for a file
+Logica/CargaSolicitudes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.s
+.PHONY : Logica/CargaSolicitudes.cpp.s
+
 Logica/CargaUsuarios.obj: Logica/CargaUsuarios.cpp.obj
 .PHONY : Logica/CargaUsuarios.obj
 
@@ -151,6 +175,30 @@ Logica/CargaUsuarios.s: Logica/CargaUsuarios.cpp.s
 Logica/CargaUsuarios.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargaUsuarios.cpp.s
 .PHONY : Logica/CargaUsuarios.cpp.s
+
+Logica/CargarPublicaciones.obj: Logica/CargarPublicaciones.cpp.obj
+.PHONY : Logica/CargarPublicaciones.obj
+
+# target to build an object file
+Logica/CargarPublicaciones.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj
+.PHONY : Logica/CargarPublicaciones.cpp.obj
+
+Logica/CargarPublicaciones.i: Logica/CargarPublicaciones.cpp.i
+.PHONY : Logica/CargarPublicaciones.i
+
+# target to preprocess a source file
+Logica/CargarPublicaciones.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.i
+.PHONY : Logica/CargarPublicaciones.cpp.i
+
+Logica/CargarPublicaciones.s: Logica/CargarPublicaciones.cpp.s
+.PHONY : Logica/CargarPublicaciones.s
+
+# target to generate assembly for a file
+Logica/CargarPublicaciones.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.s
+.PHONY : Logica/CargarPublicaciones.cpp.s
 
 Logica/InicioSeccion.obj: Logica/InicioSeccion.cpp.obj
 .PHONY : Logica/InicioSeccion.obj
@@ -593,9 +641,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Fase_1
+	@echo ... Logica/CargaSolicitudes.obj
+	@echo ... Logica/CargaSolicitudes.i
+	@echo ... Logica/CargaSolicitudes.s
 	@echo ... Logica/CargaUsuarios.obj
 	@echo ... Logica/CargaUsuarios.i
 	@echo ... Logica/CargaUsuarios.s
+	@echo ... Logica/CargarPublicaciones.obj
+	@echo ... Logica/CargarPublicaciones.i
+	@echo ... Logica/CargarPublicaciones.s
 	@echo ... Logica/InicioSeccion.obj
 	@echo ... Logica/InicioSeccion.i
 	@echo ... Logica/InicioSeccion.s

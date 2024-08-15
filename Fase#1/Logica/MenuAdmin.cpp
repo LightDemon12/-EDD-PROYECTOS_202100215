@@ -3,9 +3,16 @@
 //
 #include <iostream>
 #include "../Headers/Perfil.h"
+#include "../Headers/CargaUsuarios.h"
+#include "../Headers/CargaSolicitudes.h"
+#include "../Headers/CargarPublicaciones.h"
+#include <locale>
 
+#include "../Headers/ListaEnlazada.h"
 
 using namespace std;
+
+extern ListaEnlazada lista;
 
 void mostrarMenuAdmin(const string& correoElectronico) {
     int opcion;
@@ -23,16 +30,18 @@ void mostrarMenuAdmin(const string& correoElectronico) {
         switch(opcion) {
             case 1:
                 cout << "Carga de usuarios" << endl;
-                // Implementar funcionalidad de carga de usuarios
+                cargarUsuariosDesdeJSON(lista);
                 break;
             case 2:
                 cout << "Carga de relaciones" << endl;
-                // Implementar funcionalidad de carga de relaciones
+                cargarSolicitudesDesdeJSON(lista);
                 break;
-            case 3:
+            case 3: {
                 cout << "Carga de publicaciones" << endl;
-                // Implementar funcionalidad de carga de publicaciones
+                ListaDoblePublicaciones listaDoblePublicaciones;
+                cargarPublicacionesDesdeJSON(listaDoblePublicaciones);
                 break;
+            }
             case 4: {
                 int subopcion;
                 cout << "Gestionar usuarios" << endl;

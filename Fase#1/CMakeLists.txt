@@ -41,4 +41,8 @@ add_executable(Fase_1 main.cpp
         Logica/MenuAdmin.cpp
         Logica/CargaUsuarios.cpp
         Headers/CargaUsuarios.h
+        Headers/CargaSolicitudes.h
+        Logica/CargaSolicitudes.cpp
+        Headers/CargarPublicaciones.h
+        Logica/CargarPublicaciones.cpp
 )

@@ -20,6 +20,7 @@ public:
     bool empty() const;
     size_t size() const;
     void mostrarTop() const; // Método para mostrar el elemento en el tope
+    bool existeEmisor(const std::string& emisor) const; // Nuevo método para verificar si existe un emisor en la pila
 };
 
 #endif // PILA_H

@@ -10,6 +10,9 @@
 #include "Headers/MatrizDispersa.h"
 #include "Headers/ListaEnlazadaRechazo.h"
 #include "Headers/CargaUsuarios.h"
+#include "Headers/CargaSolicitudes.h"
+#include "Headers/CargarPublicaciones.h"
+#include "Headers/Usuarios.h"
 using namespace std;
 
 ListaEnlazada lista;
@@ -49,6 +52,7 @@ void mostrarMenuPrincipal() {
                 registrarUsuario(lista);
                 break;
             case 3:
+                lista.imprimirUsuarios();
                 cout << "Funcionalidad de información no implementada." << endl;
                 break;
             case 4:
@@ -61,23 +65,20 @@ void mostrarMenuPrincipal() {
 }
 
 int main() {
-    // Configurar la consola para usar UTF-8
+
+
     configurarConsolaUTF8();
     cargarUsuariosDesdeJSON(lista);
-    // Supongamos que ya tienes una lista de usuarios cargada
-    // Aquí solo se muestra un ejemplo de cómo podrías llamar a las funciones
+    //cargarSolicitudesDesdeJSON(lista);
 
-    // Agregar usuarios de ejemplo
-    //lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));
-    //lista.agregarNodo(new Usuario(2, "Usuario", "Ejemplo", "02/02/2000", "usuario@example.com", "password"));
-    //lista.agregarNodo(new Usuario(3, "Usuario", "Ejemplo", "02/02/2000", "1", "1"));
+    //ListaDoblePublicaciones listaDoblePublicaciones;
 
-    // Crear relación entre usuario@example.com y 1
-   // lista.crearRelacion("usuario@example.com", "1");
-
+    //cargarPublicacionesDesdeJSON(listaDoblePublicaciones);
+    lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));
+    // Imprimir las publicaciones para verificar
+    //listaDoblePublicaciones.imprimirPublicaciones();
     // Imprimir usuarios y matriz dispersa
-    lista.imprimirUsuarios();
-    //lista.agregarRechazo("usuario@example.com", "1", "usuario@example.com");
+    //lista.imprimirUsuarios();
 
     // Mostrar menú principal
     mostrarMenuPrincipal();
