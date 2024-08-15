@@ -8,7 +8,7 @@
 #include <cstdlib> // Para usar system()
 #include <algorithm> // Para std::find_if
 #include <iostream> // Para std::cout
-
+#include <unordered_map>
 MatrizDispersa::MatrizDispersa(int f, int c) : filas(f), columnas(c) {}
 
 MatrizDispersa::~MatrizDispersa() {
@@ -103,3 +103,31 @@ void MatrizDispersa::agregarPublicacion(const std::string& correo, const std::st
     publicaciones.emplace_back(correo, contenido, fecha, hora);
 }
 
+void MatrizDispersa::generarTopMenosAmigos(int topN) const {
+    std::unordered_map<std::string, int> conteoAmigos;
+
+    // Inicializar el conteo de amigos para cada usuario
+    for (const NodoMatriz* nodo : nodos) {
+        conteoAmigos[nodo->correo] = 0;
+    }
+
+    // Contar las relaciones de amistad
+    for (const auto& relacion : relaciones) {
+        conteoAmigos[relacion.first]++;
+        conteoAmigos[relacion.second]++;
+    }
+
+    // Convertir el unordered_map en un vector de pares
+    std::vector<std::pair<std::string, int>> vectorAmigos(conteoAmigos.begin(), conteoAmigos.end());
+
+    // Ordenar el vector por el número de amigos (de menor a mayor)
+    std::sort(vectorAmigos.begin(), vectorAmigos.end(), [](const auto& a, const auto& b) {
+        return a.second < b.second;
+    });
+
+    // Imprimir el top de usuarios con menos amigos
+    std::cout << "Top " << topN << " usuarios con menos amigos:" << std::endl;
+    for (int i = 0; i < topN && i < vectorAmigos.size(); ++i) {
+        std::cout << i + 1 << ". " << vectorAmigos[i].first << " - " << vectorAmigos[i].second << " amigos" << std::endl;
+    }
+}

@@ -37,6 +37,8 @@ public:
     void mostrarRechazos(const std::string& correoUsuario) const;
     void generarReporteRelacionesAmistad(const std::string& nombreArchivo) const;
     void generarReporteListaEnlazada(const std::string& nombreArchivo) const;
+    void generarTopMenosAmigos(int topN) const;
+
 
 };
 

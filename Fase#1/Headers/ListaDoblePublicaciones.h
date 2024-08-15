@@ -19,6 +19,7 @@ public:
     void mostrarPublicacionesConIndice() const; // Nuevo método
     void eliminarPublicacionPorIndice(int indice); // Nuevo método
     void generarReporteListaDoble(const std::string& nombreArchivo) const;
+    void generarTopCorreos(int topN) const;
 private:
     Publicacion* cabeza = nullptr;
     Publicacion* cola = nullptr;

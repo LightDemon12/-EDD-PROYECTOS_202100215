@@ -140,6 +140,13 @@ void ListaEnlazada::generarReporteRelacionesAmistad(const std::string& nombreArc
         std::cerr << "Error: La matriz de usuarios no está inicializada." << std::endl;
     }
 }
+void ListaEnlazada::generarTopMenosAmigos(int topN) const {
+    if (matrizUsuarios != nullptr) {
+        matrizUsuarios->generarTopMenosAmigos(topN);
+    } else {
+        std::cerr << "Error: La matriz de usuarios no está inicializada." << std::endl;
+    }
+}
 // Nuevos métodos para manejar rechazos
 
 void ListaEnlazada::agregarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) {

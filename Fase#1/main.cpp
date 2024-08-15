@@ -71,7 +71,6 @@ int main() {
     // Cargar datos desde archivos JSON
     //cargarUsuariosDesdeJSON(lista);
     //cargarSolicitudesDesdeJSON(lista);
-    cargarPublicacionesDesdeJSON(); // Cargar publicaciones en la lista global
 
     // Agregar un usuario administrador
     lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));

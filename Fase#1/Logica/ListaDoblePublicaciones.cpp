@@ -5,7 +5,10 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <sstream>
+
+#include <unordered_map>
+#include <vector>
+#include <algorithm>
 
 
 ListaDoblePublicaciones::ListaDoblePublicaciones() : cabeza(nullptr), cola(nullptr) {}
@@ -165,4 +168,30 @@ void ListaDoblePublicaciones::generarReporteListaDoble(const std::string& nombre
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_doble_publicaciones.png";
     system(comando.c_str());
+}
+// Añadir esta función a la clase ListaDoblePublicaciones
+void ListaDoblePublicaciones::generarTopCorreos(int topN) const {
+    std::unordered_map<std::string, int> conteoCorreos;
+    Publicacion* actual = cabeza;
+
+    // Contar las ocurrencias de cada correo
+    while (actual != nullptr) {
+        std::string correo = actual->correoUsuario;
+        conteoCorreos[correo]++;
+        actual = actual->siguiente;
+    }
+
+    // Convertir el unordered_map en un vector de pares
+    std::vector<std::pair<std::string, int>> vectorCorreos(conteoCorreos.begin(), conteoCorreos.end());
+
+    // Ordenar el vector por el número de publicaciones (de mayor a menor)
+    std::sort(vectorCorreos.begin(), vectorCorreos.end(), [](const auto& a, const auto& b) {
+        return b.second < a.second;
+    });
+
+    // Imprimir el top de correos
+    std::cout << "Top " << topN << " correos con más publicaciones:" << std::endl;
+    for (int i = 0; i < topN && i < vectorCorreos.size(); ++i) {
+        std::cout << i + 1 << ". " << vectorCorreos[i].first << " - " << vectorCorreos[i].second << " publicaciones" << std::endl;
+    }
 }
