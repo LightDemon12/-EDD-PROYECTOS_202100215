@@ -2,7 +2,12 @@
 // Created by LightDemon12 on 14/08/2024.
 //
 
-#ifndef MENUREPORTES_H
-#define MENUREPORTES_H
+#ifndef MENU_REPORTES_H
+#define MENU_REPORTES_H
 
-#endif //MENUREPORTES_H
+#include <string>
+
+// Declaración de la función para mostrar el menú de reportes
+void mostrarMenuReportes(const std::string& correoElectronico);
+
+#endif // MENU_REPORTES_H

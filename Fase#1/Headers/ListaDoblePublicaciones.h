@@ -18,6 +18,7 @@ public:
     void navegarPublicaciones() const; // Asegúrate de declarar la función aquí
     void mostrarPublicacionesConIndice() const; // Nuevo método
     void eliminarPublicacionPorIndice(int indice); // Nuevo método
+    void generarReporteListaDoble(const std::string& nombreArchivo) const;
 private:
     Publicacion* cabeza = nullptr;
     Publicacion* cola = nullptr;

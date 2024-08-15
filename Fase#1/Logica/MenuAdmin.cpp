@@ -6,12 +6,14 @@
 #include "../Headers/CargaUsuarios.h"
 #include "../Headers/CargaSolicitudes.h"
 #include "../Headers/CargarPublicaciones.h"
+#include "../Headers/ListaDoblePublicaciones.h"
 #include <locale>
-
+#include "../Headers/MenuReportes.h"
 #include "../Headers/ListaEnlazada.h"
 
 using namespace std;
 
+extern ListaDoblePublicaciones listaPublicaciones;
 extern ListaEnlazada lista;
 
 void mostrarMenuAdmin(const string& correoElectronico) {
@@ -38,8 +40,7 @@ void mostrarMenuAdmin(const string& correoElectronico) {
                 break;
             case 3: {
                 cout << "Carga de publicaciones" << endl;
-                ListaDoblePublicaciones listaDoblePublicaciones;
-                cargarPublicacionesDesdeJSON(listaDoblePublicaciones);
+                cargarPublicacionesDesdeJSON();
                 break;
             }
             case 4: {
@@ -62,6 +63,7 @@ void mostrarMenuAdmin(const string& correoElectronico) {
             case 5:
                 cout << "Reportes" << endl;
                 // Implementar funcionalidad de reportes
+                mostrarMenuReportes(correoElectronico);
                 break;
             case 6:
                 cout << "Saliendo del módulo administrador..." << endl;

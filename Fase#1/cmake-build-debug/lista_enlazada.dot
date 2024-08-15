@@ -1,0 +1,14 @@
+digraph G {
+node [shape=record];
+node0 [label="{Usuario Ejemplo | 2}"];
+node1 [label="{Usuario Ejemplo | usuario@example.com}"];
+node2 [label="{Carlos López | carlos.lopez@example.com}"];
+node3 [label="{María García | maria.garcia@example.com}"];
+node4 [label="{Juan Pérez | juan.perez@example.com}"];
+node5 [label="{Admin Admin | admin}"];
+node0 -> node1;
+node1 -> node2;
+node2 -> node3;
+node3 -> node4;
+node4 -> node5;
+}

@@ -155,10 +155,9 @@ CMakeFiles/Fase_1.dir/Logica/CargaSolicitudes.cpp.obj: \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaSolicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Solicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaDoblePublicaciones.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Publicacion.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/MatrizDispersa.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/NodoMatriz.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Publicacion.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/nlohmann/json.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \

@@ -152,6 +152,4 @@ CMakeFiles/Fase_1.dir/Logica/Usuarios.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaSolicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Solicitud.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaDoblePublicaciones.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Publicacion.h
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h

@@ -3,7 +3,10 @@
 //
 #include "../Headers/ListaDoblePublicaciones.h"
 #include <iostream>
+#include <fstream>
 #include <algorithm>
+#include <sstream>
+
 
 ListaDoblePublicaciones::ListaDoblePublicaciones() : cabeza(nullptr), cola(nullptr) {}
 
@@ -15,7 +18,6 @@ ListaDoblePublicaciones::~ListaDoblePublicaciones() {
         actual = siguiente;
     }
 }
-
 void ListaDoblePublicaciones::agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora) {
     Publicacion* nuevaPublicacion = new Publicacion(correo, contenido, fecha, hora);
     if (cabeza == nullptr) {
@@ -78,6 +80,7 @@ void ListaDoblePublicaciones::navegarPublicaciones() const {
     }
 }
 
+// Método para mostrar publicaciones con índice
 void ListaDoblePublicaciones::mostrarPublicacionesConIndice() const {
     Publicacion* actual = cabeza;
     int indice = 0;
@@ -86,8 +89,7 @@ void ListaDoblePublicaciones::mostrarPublicacionesConIndice() const {
         actual = actual->siguiente;
         indice++;
     }
-}
-void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
+}void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
     Publicacion* actual = cabeza;
     int contador = 0;
     while (actual != nullptr) {
@@ -108,4 +110,59 @@ void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
         actual = actual->siguiente;
         contador++;
     }
+}
+
+// Método para generar el reporte en formato DOT
+void ListaDoblePublicaciones::generarReporteListaDoble(const std::string& nombreArchivo) const {
+    if (cabeza == nullptr) {
+        std::cerr << "Error: La lista está vacía." << std::endl;
+        return;
+    }
+
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        std::cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << "digraph G {\n";
+    archivo << "node [shape=record];\n";
+
+    // Crear nodos para cada publicación con índice
+    Publicacion* actual = cabeza;
+    int indice = 0;
+    while (actual != nullptr) {
+        archivo << "node" << indice << " [label=\"{"
+                << "Correo: " << actual->correoUsuario << " | "
+                << "Contenido: " << actual->contenido << " | "
+                << "Fecha: " << actual->fecha << " | "
+                << "Hora: " << actual->hora << "}\"];\n";
+        std::cerr << "Nodo " << indice << " creado: "
+                  << "Correo: " << actual->correoUsuario << ", "
+                  << "Contenido: " << actual->contenido << ", "
+                  << "Fecha: " << actual->fecha << ", "
+                  << "Hora: " << actual->hora << std::endl;
+        actual = actual->siguiente;
+        indice++;
+    }
+
+    // Crear enlaces entre los nodos
+    actual = cabeza;
+    indice = 0;
+    while (actual != nullptr) {
+        if (actual->siguiente != nullptr) {
+            archivo << "node" << indice << " -> node" << (indice + 1) << ";\n";
+            archivo << "node" << (indice + 1) << " -> node" << indice << ";\n";
+            std::cerr << "Enlace creado entre node" << indice << " y node" << (indice + 1) << std::endl;
+        }
+        actual = actual->siguiente;
+        indice++;
+    }
+
+    archivo << "}\n";
+    archivo.close();
+
+    // Generar la imagen usando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_doble_publicaciones.png";
+    system(comando.c_str());
 }

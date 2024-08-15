@@ -1,6 +1,3 @@
-//
-// Created by LightDemon12 on 08/08/2024.
-//
 // Usuarios.cpp
 #include "../Headers/Usuarios.h"
 #include <iostream>
@@ -31,11 +28,8 @@ void imprimirUsuario(const Usuario& usuario) {
     // Imprimir solicitudes de amistad del usuario
     cout << "Solicitudes de amistad: " << endl;
     usuario.listaSolicitudes.mostrarSolicitudes();
-
-    // Imprimir publicaciones del usuario
-    cout << "Publicaciones: " << endl;
-    usuario.listaPublicaciones.imprimirPublicaciones();
 }
+
 void Usuario::agregarSolicitud(const std::string& receptor, const std::string& emisor, const std::string& estado) {
     listaSolicitudes.agregarSolicitud(receptor, emisor, estado);
     std::cout << "Solicitud agregada: Receptor=" << receptor << ", Emisor=" << emisor << ", Estado=" << estado << std::endl; // Mensaje de depuración

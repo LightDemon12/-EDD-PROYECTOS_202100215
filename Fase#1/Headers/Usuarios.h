@@ -3,14 +3,14 @@
 //
 
 // Usuarios.h
+// Usuarios.h
 #ifndef USUARIOS_H
 #define USUARIOS_H
 
 #include <string>
 #include "Pila.h"
 #include "ListaSolicitud.h"
-#include "ListaEnlazadaRechazo.h" // Incluir la cabecera de ListaEnlazadaRechazo
-#include "ListaDoblePublicaciones.h"
+#include "ListaEnlazadaRechazo.h"
 
 class Usuario {
 public:
@@ -24,7 +24,6 @@ public:
     Pila pilaPersonal; // Pila personal para cada usuario
     ListaSolicitud listaSolicitudes; // Lista de solicitudes de amistad personal para cada usuario
     ListaEnlazadaRechazo listaRechazos; // Lista de rechazos personal para cada usuario
-    ListaDoblePublicaciones listaPublicaciones; // Lista doble de publicaciones para cada usuario
 
     void agregarSolicitud(const std::string& receptor, const std::string& emisor, const std::string& estado);
     void agregarRechazo(const std::string& emisor, const std::string& receptor);

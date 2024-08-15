@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Fase_1.dir/Logica/MenuAdmin.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/MenuPublicaciones.cpp.obj.d"
+  "CMakeFiles/Fase_1.dir/Logica/MenuReportes.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/MenuReportes.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/MenuUsuario.cpp.obj"

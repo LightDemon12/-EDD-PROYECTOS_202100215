@@ -3,6 +3,7 @@
 //
 #include "../Headers/ListaEnlazada.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // Constructor para inicializar la lista vacía
@@ -131,6 +132,14 @@ void ListaEnlazada::imprimirUsuarios() const {
     matrizUsuarios->imprimir();
     matrizUsuarios->generarArchivoDOT("matriz_usuarios.dot");
 }
+
+void ListaEnlazada::generarReporteRelacionesAmistad(const std::string& nombreArchivo) const {
+    if (matrizUsuarios != nullptr) {
+        matrizUsuarios->generarArchivoDOT(nombreArchivo);
+    } else {
+        std::cerr << "Error: La matriz de usuarios no está inicializada." << std::endl;
+    }
+}
 // Nuevos métodos para manejar rechazos
 
 void ListaEnlazada::agregarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) {
@@ -172,3 +181,39 @@ void ListaEnlazada::mostrarRechazos(const std::string& correoUsuario) const {
     }
 }
 
+void ListaEnlazada::generarReporteListaEnlazada(const std::string& nombreArchivo) const {
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        std::cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << "digraph G {" << std::endl;
+    archivo << "node [shape=record];" << std::endl;
+
+    Usuario* actual = cabeza;
+    int contador = 0;
+
+    // Crear nodos para cada usuario
+    while (actual != nullptr) {
+        archivo << "node" << contador << " [label=\"{" << actual->nombres << " " << actual->apellidos << " | " << actual->correoElectronico << "}\"];" << std::endl;
+        actual = actual->siguiente;
+        contador++;
+    }
+
+    // Crear enlaces entre los nodos
+    actual = cabeza;
+    contador = 0;
+    while (actual != nullptr && actual->siguiente != nullptr) {
+        archivo << "node" << contador << " -> node" << (contador + 1) << ";" << std::endl;
+        actual = actual->siguiente;
+        contador++;
+    }
+
+    archivo << "}" << std::endl;
+    archivo.close();
+
+    // Generar la imagen usando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_enlazada.png";
+    system(comando.c_str());
+}

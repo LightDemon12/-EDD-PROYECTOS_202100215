@@ -12,11 +12,12 @@
 #include "Headers/CargaUsuarios.h"
 #include "Headers/CargaSolicitudes.h"
 #include "Headers/CargarPublicaciones.h"
-#include "Headers/Usuarios.h"
+#include "Headers/ListaDoblePublicaciones.h"
+
 using namespace std;
 
 ListaEnlazada lista;
-
+ListaDoblePublicaciones listaPublicaciones;
 
 void configurarConsolaUTF8() {
     // Establecer la página de códigos de salida en UTF-8
@@ -65,20 +66,18 @@ void mostrarMenuPrincipal() {
 }
 
 int main() {
-
-
     configurarConsolaUTF8();
-    cargarUsuariosDesdeJSON(lista);
+
+    // Cargar datos desde archivos JSON
+    //cargarUsuariosDesdeJSON(lista);
     //cargarSolicitudesDesdeJSON(lista);
+    cargarPublicacionesDesdeJSON(); // Cargar publicaciones en la lista global
 
-    //ListaDoblePublicaciones listaDoblePublicaciones;
-
-    //cargarPublicacionesDesdeJSON(listaDoblePublicaciones);
+    // Agregar un usuario administrador
     lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));
+
     // Imprimir las publicaciones para verificar
-    //listaDoblePublicaciones.imprimirPublicaciones();
-    // Imprimir usuarios y matriz dispersa
-    //lista.imprimirUsuarios();
+    listaPublicaciones.imprimirPublicaciones();
 
     // Mostrar menú principal
     mostrarMenuPrincipal();

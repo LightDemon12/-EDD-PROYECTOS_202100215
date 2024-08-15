@@ -35,6 +35,8 @@ public:
     bool eliminarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor);
     Solicitud* buscarRechazo(const std::string& correoUsuario, const std::string& destinatario, const std::string& emisor) const;
     void mostrarRechazos(const std::string& correoUsuario) const;
+    void generarReporteRelacionesAmistad(const std::string& nombreArchivo) const;
+    void generarReporteListaEnlazada(const std::string& nombreArchivo) const;
 
 };
 

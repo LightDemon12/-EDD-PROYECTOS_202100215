@@ -1,14 +1,17 @@
 //
 // Created by LightDemon12 on 10/08/2024.
 //
+// Perfil.cpp
 #include <iostream>
 #include "../Headers/Perfil.h"
-#include "../Headers/MenuSolicitud.h" // Asegúrate de incluir MenuSolicitud.h
-#include "../Headers/MenuPublicaciones.h" // Incluir MenuPublicaciones.h
-#include "../Headers/ListaDoblePublicaciones.h" // Incluir ListaDoblePublicaciones.h
-#include "../Headers/CargarPublicaciones.h" // Incluir CargarPublicaciones.h
+#include "../Headers/MenuSolicitud.h"
+#include "../Headers/MenuPublicaciones.h"
+#include "../Headers/ListaDoblePublicaciones.h"
+#include "../Headers/CargarPublicaciones.h"
 
 using namespace std;
+
+extern ListaDoblePublicaciones listaPublicaciones; // Declarar la lista de publicaciones como externa
 
 void mostrarMenuUsuario(const string& correoElectronico) {
     int opcion;
@@ -50,8 +53,6 @@ void mostrarMenuUsuario(const string& correoElectronico) {
                 break;
             case 3: {
                 cout << "Publicaciones" << endl;
-                ListaDoblePublicaciones listaPublicaciones;
-                cargarPublicacionesDesdeJSON(listaPublicaciones); // Cargar publicaciones desde JSON
                 MenuPublicaciones menu(listaPublicaciones, correoElectronico);
                 menu.mostrarMenu();
                 break;
@@ -68,7 +69,6 @@ void mostrarMenuUsuario(const string& correoElectronico) {
 
     } while(opcion != 5);
 }
-
 
 
 

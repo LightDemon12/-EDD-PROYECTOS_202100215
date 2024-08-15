@@ -154,13 +154,12 @@ CMakeFiles/Fase_1.dir/Logica/MenuSolicitud.cpp.obj: \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaSolicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Solicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaDoblePublicaciones.h \
- C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Publicacion.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaSolicitud.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazada.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Usuarios.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/MatrizDispersa.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/NodoMatriz.h \
+ C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Publicacion.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/Pila.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/MatrizDispersa.h \
  C:/Users/LightDemon12/Desktop/SEGUNDO\ SEMESTRE\ 2024/CODE/-EDD-PROYECTOS_202100215/Fase\#1/Headers/ListaEnlazadaRechazo.h
