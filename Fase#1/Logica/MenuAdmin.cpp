@@ -16,9 +16,11 @@ using namespace std;
 extern ListaDoblePublicaciones listaPublicaciones;
 extern ListaEnlazada lista;
 
+
 void mostrarMenuAdmin(const string& correoElectronico) {
     int opcion;
     do {
+        std::cout << "*******************************" << std::endl;
         cout << "Modulo Administrador" << endl;
         cout << "1. Carga de usuarios" << endl;
         cout << "2. Carga de relaciones" << endl;
@@ -26,6 +28,7 @@ void mostrarMenuAdmin(const string& correoElectronico) {
         cout << "4. Gestionar usuarios" << endl;
         cout << "5. Reportes" << endl;
         cout << "6. Salir" << endl;
+        std::cout << "*******************************" << std::endl;
         cout << "Seleccione una opción: ";
         cin >> opcion;
 
@@ -45,24 +48,37 @@ void mostrarMenuAdmin(const string& correoElectronico) {
             }
             case 4: {
                 int subopcion;
-                cout << "Gestionar usuarios" << endl;
-                cout << "1. Eliminar usuarios" << endl;
-                cout << "Seleccione una opción: ";
-                cin >> subopcion;
+                do {
+                    std::cout << "*******************************" << std::endl;
+                    cout << "Gestionar usuarios" << endl;
+                    cout << "1. Eliminar usuarios" << endl;
+                    cout << "2. Regresar" << endl;
+                    std::cout << "*******************************" << std::endl;
+                    cout << "Seleccione una opción: ";
+                    cin >> subopcion;
 
-                switch(subopcion) {
-                    case 1:
-                        cout << "Eliminar usuarios" << endl;
-                        // Implementar funcionalidad de eliminar usuarios
+                    switch(subopcion) {
+                        case 1: {
+                            cout << "Eliminar usuarios" << endl;
+                            lista.imprimirLista();
+                            cout << "Ingrese el correo del usuario a eliminar: ";
+                            string correo;
+                            cin >> correo;
+                            lista.eliminarNodo(correo);
+                            listaPublicaciones.eliminarPublicacionPorCorreo(correo);
+                            break;
+                        }
+                        case 2:
+                            cout << "Regresando al menú principal..." << endl;
                         break;
-                    default:
-                        cout << "Opción no válida, por favor intente de nuevo." << endl;
-                }
+                        default:
+                            cout << "Opción no válida, por favor intente de nuevo." << endl;
+                    }
+                } while(subopcion != 2);
                 break;
             }
             case 5:
                 cout << "Reportes" << endl;
-                // Implementar funcionalidad de reportes
                 mostrarMenuReportes(correoElectronico);
                 break;
             case 6:

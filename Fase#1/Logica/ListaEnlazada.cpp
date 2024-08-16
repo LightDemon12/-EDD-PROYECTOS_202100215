@@ -34,8 +34,8 @@ void ListaEnlazada::agregarNodo(Usuario* nuevoUsuario) {
     // Insertar en la matriz dispersa
     matrizUsuarios->insertar(nuevoUsuario->correoElectronico, nuevoUsuario->nombres + " " + nuevoUsuario->apellidos);
 }
-// Método para eliminar un usuario de la lista por correo electrónico
-void ListaEnlazada::eliminarNodo(const string& correoElectronico) {
+
+void ListaEnlazada::eliminarNodo(const std::string& correoElectronico) {
     Usuario* actual = cabeza;
     Usuario* anterior = nullptr;
     while (actual != nullptr && actual->correoElectronico != correoElectronico) {
@@ -43,20 +43,36 @@ void ListaEnlazada::eliminarNodo(const string& correoElectronico) {
         actual = actual->siguiente;
     }
     if (actual != nullptr) {
+        // Eliminar objetos de la pila asociados al usuario
+        eliminarObjetosDePilaPorCorreoEmisor(correoElectronico, correoElectronico);
+
+        // Eliminar el nodo de la lista
         if (anterior == nullptr) {
             cabeza = actual->siguiente;
         } else {
             anterior->siguiente = actual->siguiente;
         }
+
+        // Eliminar el nodo de la matriz dispersa
+        if (matrizUsuarios != nullptr) {
+            matrizUsuarios->eliminarNodoPorCorreo(correoElectronico);
+        } else {
+            std::cerr << "Error: matrizUsuarios es nullptr." << std::endl;
+        }
+
         delete actual;
+        std::cout << "Usuario con correo " << correoElectronico << " eliminado." << std::endl;
+    } else {
+        std::cout << "Usuario con correo " << correoElectronico << " no encontrado." << std::endl;
     }
 }
 
-// Método para imprimir la lista de usuarios
 void ListaEnlazada::imprimirLista() const {
     Usuario* actual = cabeza;
     while (actual != nullptr) {
-        cout << "ID: " << actual->id << ", Nombre: " << actual->nombres << " " << actual->apellidos << ", Correo: " << actual->correoElectronico << endl;
+        if (actual->correoElectronico != "admin") {
+            cout << "ID: " << actual->id << ", Nombre: " << actual->nombres << " " << actual->apellidos << ", Correo: " << actual->correoElectronico << endl;
+        }
         actual = actual->siguiente;
     }
 }
@@ -99,6 +115,16 @@ void ListaEnlazada::imprimirCorreosYNombres(const string& correoLogueado) const 
         actual = actual->siguiente;
     }
 }
+void ListaEnlazada::eliminarObjetosDePilaPorCorreoEmisor(const std::string& correoUsuario, const std::string& correoEmisor) {
+    Usuario* usuario = buscarUsuario(correoUsuario);
+    if (usuario != nullptr) {
+        usuario->pilaPersonal.eliminarPorCorreoEmisor(correoEmisor);
+        std::cout << "Objetos eliminados de la pila del usuario con correo: " << correoUsuario << std::endl;
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correoUsuario << std::endl;
+    }
+}
+
 void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila& nodo) {
     Usuario* usuario = buscarUsuario(correo);
     if (usuario != nullptr) {
@@ -108,6 +134,9 @@ void ListaEnlazada::agregarObjetoAPila(const std::string& correo, const NodoPila
         std::cout << "Usuario no encontrado con el correo: " << correo << std::endl;
     }
 }
+
+
+
 void ListaEnlazada::crearRelacion(const std::string& correo1, const std::string& correo2) {
     if (matrizUsuarios != nullptr) {
         matrizUsuarios->crearRelacion(correo1, correo2);
@@ -223,4 +252,26 @@ void ListaEnlazada::generarReporteListaEnlazada(const std::string& nombreArchivo
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_enlazada.png";
     system(comando.c_str());
+}
+
+void ListaEnlazada::generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const {
+    if (matrizUsuarios != nullptr) {
+        matrizUsuarios->generarReporteAmigosUsuario(correo, nombreArchivo);
+    } else {
+        std::cerr << "Error: La matriz de usuarios no está inicializada." << std::endl;
+    }
+}
+void ListaEnlazada::generarReportePilaUsuario(const std::string& correo, const std::string& nombreArchivo) const {
+    Usuario* usuario = buscarUsuario(correo);
+    if (usuario != nullptr) {
+        usuario->pilaPersonal.generarReportePila(nombreArchivo);
+        std::cout << "Reporte de la pila generado para el usuario con correo: " << correo << std::endl;
+    } else {
+        std::cout << "Usuario no encontrado con el correo: " << correo << std::endl;
+    }
+}
+
+void ListaEnlazada::generarReporteListaSolicitudes(const std::string& correo, const std::string& nombreArchivo) const {
+    listaSolicitudes.generarReporteListaSolicitud(correo, nombreArchivo);
+    std::cout << "Reporte de la lista de solicitudes generado como '" << nombreArchivo << "'" << std::endl;
 }

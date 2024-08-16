@@ -15,12 +15,14 @@ using namespace std;
 void mostrarMenuReportes(const string& correoElectronico) {
     int opcion;
     do {
+        std::cout << "*******************************" << std::endl;
         cout << "Menu de Reportes" << endl;
         cout << "1. Usuarios" << endl;
         cout << "2. Relaciones de Amistad" << endl;
         cout << "3. Publicaciones" << endl;
         cout << "4. Top" << endl;
         cout << "5. Salir" << endl;
+        std::cout << "*******************************" << std::endl;
         cout << "Seleccione una opción: ";
         cin >> opcion;
 
@@ -43,10 +45,12 @@ void mostrarMenuReportes(const string& correoElectronico) {
             break;
             case 4:
                 int subopcion;
+            std::cout << "*******************************" << std::endl;
             cout << "Reportes de Top" << endl;
             cout << "1. Top de Publicaciones" << endl;
             cout << "2. Top de Amigos" << endl;
             cout << "3. Top de Menos Amigos" << endl; // Nueva opción para el top de menos amigos
+            std::cout << "*******************************" << std::endl;
             cout << "Seleccione una opción: ";
             cin >> subopcion;
 

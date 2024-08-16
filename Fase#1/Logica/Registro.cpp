@@ -10,6 +10,7 @@ void registrarUsuario(ListaEnlazada& lista) {
     string nombres, apellidos, fechaNacimiento, correo, contrasena;
 
     // Solicitar los datos del usuario
+    std::cout << "*******************************" << std::endl;
     cout << "Ingrese sus nombres: ";
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar el buffer de entrada
     getline(cin, nombres);
@@ -21,7 +22,7 @@ void registrarUsuario(ListaEnlazada& lista) {
     getline(cin, correo);
     cout << "Ingrese su contraseña: ";
     getline(cin, contrasena);
-
+    std::cout << "*******************************" << std::endl;
     // Verificar si el correo ya existe en la lista
     Usuario* usuarioExistente = lista.buscarUsuario(correo, "");
     if (usuarioExistente != nullptr) {

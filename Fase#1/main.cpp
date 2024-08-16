@@ -3,17 +3,12 @@
 #include <locale>
 #include "Headers/Usuarios.h"
 #include "Headers/ListaEnlazada.h"
-#include "Headers/Perfil.h"
-#include "Headers/MenuUsuario.h"
 #include "Headers/InicioSeccion.h"
 #include "Headers/Registro.h"
-#include "Headers/MatrizDispersa.h"
-#include "Headers/ListaEnlazadaRechazo.h"
-#include "Headers/CargaUsuarios.h"
-#include "Headers/CargaSolicitudes.h"
-#include "Headers/CargarPublicaciones.h"
 #include "Headers/ListaDoblePublicaciones.h"
-
+#include "Headers/ListaSolicitud.h"
+#include <cstdlib> // Para limpiar la consola
+#include <cstdlib>
 using namespace std;
 
 ListaEnlazada lista;
@@ -28,14 +23,17 @@ void configurarConsolaUTF8() {
     setlocale(LC_ALL, ".UTF-8");
 }
 
+
 void mostrarMenuPrincipal() {
     int opcion;
     do {
+        std::cout << "*******************************" << std::endl;
         cout << "Menú Principal" << endl;
         cout << "1. Iniciar sesión" << endl;
         cout << "2. Registrarse" << endl;
         cout << "3. Información" << endl;
         cout << "4. Salir" << endl;
+        std::cout << "*******************************" << std::endl;
         cout << "Seleccione una opción: ";
         cin >> opcion;
 
@@ -53,8 +51,17 @@ void mostrarMenuPrincipal() {
                 registrarUsuario(lista);
                 break;
             case 3:
-                lista.imprimirUsuarios();
-                cout << "Funcionalidad de información no implementada." << endl;
+                // Imprimir datos decorados
+                std::cout << "*******************************" << std::endl;
+            std::cout << "* Angel Guillermo de Jesús    *" << std::endl;
+            std::cout << "*       Pérez Jiménez         *" << std::endl;
+            std::cout << "*******************************" << std::endl;
+            std::cout << "*         202100215           *" << std::endl;
+            std::cout << "*******************************" << std::endl;
+            std::cout << "*     Estructura de datos     *" << std::endl;
+            std::cout << "*          Sección: B         *" << std::endl;
+            std::cout << "*           Fase #1          *" << std::endl;
+            std::cout << "*******************************" << std::endl;
                 break;
             case 4:
                 cout << "Saliendo del programa..." << endl;
@@ -69,14 +76,23 @@ int main() {
     configurarConsolaUTF8();
 
     // Cargar datos desde archivos JSON
-    //cargarUsuariosDesdeJSON(lista);
-    //cargarSolicitudesDesdeJSON(lista);
 
+
+    // Generar el reporte de amigos para un usuario específico
+    //td::string correo = "usuario@example.com";
+    //std::string nombreArchivo = "reporte_amigos.dot";
+    //lista.generarReporteAmigosUsuario(correo, nombreArchivo);
+
+    //std::cout << "Reporte de amigos generado como '" << nombreArchivo << "'" << std::endl;
     // Agregar un usuario administrador
     lista.agregarNodo(new Usuario(1, "Admin", "Admin", "01/01/2000", "admin", "admin"));
+    // Insertar algunos usuarios y relaciones para el ejemplo
+
+
+    // Generar el reporte de publicaciones del usuario
 
     // Imprimir las publicaciones para verificar
-    listaPublicaciones.imprimirPublicaciones();
+    //listaPublicaciones.imprimirPublicaciones();
 
     // Mostrar menú principal
     mostrarMenuPrincipal();

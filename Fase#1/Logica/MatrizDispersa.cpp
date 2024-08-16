@@ -131,3 +131,73 @@ void MatrizDispersa::generarTopMenosAmigos(int topN) const {
         std::cout << i + 1 << ". " << vectorAmigos[i].first << " - " << vectorAmigos[i].second << " amigos" << std::endl;
     }
 }
+
+void MatrizDispersa::generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const {
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << "digraph G {" << std::endl;
+    archivo << "    node [shape=ellipse];" << std::endl;
+
+    // Encontrar el nodo del usuario
+    NodoMatriz* usuario = nullptr;
+    for (const auto& nodo : nodos) {
+        if (nodo->correo == correo) {
+            usuario = nodo;
+            break;
+        }
+    }
+
+    if (usuario == nullptr) {
+        std::cerr << "Error: Usuario no encontrado." << std::endl;
+        archivo << "}" << std::endl;
+        archivo.close();
+        return;
+    }
+
+    // Agregar el nodo del usuario
+    archivo << "    \"" << usuario->correo << "\" [label=\"" << usuario->nombreCompleto << "\"];" << std::endl;
+
+    // Agregar los nodos de los amigos y las relaciones
+    for (const auto& relacion : relaciones) {
+        if (relacion.first == correo) {
+            archivo << "    \"" << relacion.first << "\" -> \"" << relacion.second << "\";" << std::endl;
+        } else if (relacion.second == correo) {
+            archivo << "    \"" << relacion.second << "\" -> \"" << relacion.first << "\";" << std::endl;
+        }
+    }
+
+    archivo << "}" << std::endl;
+    archivo.close();
+
+    // Generar la imagen usando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o " + nombreArchivo + ".png";
+    int resultado = system(comando.c_str());
+    if (resultado != 0) {
+        std::cerr << "Error al generar la imagen con Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: " << nombreArchivo << ".png" << std::endl;
+    }
+}
+void MatrizDispersa::eliminarNodoPorCorreo(const std::string& correo) {
+    // Eliminar el nodo de la lista de nodos
+    auto itNodo = std::remove_if(nodos.begin(), nodos.end(), [&](NodoMatriz* nodo) {
+        if (nodo->correo == correo) {
+            delete nodo;
+            return true;
+        }
+        return false;
+    });
+    nodos.erase(itNodo, nodos.end());
+
+    // Eliminar las relaciones asociadas al nodo
+    auto itRelacion = std::remove_if(relaciones.begin(), relaciones.end(), [&](const std::pair<std::string, std::string>& relacion) {
+        return relacion.first == correo || relacion.second == correo;
+    });
+    relaciones.erase(itRelacion, relaciones.end());
+
+    std::cout << "Nodo y relaciones eliminadas para el correo: " << correo << std::endl;
+}

@@ -21,6 +21,10 @@ public:
     size_t size() const;
     void mostrarTop() const; // Método para mostrar el elemento en el tope
     bool existeEmisor(const std::string& emisor) const; // Nuevo método para verificar si existe un emisor en la pila
+    void generarReportePila(const std::string& nombreArchivo) const; // Nuevo método
+    void generarReportePilaUsuario(const std::string& correo, const std::string& nombreArchivo) const;
+    void eliminarPorCorreoEmisor(const std::string& correoEmisor);
+
 };
 
 #endif // PILA_H

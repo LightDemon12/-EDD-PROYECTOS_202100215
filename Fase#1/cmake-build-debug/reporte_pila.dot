@@ -1,0 +1,7 @@
+digraph G {
+rankdir=BT;
+node [shape=record];
+node0 [label="{Destinatario: 2 | Emisor: maria.garcia@example.com | Estado: Pendiente}"];
+node1 [label="{Destinatario: 2 | Emisor: usuario@example.com | Estado: Pendiente}"];
+node0 -> node1 [style=invis];
+}

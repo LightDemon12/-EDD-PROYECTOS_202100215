@@ -118,6 +118,9 @@
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuReportes.h">
 			<Option target="Fase_1"/>
 		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuReportesUsuario.h">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/MenuSolicitud.h">
 			<Option target="Fase_1"/>
 		</Unit>
@@ -182,6 +185,9 @@
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuReportes.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuReportesUsuario.cpp">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/MenuSolicitud.cpp">

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-
+#include <cstdlib>
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
@@ -35,11 +35,12 @@ void ListaDoblePublicaciones::agregarPublicacion(const std::string& correo, cons
 void ListaDoblePublicaciones::imprimirPublicaciones() const {
     Publicacion* actual = cabeza;
     while (actual != nullptr) {
+        std::cout << "*******************************" << std::endl;
         std::cout << "Correo: " << actual->correoUsuario << std::endl;
         std::cout << "Contenido: " << actual->contenido << std::endl;
         std::cout << "Fecha: " << actual->fecha << std::endl;
         std::cout << "Hora: " << actual->hora << std::endl;
-        std::cout << "-------------------------" << std::endl;
+        std::cout << "*******************************" << std::endl;
         actual = actual->siguiente;
     }
 }
@@ -54,12 +55,12 @@ void ListaDoblePublicaciones::navegarPublicaciones() const {
     char opcion;
 
     while (true) {
+        std::cout << "*******************************" << std::endl;
         std::cout << "Correo: " << actual->correoUsuario << std::endl;
         std::cout << "Contenido: " << actual->contenido << std::endl;
         std::cout << "Fecha: " << actual->fecha << std::endl;
         std::cout << "Hora: " << actual->hora << std::endl;
-        std::cout << "-------------------------" << std::endl;
-
+        std::cout << "*******************************" << std::endl;
         std::cout << "Presione 'A' para anterior, 'S' para siguiente, 'Q' para salir: ";
         std::cin >> opcion;
 
@@ -193,5 +194,94 @@ void ListaDoblePublicaciones::generarTopCorreos(int topN) const {
     std::cout << "Top " << topN << " correos con más publicaciones:" << std::endl;
     for (int i = 0; i < topN && i < vectorCorreos.size(); ++i) {
         std::cout << i + 1 << ". " << vectorCorreos[i].first << " - " << vectorCorreos[i].second << " publicaciones" << std::endl;
+    }
+}
+
+
+
+void ListaDoblePublicaciones::generarReportePublicacionesUsuario(const std::string& nombreArchivo) const {
+    if (cabeza == nullptr) {
+        std::cerr << "Error: La lista está vacía." << std::endl;
+        return;
+    }
+
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        std::cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << "digraph G {\n";
+    archivo << "node [shape=record];\n";
+
+    // Crear nodos para cada publicación con índice
+    Publicacion* actual = cabeza;
+    int indice = 0;
+    while (actual != nullptr) {
+        archivo << "node" << indice << " [label=\"{"
+                << "Correo: " << actual->correoUsuario << " | "
+                << "Contenido: " << actual->contenido << " | "
+                << "Fecha: " << actual->fecha << " | "
+                << "Hora: " << actual->hora << "}\"];\n";
+        std::cerr << "Nodo " << indice << " creado: "
+                  << "Correo: " << actual->correoUsuario << ", "
+                  << "Contenido: " << actual->contenido << ", "
+                  << "Fecha: " << actual->fecha << ", "
+                  << "Hora: " << actual->hora << std::endl;
+        actual = actual->siguiente;
+        indice++;
+    }
+
+    // Crear enlaces entre los nodos
+    actual = cabeza;
+    indice = 0;
+    Publicacion* ultimo = nullptr;
+    while (actual != nullptr) {
+        if (actual->siguiente != nullptr) {
+            archivo << "node" << indice << " -> node" << (indice + 1) << ";\n";
+            archivo << "node" << (indice + 1) << " -> node" << indice << ";\n";
+            std::cerr << "Enlace creado entre node" << indice << " y node" << (indice + 1) << std::endl;
+        } else {
+            ultimo = actual;
+        }
+        actual = actual->siguiente;
+        indice++;
+    }
+
+    // Crear enlace entre el primer y el último nodo
+    if (ultimo != nullptr) {
+        archivo << "node0 -> node" << (indice - 1) << ";\n";
+        archivo << "node" << (indice - 1) << " -> node0;\n";
+        std::cerr << "Enlace creado entre node0 y node" << (indice - 1) << std::endl;
+    }
+
+    archivo << "}\n";
+    archivo.close();
+
+    // Generar la imagen usando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o mis_publicaciones.png";
+    system(comando.c_str());
+}
+
+void ListaDoblePublicaciones::eliminarPublicacionPorCorreo(const std::string& correo) {
+    Publicacion* actual = cabeza;
+    while (actual != nullptr) {
+        if (actual->correoUsuario == correo) {
+            Publicacion* aEliminar = actual;
+            if (actual->anterior != nullptr) {
+                actual->anterior->siguiente = actual->siguiente;
+            } else {
+                cabeza = actual->siguiente;
+            }
+            if (actual->siguiente != nullptr) {
+                actual->siguiente->anterior = actual->anterior;
+            } else {
+                cola = actual->anterior;
+            }
+            actual = actual->siguiente;
+            delete aEliminar;
+        } else {
+            actual = actual->siguiente;
+        }
     }
 }

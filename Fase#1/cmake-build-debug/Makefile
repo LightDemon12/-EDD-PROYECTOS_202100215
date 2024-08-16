@@ -416,6 +416,30 @@ Logica/MenuReportes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuReportes.cpp.s
 .PHONY : Logica/MenuReportes.cpp.s
 
+Logica/MenuReportesUsuario.obj: Logica/MenuReportesUsuario.cpp.obj
+.PHONY : Logica/MenuReportesUsuario.obj
+
+# target to build an object file
+Logica/MenuReportesUsuario.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuReportesUsuario.cpp.obj
+.PHONY : Logica/MenuReportesUsuario.cpp.obj
+
+Logica/MenuReportesUsuario.i: Logica/MenuReportesUsuario.cpp.i
+.PHONY : Logica/MenuReportesUsuario.i
+
+# target to preprocess a source file
+Logica/MenuReportesUsuario.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuReportesUsuario.cpp.i
+.PHONY : Logica/MenuReportesUsuario.cpp.i
+
+Logica/MenuReportesUsuario.s: Logica/MenuReportesUsuario.cpp.s
+.PHONY : Logica/MenuReportesUsuario.s
+
+# target to generate assembly for a file
+Logica/MenuReportesUsuario.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/MenuReportesUsuario.cpp.s
+.PHONY : Logica/MenuReportesUsuario.cpp.s
+
 Logica/MenuSolicitud.obj: Logica/MenuSolicitud.cpp.obj
 .PHONY : Logica/MenuSolicitud.obj
 
@@ -701,6 +725,9 @@ help:
 	@echo ... Logica/MenuReportes.obj
 	@echo ... Logica/MenuReportes.i
 	@echo ... Logica/MenuReportes.s
+	@echo ... Logica/MenuReportesUsuario.obj
+	@echo ... Logica/MenuReportesUsuario.i
+	@echo ... Logica/MenuReportesUsuario.s
 	@echo ... Logica/MenuSolicitud.obj
 	@echo ... Logica/MenuSolicitud.i
 	@echo ... Logica/MenuSolicitud.s

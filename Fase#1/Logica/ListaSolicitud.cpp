@@ -81,6 +81,56 @@ bool ListaSolicitud::existeSolicitud(std::string destinatario, std::string emiso
     return false;
 }
 
+#include "../Headers/ListaSolicitud.h"
+#include <fstream>
+#include <iostream>
+
+void ListaSolicitud::generarReporteListaSolicitud(const std::string& correoUsuario, const std::string& nombreArchivo) const {
+    if (cabeza == nullptr) {
+        std::cerr << "Error: La lista de solicitudes está vacía." << std::endl;
+        return;
+    }
+
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        std::cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << std::endl;
+        return;
+    }
+
+    archivo << "digraph G {\n";
+    archivo << "rankdir=TB;\n"; // Cambiar la dirección a Top-Bottom
+    archivo << "node [shape=record];\n";
+
+    // Crear nodos para cada solicitud en la lista del usuario especificado
+    Solicitud* temp = cabeza;
+    int i = 0;
+    while (temp != nullptr) {
+        if (temp->emisor == correoUsuario) {
+            archivo << "node" << i << " [label=\"{"
+                    << "Destinatario: " << temp->destinatario << " | "
+                    << "Emisor: " << temp->emisor << " | "
+                    << "Estado: " << temp->estado << "}\"];\n";
+            ++i;
+        }
+        temp = temp->siguiente;
+    }
+
+    // Crear enlaces invisibles entre los nodos para forzar la disposición vertical
+    for (int j = 0; j < i - 1; ++j) {
+        archivo << "node" << j << " -> node" << (j + 1) << " [style=invis];\n";
+    }
+
+    archivo << "}\n";
+    archivo.close();
+
+    // Generar la imagen usando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_solicitudes.png";
+    int result = system(comando.c_str());
+    if (result != 0) {
+        std::cerr << "Error: No se pudo generar la imagen usando Graphviz." << std::endl;
+    }
+}
+
 // Destructor para liberar la memoria de todos los nodos al destruir la lista
 ListaSolicitud::~ListaSolicitud() {
     Solicitud* temp;

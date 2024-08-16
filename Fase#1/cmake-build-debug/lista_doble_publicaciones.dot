@@ -5,7 +5,6 @@ node1 [label="{Correo: maria.garcia@example.com | Contenido: Este es un contenid
 node2 [label="{Correo: carlos.lopez@example.com | Contenido: Este es un contenido de ejemplo para carlos.lopez@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
 node3 [label="{Correo: usuario@example.com | Contenido: Este es un contenido de ejemplo para usuario@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
 node4 [label="{Correo: 1 | Contenido: Este es un contenido de ejemplo para 1 | Fecha: 2023-10-01 | Hora: 12:00:00}"];
-node5 [label="{Correo: 2 | Contenido: adsasdasdasdasd | Fecha: 2024-08-14 | Hora: 22:46}"];
 node0 -> node1;
 node1 -> node0;
 node1 -> node2;
@@ -14,6 +13,4 @@ node2 -> node3;
 node3 -> node2;
 node3 -> node4;
 node4 -> node3;
-node4 -> node5;
-node5 -> node4;
 }

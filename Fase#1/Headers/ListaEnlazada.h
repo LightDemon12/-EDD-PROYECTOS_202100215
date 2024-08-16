@@ -6,6 +6,7 @@
 
 #include "Usuarios.h"
 #include "MatrizDispersa.h"
+#include "ListaSolicitud.h"
 #include <string>
 
 
@@ -14,6 +15,7 @@ class ListaEnlazada {
 private:
     Usuario* cabeza;
     MatrizDispersa* matrizUsuarios;
+    ListaSolicitud listaSolicitudes; // Instancia de ListaSolicitud
 
 public:
     ListaEnlazada();
@@ -38,6 +40,11 @@ public:
     void generarReporteRelacionesAmistad(const std::string& nombreArchivo) const;
     void generarReporteListaEnlazada(const std::string& nombreArchivo) const;
     void generarTopMenosAmigos(int topN) const;
+    void generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const;
+    void generarReportePilaUsuario(const std::string& correo, const std::string& nombreArchivo) const; // Declaración de la función
+    void generarReporteListaSolicitudes(const std::string& correo, const std::string& nombreArchivo) const; // Modificar la firma de la función
+    void eliminarObjetosDePilaPorCorreoEmisor(const std::string& correoUsuario, const std::string& correoEmisor);
+
 
 
 };

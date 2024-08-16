@@ -27,6 +27,8 @@ public:
 
     void agregarSolicitud(const std::string& receptor, const std::string& emisor, const std::string& estado);
     void agregarRechazo(const std::string& emisor, const std::string& receptor);
+    void generarReporteListaSolicitud(const std::string& nombreArchivo) const;
+
     // Otros métodos y miembros...
     Usuario(int id, std::string nom, std::string ape, std::string fechaNac, std::string correo, std::string contra);
 };

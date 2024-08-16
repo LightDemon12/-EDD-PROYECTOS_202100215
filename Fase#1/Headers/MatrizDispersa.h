@@ -22,6 +22,8 @@ public:
     bool existeRelacion(const std::string& correo1, const std::string& correo2) const; // Nuevo método
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
     void generarTopMenosAmigos(int topN) const;
+    void generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const; // Nuevo método
+    void eliminarNodoPorCorreo(const std::string& correo);
 
 
 

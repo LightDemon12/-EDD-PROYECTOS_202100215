@@ -12,12 +12,14 @@ MenuPublicaciones::MenuPublicaciones(ListaDoblePublicaciones& lista, const std::
 void MenuPublicaciones::mostrarMenu() {
     int opcion;
     do {
+        std::cout << "*******************************" << std::endl;
         std::cout << "Menu Publicaciones" << std::endl;
         std::cout << "1. Ver todas" << std::endl;
         std::cout << "2. Crear" << std::endl;
         std::cout << "3. Eliminar" << std::endl;
         std::cout << "4. Ver publicaciones relacionadas" << std::endl;
         std::cout << "5. Salir" << std::endl;
+        std::cout << "*******************************" << std::endl;
         std::cout << "Seleccione una opción: ";
         std::cin >> opcion;
 

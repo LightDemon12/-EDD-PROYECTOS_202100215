@@ -20,6 +20,8 @@ public:
     void eliminarPublicacionPorIndice(int indice); // Nuevo método
     void generarReporteListaDoble(const std::string& nombreArchivo) const;
     void generarTopCorreos(int topN) const;
+    void generarReportePublicacionesUsuario(const std::string& nombreArchivo) const;
+    void eliminarPublicacionPorCorreo(const std::string& correo);
 private:
     Publicacion* cabeza = nullptr;
     Publicacion* cola = nullptr;

@@ -1,0 +1,18 @@
+digraph G {
+node [shape=record];
+node0 [label="{Correo: juan.perez@example.com | Contenido: Este es un contenido de ejemplo para juan.perez@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
+node1 [label="{Correo: maria.garcia@example.com | Contenido: Este es un contenido de ejemplo para maria.garcia@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
+node2 [label="{Correo: carlos.lopez@example.com | Contenido: Este es un contenido de ejemplo para carlos.lopez@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
+node3 [label="{Correo: usuario@example.com | Contenido: Este es un contenido de ejemplo para usuario@example.com | Fecha: 2023-10-01 | Hora: 12:00:00}"];
+node4 [label="{Correo: 1 | Contenido: Este es un contenido de ejemplo para 1 | Fecha: 2023-10-01 | Hora: 12:00:00}"];
+node0 -> node1;
+node1 -> node0;
+node1 -> node2;
+node2 -> node1;
+node2 -> node3;
+node3 -> node2;
+node3 -> node4;
+node4 -> node3;
+node0 -> node4;
+node4 -> node0;
+}

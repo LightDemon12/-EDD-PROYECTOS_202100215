@@ -405,20 +405,18 @@ CMakeFiles/Fase_1.dir/main.cpp.obj: \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/NodoPila.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaSolicitud.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Solicitud.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
+ C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaEnlazadaRechazo.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaEnlazada.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Usuarios.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/MatrizDispersa.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/NodoMatriz.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Publicacion.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Perfil.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/MenuUsuario.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/InicioSeccion.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaEnlazada.h \
  C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/Registro.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/MatrizDispersa.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaEnlazadaRechazo.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargaUsuarios.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargaSolicitudes.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/CargarPublicaciones.h \
- C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaDoblePublicaciones.h
+ C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaDoblePublicaciones.h \
+ C:\Users\LightDemon12\Desktop\SEGUNDO\ SEMESTRE\ 2024\CODE\-EDD-PROYECTOS_202100215\Fase\#1\Headers/ListaSolicitud.h

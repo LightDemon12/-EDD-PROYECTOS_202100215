@@ -6,6 +6,8 @@
 
 #include "Solicitud.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 
 class ListaSolicitud {
 private:
@@ -32,6 +34,8 @@ public:
 
     // Método para verificar si ya existe una solicitud de amistad
     bool existeSolicitud(std::string destinatario, std::string emisor); // Declaración del nuevo método
+
+    void generarReporteListaSolicitud(const std::string& correoUsuario, const std::string& nombreArchivo) const;
 
     // Destructor para liberar la memoria de todos los nodos al destruir la lista
     ~ListaSolicitud();
