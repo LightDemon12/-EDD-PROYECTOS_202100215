@@ -71,7 +71,7 @@
 
 - **Lenguaje de Programación:** C++
 - **Herramienta para Gráficos:** Graphviz
-- **IDE:** Libre
-- **Sistema Operativo:** Libre
+- **IDE:** Clion
+- **Sistema Operativo:** Windows 10 
 
 
