@@ -7,7 +7,13 @@
 using json = nlohmann::json;
 
 void cargarUsuariosDesdeJSON(ListaEnlazada& lista) {
-    std::string rutaArchivo = "../Archivos Carga/Usuarios.json"; // Ruta fija al archivo JSON
+    std::string rutaCarpeta = "../Archivos Carga/"; // Ruta fija a la carpeta
+
+    std::string nombreArchivo;
+    std::cout << "Ingrese el nombre del archivo JSON (incluyendo la extensión) que desea cargar: ";
+    std::cin >> nombreArchivo;
+
+    std::string rutaArchivo = rutaCarpeta + nombreArchivo; // Construir la ruta completa al archivo
 
     std::ifstream archivo(rutaArchivo);
     if (!archivo.is_open()) {

@@ -48,6 +48,9 @@ void mostrarMenuUsuario(const string& correoElectronico) {
                         cout << "Mostrando perfil..." << endl;
 
                         mostrarPerfil(correoElectronico); // Pasar el correo electrónico
+                    cout << "Presione cualquier tecla para continuar..." << endl;
+                    cin.ignore(); // Ignorar el carácter de nueva línea pendiente
+                    cin.get(); // Esperar a que el usuario presione una tecla
                         break;
                     case 2:
                         cout << "Eliminando cuenta..." << endl;

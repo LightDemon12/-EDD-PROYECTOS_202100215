@@ -10,8 +10,13 @@ using json = nlohmann::json;
 extern ListaDoblePublicaciones listaPublicaciones; // Declarar la lista de publicaciones como externa
 
 void cargarPublicacionesDesdeJSON() {
-    // Ruta fija del archivo JSON de publicaciones
-    const std::string rutaArchivo = "../Archivos Carga/Publicaciones.json";
+    std::string rutaCarpeta = "../Archivos Carga/"; // Ruta fija a la carpeta
+
+    std::string nombreArchivo;
+    std::cout << "Ingrese el nombre del archivo JSON (incluyendo la extensión) que desea cargar: ";
+    std::cin >> nombreArchivo;
+
+    std::string rutaArchivo = rutaCarpeta + nombreArchivo; // Construir la ruta completa al archivo
 
     // Leer el archivo JSON de publicaciones
     std::ifstream archivo(rutaArchivo);

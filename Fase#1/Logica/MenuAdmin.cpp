@@ -23,7 +23,7 @@ void mostrarMenuAdmin(const string& correoElectronico) {
         std::cout << "*******************************" << std::endl;
         cout << "Modulo Administrador" << endl;
         cout << "1. Carga de usuarios" << endl;
-        cout << "2. Carga de relaciones" << endl;
+        cout << "2. Carga de Solicitudes" << endl;
         cout << "3. Carga de publicaciones" << endl;
         cout << "4. Gestionar usuarios" << endl;
         cout << "5. Reportes" << endl;
