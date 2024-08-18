@@ -224,6 +224,30 @@ Logica/InicioSeccion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.s
 .PHONY : Logica/InicioSeccion.cpp.s
 
+Logica/ListaCircular.obj: Logica/ListaCircular.cpp.obj
+.PHONY : Logica/ListaCircular.obj
+
+# target to build an object file
+Logica/ListaCircular.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/ListaCircular.cpp.obj
+.PHONY : Logica/ListaCircular.cpp.obj
+
+Logica/ListaCircular.i: Logica/ListaCircular.cpp.i
+.PHONY : Logica/ListaCircular.i
+
+# target to preprocess a source file
+Logica/ListaCircular.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/ListaCircular.cpp.i
+.PHONY : Logica/ListaCircular.cpp.i
+
+Logica/ListaCircular.s: Logica/ListaCircular.cpp.s
+.PHONY : Logica/ListaCircular.s
+
+# target to generate assembly for a file
+Logica/ListaCircular.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Fase_1.dir\build.make CMakeFiles/Fase_1.dir/Logica/ListaCircular.cpp.s
+.PHONY : Logica/ListaCircular.cpp.s
+
 Logica/ListaDoblePublicaciones.obj: Logica/ListaDoblePublicaciones.cpp.obj
 .PHONY : Logica/ListaDoblePublicaciones.obj
 
@@ -701,6 +725,9 @@ help:
 	@echo ... Logica/InicioSeccion.obj
 	@echo ... Logica/InicioSeccion.i
 	@echo ... Logica/InicioSeccion.s
+	@echo ... Logica/ListaCircular.obj
+	@echo ... Logica/ListaCircular.i
+	@echo ... Logica/ListaCircular.s
 	@echo ... Logica/ListaDoblePublicaciones.obj
 	@echo ... Logica/ListaDoblePublicaciones.i
 	@echo ... Logica/ListaDoblePublicaciones.s

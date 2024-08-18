@@ -131,7 +131,6 @@ void MatrizDispersa::generarTopMenosAmigos(int topN) const {
         std::cout << i + 1 << ". " << vectorAmigos[i].first << " - " << vectorAmigos[i].second << " amigos" << std::endl;
     }
 }
-
 void MatrizDispersa::generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const {
     std::ofstream archivo(nombreArchivo);
     if (!archivo.is_open()) {
@@ -180,8 +179,16 @@ void MatrizDispersa::generarReporteAmigosUsuario(const std::string& correo, cons
         std::cerr << "Error al generar la imagen con Graphviz." << std::endl;
     } else {
         std::cout << "Imagen generada exitosamente: " << nombreArchivo << ".png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start " + nombreArchivo + ".png";
+        resultado = system(comandoAbrir.c_str());
+        if (resultado != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
     }
 }
+
 void MatrizDispersa::eliminarNodoPorCorreo(const std::string& correo) {
     // Eliminar el nodo de la lista de nodos
     auto itNodo = std::remove_if(nodos.begin(), nodos.end(), [&](NodoMatriz* nodo) {

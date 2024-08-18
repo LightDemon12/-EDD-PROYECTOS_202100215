@@ -94,6 +94,9 @@
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/InicioSeccion.h">
 			<Option target="Fase_1"/>
 		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaCircular.h">
+			<Option target="Fase_1"/>
+		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Headers/ListaDoblePublicaciones.h">
 			<Option target="Fase_1"/>
 		</Unit>
@@ -161,6 +164,9 @@
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/InicioSeccion.cpp">
+			<Option target="Fase_1"/>
+		</Unit>
+		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaCircular.cpp">
 			<Option target="Fase_1"/>
 		</Unit>
 		<Unit filename="C:/Users/LightDemon12/Desktop/SEGUNDO SEMESTRE 2024/CODE/-EDD-PROYECTOS_202100215/Fase#1/Logica/ListaDoblePublicaciones.cpp">

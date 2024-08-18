@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Fase_1.dir/Logica/CargarPublicaciones.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/InicioSeccion.cpp.obj.d"
+  "CMakeFiles/Fase_1.dir/Logica/ListaCircular.cpp.obj"
+  "CMakeFiles/Fase_1.dir/Logica/ListaCircular.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj"
   "CMakeFiles/Fase_1.dir/Logica/ListaDoblePublicaciones.cpp.obj.d"
   "CMakeFiles/Fase_1.dir/Logica/ListaEnlazada.cpp.obj"

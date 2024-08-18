@@ -49,4 +49,6 @@ add_executable(Fase_1 main.cpp
         Logica/MenuReportes.cpp
         Headers/MenuReportesUsuario.h
         Logica/MenuReportesUsuario.cpp
+        Headers/ListaCircular.h
+        Logica/ListaCircular.cpp
 )
