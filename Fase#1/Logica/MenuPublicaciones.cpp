@@ -31,8 +31,8 @@ void MenuPublicaciones::mostrarMenu() {
                 crear();
                 break;
             case 3:
-                eliminar();
-                break;
+                eliminar(correoUsuario); // Pasar el correo del usuario actual
+            break;
             case 4:
 
                 break;
@@ -72,8 +72,8 @@ void MenuPublicaciones::crear() {
     std::cout << "Publicación creada exitosamente." << std::endl;
 }
 
-void MenuPublicaciones::eliminar() {
-    listaPublicaciones.mostrarPublicacionesConIndice();
+void MenuPublicaciones::eliminar(const std::string& correoUsuario) {
+    listaPublicaciones.mostrarPublicacionesUsuario(correoUsuario); // Mostrar solo las publicaciones del usuario actual
     int indice;
     std::cout << "Ingrese el índice de la publicación a eliminar: ";
     std::cin >> indice;

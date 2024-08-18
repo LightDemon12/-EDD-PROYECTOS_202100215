@@ -84,16 +84,19 @@ void ListaDoblePublicaciones::navegarPublicaciones() const {
     }
 }
 
-// Método para mostrar publicaciones con índice
-void ListaDoblePublicaciones::mostrarPublicacionesConIndice() const {
+// Método para mostrar publicaciones del usuario actual con índice
+void ListaDoblePublicaciones::mostrarPublicacionesUsuario(const std::string& correoUsuario) const {
     Publicacion* actual = cabeza;
     int indice = 0;
     while (actual != nullptr) {
-        std::cout << indice << ": " << actual->correoUsuario << " - " << actual->contenido << " (" << actual->fecha << " " << actual->hora << ")" << std::endl;
+        if (actual->correoUsuario == correoUsuario) {
+            std::cout << indice << ": " << actual->correoUsuario << " - " << actual->contenido << " (" << actual->fecha << " " << actual->hora << ")" << std::endl;
+        }
         actual = actual->siguiente;
         indice++;
     }
-}void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
+}
+void ListaDoblePublicaciones::eliminarPublicacionPorIndice(int indice) {
     Publicacion* actual = cabeza;
     int contador = 0;
     while (actual != nullptr) {
@@ -168,7 +171,19 @@ void ListaDoblePublicaciones::generarReporteListaDoble(const std::string& nombre
 
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_doble_publicaciones.png";
-    system(comando.c_str());
+    int result = system(comando.c_str());
+    if (result != 0) {
+        std::cerr << "Error: No se pudo generar la imagen usando Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: lista_doble_publicaciones.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start lista_doble_publicaciones.png";
+        result = system(comandoAbrir.c_str());
+        if (result != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
+    }
 }
 // Añadir esta función a la clase ListaDoblePublicaciones
 void ListaDoblePublicaciones::generarTopCorreos(int topN) const {
@@ -260,7 +275,19 @@ void ListaDoblePublicaciones::generarReportePublicacionesUsuario(const std::stri
 
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o mis_publicaciones.png";
-    system(comando.c_str());
+    int result = system(comando.c_str());
+    if (result != 0) {
+        std::cerr << "Error: No se pudo generar la imagen usando Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: mis_publicaciones.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start mis_publicaciones.png";
+        result = system(comandoAbrir.c_str());
+        if (result != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
+    }
 }
 
 void ListaDoblePublicaciones::eliminarPublicacionPorCorreo(const std::string& correo) {

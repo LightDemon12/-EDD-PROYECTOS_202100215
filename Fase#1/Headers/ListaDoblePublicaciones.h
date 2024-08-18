@@ -16,7 +16,7 @@ public:
     void agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
     void imprimirPublicaciones() const;
     void navegarPublicaciones() const; // Asegúrate de declarar la función aquí
-    void mostrarPublicacionesConIndice() const; // Nuevo método
+    void mostrarPublicacionesUsuario(const std::string& correoUsuario) const; // Nuevo método
     void eliminarPublicacionPorIndice(int indice); // Nuevo método
     void generarReporteListaDoble(const std::string& nombreArchivo) const;
     void generarTopCorreos(int topN) const;

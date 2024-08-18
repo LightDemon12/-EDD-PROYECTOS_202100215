@@ -49,17 +49,14 @@ void Pila::generarReportePila(const std::string& nombreArchivo) const {
         std::cerr << "Error: La pila está vacía." << std::endl;
         return;
     }
-
     std::ofstream archivo(nombreArchivo);
     if (!archivo.is_open()) {
         std::cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << std::endl;
         return;
     }
-
     archivo << "digraph G {\n";
     archivo << "rankdir=BT;\n"; // Cambiar la dirección a Bottom-Top
     archivo << "node [shape=record];\n";
-
     // Crear nodos para cada elemento de la pila en orden inverso
     for (size_t i = 0; i < elementos.size(); ++i) {
         archivo << "node" << i << " [label=\"{"
@@ -67,18 +64,28 @@ void Pila::generarReportePila(const std::string& nombreArchivo) const {
                 << "Emisor: " << elementos[elementos.size() - 1 - i].emisor << " | "
                 << "Estado: " << elementos[elementos.size() - 1 - i].estado << "}\"];\n";
     }
-
     // Crear enlaces invisibles entre los nodos para forzar la disposición vertical
     for (size_t i = 0; i < elementos.size() - 1; ++i) {
         archivo << "node" << i << " -> node" << (i + 1) << " [style=invis];\n";
     }
-
     archivo << "}\n";
     archivo.close();
 
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o pila.png";
-    system(comando.c_str());
+    int resultado = system(comando.c_str());
+    if (resultado != 0) {
+        std::cerr << "Error al generar la imagen con Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: pila.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start pila.png";
+        resultado = system(comandoAbrir.c_str());
+        if (resultado != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
+    }
 }
 
 void Pila::eliminarPorCorreoEmisor(const std::string& correoEmisor) {

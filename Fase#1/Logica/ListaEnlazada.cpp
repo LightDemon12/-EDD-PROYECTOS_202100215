@@ -30,7 +30,6 @@ ListaEnlazada::~ListaEnlazada() {
 void ListaEnlazada::agregarNodo(Usuario* nuevoUsuario) {
     nuevoUsuario->siguiente = cabeza;
     cabeza = nuevoUsuario;
-
     // Insertar en la matriz dispersa
     matrizUsuarios->insertar(nuevoUsuario->correoElectronico, nuevoUsuario->nombres + " " + nuevoUsuario->apellidos);
 }
@@ -45,21 +44,18 @@ void ListaEnlazada::eliminarNodo(const std::string& correoElectronico) {
     if (actual != nullptr) {
         // Eliminar objetos de la pila asociados al usuario
         eliminarObjetosDePilaPorCorreoEmisor(correoElectronico, correoElectronico);
-
         // Eliminar el nodo de la lista
         if (anterior == nullptr) {
             cabeza = actual->siguiente;
         } else {
             anterior->siguiente = actual->siguiente;
         }
-
         // Eliminar el nodo de la matriz dispersa
         if (matrizUsuarios != nullptr) {
             matrizUsuarios->eliminarNodoPorCorreo(correoElectronico);
         } else {
             std::cerr << "Error: matrizUsuarios es nullptr." << std::endl;
         }
-
         delete actual;
         std::cout << "Usuario con correo " << correoElectronico << " eliminado." << std::endl;
     } else {
@@ -251,7 +247,19 @@ void ListaEnlazada::generarReporteListaEnlazada(const std::string& nombreArchivo
 
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o lista_enlazada.png";
-    system(comando.c_str());
+    int result = system(comando.c_str());
+    if (result != 0) {
+        std::cerr << "Error: No se pudo generar la imagen usando Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: lista_enlazada.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start lista_enlazada.png";
+        result = system(comandoAbrir.c_str());
+        if (result != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
+    }
 }
 
 void ListaEnlazada::generarReporteAmigosUsuario(const std::string& correo, const std::string& nombreArchivo) const {

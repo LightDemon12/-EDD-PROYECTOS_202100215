@@ -16,7 +16,7 @@ public:
 private:
     void verTodas();
     void crear();
-    void eliminar();
+    void eliminar(const std::string& correoUsuario); // Modificado para aceptar el correo del usuario
 
 
     ListaDoblePublicaciones& listaPublicaciones;

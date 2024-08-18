@@ -128,6 +128,15 @@ void ListaSolicitud::generarReporteListaSolicitud(const std::string& correoUsuar
     int result = system(comando.c_str());
     if (result != 0) {
         std::cerr << "Error: No se pudo generar la imagen usando Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: lista_solicitudes.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start lista_solicitudes.png";
+        result = system(comandoAbrir.c_str());
+        if (result != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
     }
 }
 

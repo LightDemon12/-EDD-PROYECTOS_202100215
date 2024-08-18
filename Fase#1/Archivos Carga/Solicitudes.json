@@ -3,32 +3,32 @@
     {
       "emisor": "usuario@example.com",
       "receptor": "carlos.lopez@example.com",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     },
     {
       "emisor": "usuario@example.com",
       "receptor": "2",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     },
     {
       "emisor": "maria.garcia@example.com",
       "receptor": "2",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     },
     {
       "emisor": "2",
       "receptor": "carlos.lopez@example.com",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     },
     {
       "emisor": "2",
       "receptor": "maria.garcia@example.com",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     },
     {
       "emisor": "usuario@example.com",
       "receptor": "maria.garcia@example.com",
-      "estado": "Pendiente"
+      "estado": "Aceptada"
     }
   ]
 }

@@ -1,4 +1,7 @@
 digraph G {
     node [shape=ellipse];
     "usuario@example.com" [label="Usuario Ejemplo"];
+    "usuario@example.com" -> "carlos.lopez@example.com";
+    "usuario@example.com" -> "2";
+    "usuario@example.com" -> "maria.garcia@example.com";
 }

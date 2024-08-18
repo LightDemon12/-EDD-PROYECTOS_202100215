@@ -66,14 +66,12 @@ void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
     archivo << "node [shape=plaintext]" << std::endl;
     archivo << "a [label=<" << std::endl;
     archivo << "<table border='1' cellborder='1' cellspacing='0'>" << std::endl;
-
     // Encabezados de columnas
     archivo << "<tr><td></td>";
     for (const NodoMatriz* nodo : nodos) {
         archivo << "<td>" << nodo->correo << "</td>";
     }
     archivo << "</tr>" << std::endl;
-
     // Filas
     for (const NodoMatriz* nodoFila : nodos) {
         archivo << "<tr><td>" << nodoFila->correo << "</td>";
@@ -90,15 +88,27 @@ void MatrizDispersa::generarArchivoDOT(const std::string& nombreArchivo) const {
         }
         archivo << "</tr>" << std::endl;
     }
-
     archivo << "</table>>];" << std::endl;
     archivo << "}" << std::endl;
     archivo.close();
 
     // Generar la imagen usando Graphviz
     std::string comando = "dot -Tpng " + nombreArchivo + " -o matriz_usuarios.png";
-    system(comando.c_str());
+    int resultado = system(comando.c_str());
+    if (resultado != 0) {
+        std::cerr << "Error al generar la imagen con Graphviz." << std::endl;
+    } else {
+        std::cout << "Imagen generada exitosamente: matriz_usuarios.png" << std::endl;
+
+        // Abrir la imagen automáticamente
+        std::string comandoAbrir = "start matriz_usuarios.png";
+        resultado = system(comandoAbrir.c_str());
+        if (resultado != 0) {
+            std::cerr << "Error al abrir la imagen." << std::endl;
+        }
+    }
 }
+
 void MatrizDispersa::agregarPublicacion(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora) {
     publicaciones.emplace_back(correo, contenido, fecha, hora);
 }
@@ -208,3 +218,5 @@ void MatrizDispersa::eliminarNodoPorCorreo(const std::string& correo) {
 
     std::cout << "Nodo y relaciones eliminadas para el correo: " << correo << std::endl;
 }
+
+
