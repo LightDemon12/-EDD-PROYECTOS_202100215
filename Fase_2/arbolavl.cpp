@@ -55,6 +55,7 @@ NodoAVL* ArbolAVL::insertarNodo(NodoAVL* nodo, Usuario* usuario) {
     if (nodo == nullptr)
         return new NodoAVL(usuario);
 
+    // Comparar por correo electrónico
     if (usuario->getCorreoElectronico() < nodo->usuario->getCorreoElectronico())
         nodo->izquierda = insertarNodo(nodo->izquierda, usuario);
     else if (usuario->getCorreoElectronico() > nodo->usuario->getCorreoElectronico())
@@ -189,6 +190,15 @@ bool ArbolAVL::buscar(const std::string& correoElectronico) {
     return buscarNodo(raiz, correoElectronico) != nullptr;
 }
 
+// Buscar un usuario en el árbol AVL por correo electrónico y contraseña
+bool ArbolAVL::buscarUsuario(const std::string& correoElectronico, const std::string& contrasena) {
+    NodoAVL* nodo = buscarNodo(raiz, correoElectronico);
+    if (nodo != nullptr && nodo->usuario->getContrasena() == contrasena) {
+        return true;
+    }
+    return false;
+}
+
 // Recorrido en preorden
 void ArbolAVL::preOrden(NodoAVL* nodo) {
     if (nodo != nullptr) {
@@ -204,6 +214,34 @@ void ArbolAVL::preOrden(NodoAVL* nodo) {
     }
 }
 
+// Recorrido en orden
+void ArbolAVL::enOrden(NodoAVL* nodo) {
+    if (nodo != nullptr) {
+        enOrden(nodo->izquierda); // Visitar subárbol izquierdo
+        Usuario* usuario = nodo->usuario;
+        qDebug() << "Nombre:" << QString::fromStdString(usuario->getNombres());
+        qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
+        qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
+        qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
+        qDebug() << "Contraseña:" << QString::fromStdString(usuario->getContrasena());
+        qDebug() << "-----------------------------";
+        enOrden(nodo->derecha); // Visitar subárbol derecho
+    }
+}
+std::string ArbolAVL::mostrarUsuario(const std::string& correoElectronico) {
+    NodoAVL* nodo = buscarNodo(raiz, correoElectronico);
+    if (nodo != nullptr) {
+        Usuario* usuario = nodo->usuario;
+        std::string info = "Nombre: " + usuario->getNombres() + "\n" +
+                           "Apellido: " + usuario->getApellidos() + "\n" +
+                           "Fecha de Nacimiento: " + usuario->getFechaNacimiento() + "\n" +
+                           "Correo Electrónico: " + usuario->getCorreoElectronico() + "\n" +
+                           "Contraseña: " + usuario->getContrasena();
+        return info; // Usuario encontrado
+    } else {
+        return ""; // Usuario no encontrado
+    }
+}
 // Obtener la raíz del árbol
 NodoAVL* ArbolAVL::getRaiz() {
     return raiz;

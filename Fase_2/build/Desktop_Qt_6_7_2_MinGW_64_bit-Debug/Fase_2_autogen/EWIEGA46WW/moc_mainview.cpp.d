@@ -1,6 +1,8 @@
 C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/EWIEGA46WW/moc_mainview.cpp: C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
@@ -145,8 +147,13 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/QDialog \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \

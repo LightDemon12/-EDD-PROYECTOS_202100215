@@ -36,6 +36,9 @@ public:
     void eliminar(const std::string& correoElectronico);
     bool buscar(const std::string& correoElectronico);
     void preOrden(NodoAVL* nodo);
+    void enOrden(NodoAVL* nodo); // Declaración del nuevo método
+    bool buscarUsuario(const std::string& correoElectronico, const std::string& contrasena); // Declaración del nuevo método
+    std::string mostrarUsuario(const std::string& correoElectronico); // Declaración del método modificado
     NodoAVL* getRaiz();
 };
 

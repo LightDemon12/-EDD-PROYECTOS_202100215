@@ -263,9 +263,21 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.h",
+			"MU",
+			"EWIEGA46WW/moc_feed.cpp",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.h",
 			"MU",
 			"EWIEGA46WW/moc_mainview.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h",
+			"MU",
+			"EWIEGA46WW/moc_matriz.cpp",
 			null
 		],
 		[
@@ -358,12 +370,22 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/main.cpp",
 			"MU",
 			null
 		],
 		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.cpp",
 			"MU",
 			null
 		],

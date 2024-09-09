@@ -1,6 +1,7 @@
 C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/EWIEGA46WW/moc_registro.cpp: C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \

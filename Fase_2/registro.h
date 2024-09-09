@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "arbolavl.h"
+#include "matriz.h"
 
 // Forward declaration
 class MainView;
@@ -16,7 +17,7 @@ class Registro : public QWidget
     Q_OBJECT
 
 public:
-    explicit Registro(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MainView* mainView = nullptr);
+    explicit Registro(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MainView* mainView = nullptr, MatrizDispersa* matriz = nullptr);
     ~Registro();
 
 private slots:
@@ -27,6 +28,8 @@ private:
     Ui::Registro *ui;
     ArbolAVL* arbol;
     MainView* mainView;
+    MatrizDispersa* matriz;
+    int contadorNodos; // Contador de nodos
 };
 
 #endif // REGISTRO_H

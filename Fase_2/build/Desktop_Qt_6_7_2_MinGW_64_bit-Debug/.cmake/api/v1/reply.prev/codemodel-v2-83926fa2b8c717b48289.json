@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ca9692040b49c88a7c24.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Fase_2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Fase_2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Fase_2-Debug-3256582c2c13cd2b51ef.json",
+					"name" : "Fase_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Fase_2_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Fase_2_autogen-Debug-01165af1dda4a8223038.json",
+					"name" : "Fase_2_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Fase_2_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Fase_2_autogen_timestamp_deps-Debug-f6d0d838f577550c6cc7.json",
+					"name" : "Fase_2_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+		"source" : "C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

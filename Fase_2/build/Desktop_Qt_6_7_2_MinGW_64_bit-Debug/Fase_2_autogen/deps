@@ -7,9 +7,13 @@ Fase_2_autogen/timestamp: \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.cpp \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/main.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.cpp \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.cpp \
@@ -157,9 +161,14 @@ Fase_2_autogen/timestamp: \
 	E:/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
 	E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
 	E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/QDialog \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -532,6 +541,7 @@ Fase_2_autogen/timestamp: \
 	E:/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
 	E:/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	E:/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.ui \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.ui \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.ui \
 	E:/QT/Tools/CMake_64/bin/cmake.exe

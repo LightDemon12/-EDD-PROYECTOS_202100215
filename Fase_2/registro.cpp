@@ -4,11 +4,13 @@
 #include <QMessageBox>
 #include <QDebug>
 
-Registro::Registro(QWidget *parent, ArbolAVL* arbol, MainView* mainView)
+Registro::Registro(QWidget *parent, ArbolAVL* arbol, MainView* mainView, MatrizDispersa* matriz)
     : QWidget(parent)
     , ui(new Ui::Registro)
     , arbol(arbol)
     , mainView(mainView)
+    , matriz(matriz)
+    , contadorNodos(0) // Inicializar el contador de nodos
 {
     ui->setupUi(this);
     qDebug() << "Registro window created";
@@ -48,9 +50,13 @@ void Registro::on_ButtonRegistro_clicked()
     // Insertar el usuario en el árbol AVL
     arbol->insertar(nuevoUsuario);
 
+    // Determinar la posición en la matriz dispersa
+    matriz->setValor(contadorNodos, contadorNodos, correo.toStdString());
+    contadorNodos++; // Incrementar el contador de nodos
+
     // Mostrar el recorrido en preorden del árbol AVL
-    qDebug() << "Usuarios en el árbol AVL (preorden):";
-    arbol->preOrden(arbol->getRaiz());
+    qDebug() << "Usuarios en el árbol AVL (enOrden):";
+    arbol->enOrden(arbol->getRaiz());
 }
 
 void Registro::on_ButtonSalir_clicked()
