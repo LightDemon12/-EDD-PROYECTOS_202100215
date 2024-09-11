@@ -28,6 +28,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         registro.h registro.cpp registro.ui
         matriz.h matriz.cpp
         feed.h feed.cpp feed.ui
+        nodosolicitud.h nodosolicitud.cpp
+        listaenviados.h listaenviados.cpp
+        pila.h pila.cpp
 
 
 

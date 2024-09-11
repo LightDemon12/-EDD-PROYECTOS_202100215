@@ -1,0 +1,8 @@
+digraph G {
+node [shape=plaintext]
+a [label=<
+<table border='1' cellborder='1' cellspacing='0'>
+<tr><td></td><td>c</td></tr>
+<tr><td>c</td><td></td></tr>
+</table>>];
+}

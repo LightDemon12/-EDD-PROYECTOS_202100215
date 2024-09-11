@@ -4,7 +4,6 @@
 #include "feed.h" // Incluir la cabecera de la nueva ventana Feed
 #include <QDebug>
 #include "arbolavl.h"
-#include <QMessageBox> // Incluir QMessageBox
 
 MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
@@ -21,7 +20,10 @@ MainView::~MainView()
 {
     delete ui;
 }
-
+void MainView::insertarUsuario(Usuario* usuario)
+{
+    arbol.insertar(usuario);
+}
 void MainView::on_Registro_clicked()
 {
     qDebug() << "Registro button clicked";
@@ -40,7 +42,6 @@ void MainView::on_Registro_clicked()
     this->hide();
     qDebug() << "MainView window hidden";
 }
-
 void MainView::on_Inicio_clicked()
 {
     qDebug() << "Inicio button clicked";
@@ -65,10 +66,15 @@ void MainView::on_Inicio_clicked()
     if (arbol.buscarUsuario(correo.toStdString(), contrasena.toStdString())) {
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión exitoso.");
 
+        // Almacenar el correo electrónico del usuario actual
+        currentUserEmail = correo;
+
         // Crear la ventana Feed si no existe
         if (!feed) {
-            feed = new Feed(this, &arbol); // Pasar el puntero de MainView y el árbol AVL
+            feed = new Feed(this, &arbol, currentUserEmail, &matriz); // Pasar el puntero de MainView, el árbol AVL, el correo electrónico y la matriz
             qDebug() << "Feed window instantiated";
+        } else {
+            feed->setCurrentUserEmail(currentUserEmail); // Actualizar el correo electrónico del usuario actual en la ventana Feed
         }
 
         // Mostrar la ventana Feed

@@ -113,6 +113,30 @@ build CMakeFiles/Fase_2.dir/feed.cpp.obj: CXX_COMPILER__Fase_2_unscanned_Debug C
   OBJECT_DIR = CMakeFiles\Fase_2.dir
   OBJECT_FILE_DIR = CMakeFiles\Fase_2.dir
 
+build CMakeFiles/Fase_2.dir/nodosolicitud.cpp.obj: CXX_COMPILER__Fase_2_unscanned_Debug C$:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodosolicitud.cpp || cmake_object_order_depends_target_Fase_2
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Fase_2.dir\nodosolicitud.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/include -isystem E:/QT/6.7.2/mingw_64/include/QtCore -isystem E:/QT/6.7.2/mingw_64/include -isystem E:/QT/6.7.2/mingw_64/mkspecs/win32-g++ -isystem E:/QT/6.7.2/mingw_64/include/QtWidgets -isystem E:/QT/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Fase_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fase_2.dir
+
+build CMakeFiles/Fase_2.dir/listaenviados.cpp.obj: CXX_COMPILER__Fase_2_unscanned_Debug C$:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listaenviados.cpp || cmake_object_order_depends_target_Fase_2
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Fase_2.dir\listaenviados.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/include -isystem E:/QT/6.7.2/mingw_64/include/QtCore -isystem E:/QT/6.7.2/mingw_64/include -isystem E:/QT/6.7.2/mingw_64/mkspecs/win32-g++ -isystem E:/QT/6.7.2/mingw_64/include/QtWidgets -isystem E:/QT/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Fase_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fase_2.dir
+
+build CMakeFiles/Fase_2.dir/pila.cpp.obj: CXX_COMPILER__Fase_2_unscanned_Debug C$:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/pila.cpp || cmake_object_order_depends_target_Fase_2
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Fase_2.dir\pila.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/include -isystem E:/QT/6.7.2/mingw_64/include/QtCore -isystem E:/QT/6.7.2/mingw_64/include -isystem E:/QT/6.7.2/mingw_64/mkspecs/win32-g++ -isystem E:/QT/6.7.2/mingw_64/include/QtWidgets -isystem E:/QT/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Fase_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Fase_2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Fase_2
@@ -121,7 +145,7 @@ build CMakeFiles/Fase_2.dir/feed.cpp.obj: CXX_COMPILER__Fase_2_unscanned_Debug C
 #############################################
 # Link the executable Fase_2.exe
 
-build Fase_2.exe: CXX_EXECUTABLE_LINKER__Fase_2_Debug CMakeFiles/Fase_2.dir/Fase_2_autogen/mocs_compilation.cpp.obj CMakeFiles/Fase_2.dir/main.cpp.obj CMakeFiles/Fase_2.dir/mainview.cpp.obj CMakeFiles/Fase_2.dir/arbolavl.cpp.obj CMakeFiles/Fase_2.dir/usuario.cpp.obj CMakeFiles/Fase_2.dir/registro.cpp.obj CMakeFiles/Fase_2.dir/matriz.cpp.obj CMakeFiles/Fase_2.dir/feed.cpp.obj | E$:/QT/6.7.2/mingw_64/lib/libQt6Widgets.a E$:/QT/6.7.2/mingw_64/lib/libQt6Gui.a E$:/QT/6.7.2/mingw_64/lib/libQt6Core.a E$:/QT/6.7.2/mingw_64/lib/libQt6EntryPoint.a || Fase_2_autogen Fase_2_autogen_timestamp_deps
+build Fase_2.exe: CXX_EXECUTABLE_LINKER__Fase_2_Debug CMakeFiles/Fase_2.dir/Fase_2_autogen/mocs_compilation.cpp.obj CMakeFiles/Fase_2.dir/main.cpp.obj CMakeFiles/Fase_2.dir/mainview.cpp.obj CMakeFiles/Fase_2.dir/arbolavl.cpp.obj CMakeFiles/Fase_2.dir/usuario.cpp.obj CMakeFiles/Fase_2.dir/registro.cpp.obj CMakeFiles/Fase_2.dir/matriz.cpp.obj CMakeFiles/Fase_2.dir/feed.cpp.obj CMakeFiles/Fase_2.dir/nodosolicitud.cpp.obj CMakeFiles/Fase_2.dir/listaenviados.cpp.obj CMakeFiles/Fase_2.dir/pila.cpp.obj | E$:/QT/6.7.2/mingw_64/lib/libQt6Widgets.a E$:/QT/6.7.2/mingw_64/lib/libQt6Gui.a E$:/QT/6.7.2/mingw_64/lib/libQt6Core.a E$:/QT/6.7.2/mingw_64/lib/libQt6EntryPoint.a || Fase_2_autogen Fase_2_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = E:/QT/6.7.2/mingw_64/lib/libQt6Widgets.a  E:/QT/6.7.2/mingw_64/lib/libQt6Gui.a  E:/QT/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  E:/QT/6.7.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

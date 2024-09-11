@@ -3,6 +3,7 @@
 
 #include "usuario.h"
 #include <QDebug>
+#include <qtablewidget.h>
 
 class NodoAVL {
 public:
@@ -27,7 +28,6 @@ private:
     NodoAVL* insertarNodo(NodoAVL* nodo, Usuario* usuario);
     NodoAVL* nodoConValorMinimo(NodoAVL* nodo);
     NodoAVL* eliminarNodo(NodoAVL* raiz, const std::string& correoElectronico);
-    NodoAVL* buscarNodo(NodoAVL* nodo, const std::string& correoElectronico);
 
 public:
     ArbolAVL() : raiz(nullptr) {}
@@ -39,6 +39,8 @@ public:
     void enOrden(NodoAVL* nodo); // Declaración del nuevo método
     bool buscarUsuario(const std::string& correoElectronico, const std::string& contrasena); // Declaración del nuevo método
     std::string mostrarUsuario(const std::string& correoElectronico); // Declaración del método modificado
+    void enTable(NodoAVL* nodo, QTableWidget* table); // Declaración del método enTable
+    NodoAVL* buscarNodo(NodoAVL* nodo, const std::string& correoElectronico);
     NodoAVL* getRaiz();
 };
 

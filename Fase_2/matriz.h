@@ -11,8 +11,10 @@ public:
         std::string valor;
         Nodo* siguienteFila;
         Nodo* siguienteColumna;
-        Nodo(int f, int c, const std::string& v)
-            : fila(f), columna(c), valor(v), siguienteFila(nullptr), siguienteColumna(nullptr) {}
+        bool esCabecera;  // Nuevo atributo para identificar si el nodo es una cabecera
+
+        Nodo(int f, int c, const std::string& v, bool esCabecera = false)
+            : fila(f), columna(c), valor(v), siguienteFila(nullptr), siguienteColumna(nullptr), esCabecera(esCabecera) {}
     };
 
     MatrizDispersa(int filas, int columnas);
@@ -22,6 +24,8 @@ public:
     void eliminarNodos();
     void generarReporte(const std::string& nombreArchivo) const;
     void marcarInterseccion(const std::string& usuario1, const std::string& usuario2);
+    void mostrarAmigos(const std::string& usuario) const; // Declarar el nuevo método
+    void inicializarCabeceras();  // Nuevo método para inicializar cabeceras
 
 private:
     int filas;

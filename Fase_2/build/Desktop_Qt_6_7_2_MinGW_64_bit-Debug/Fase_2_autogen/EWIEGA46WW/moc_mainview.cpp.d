@@ -1,14 +1,18 @@
 C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/EWIEGA46WW/moc_mainview.cpp: C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/NodoSolicitud.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listaenviados.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/pila.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20memory.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q23utility.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qanystringview.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qarraydata.h \
@@ -50,11 +54,13 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qhash.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qitemselectionmodel.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiterable.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiterator.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qline.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlist.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qlocale.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlogging.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qmalloc.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qmap.h \
@@ -75,6 +81,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qrect.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qregularexpression.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qset.h \
@@ -116,6 +123,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qtypes.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qurl.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qvariant.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -135,26 +143,47 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpalette.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qpen.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpixmap.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpolygon.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qregion.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qrgb.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qtextoption.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qvalidator.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QDialog \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/QLineEdit \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractslider.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qframe.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qrubberband.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qslider.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qstyle.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qstyleoption.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabbar.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtableview.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtablewidget.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \

@@ -2,6 +2,7 @@
 #define MAINVIEW_H
 
 #include <QMainWindow>
+#include <QLineEdit>
 #include "arbolavl.h"
 #include "matriz.h"
 #include <QMessageBox>
@@ -21,6 +22,7 @@ class MainView : public QMainWindow
 public:
     MainView(QWidget *parent = nullptr);
     ~MainView();
+    void insertarUsuario(Usuario* usuario);
 
 private slots:
     void on_Registro_clicked();
@@ -33,6 +35,7 @@ private:
     Feed *feed; // Declarar un puntero a la ventana Feed
     ArbolAVL arbol;
     MatrizDispersa matriz;
+    QString currentUserEmail; // Variable para almacenar el correo electrónico del usuario actual
 
 };
 

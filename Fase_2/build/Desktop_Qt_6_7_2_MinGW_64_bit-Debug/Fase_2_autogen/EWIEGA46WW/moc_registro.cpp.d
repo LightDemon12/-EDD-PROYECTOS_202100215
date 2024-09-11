@@ -1,13 +1,17 @@
 C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/EWIEGA46WW/moc_registro.cpp: C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/NodoSolicitud.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listaenviados.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/pila.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20memory.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q23utility.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qanystringview.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qarraydata.h \
@@ -49,11 +53,13 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qhash.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qitemselectionmodel.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiterable.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiterator.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qline.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlist.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qlocale.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qlogging.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qmalloc.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qmap.h \
@@ -74,6 +80,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qprocessordetection.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qrect.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qrefcount.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qregularexpression.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qscopedpointer.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qscopeguard.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qset.h \
@@ -144,10 +151,25 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qvalidator.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemview.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractslider.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qframe.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qrubberband.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qslider.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qstyle.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qstyleoption.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabbar.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtableview.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtablewidget.h \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

@@ -2,12 +2,23 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <qdebug.h>
+#include <qlogging.h>
 
 MatrizDispersa::MatrizDispersa(int filas, int columnas)
     : filas(filas), columnas(columnas) {
-    filasCabecera = new Nodo*[filas]();
-    columnasCabecera = new Nodo*[columnas]();
+    filasCabecera = new Nodo*[filas];
+    columnasCabecera = new Nodo*[columnas];
+
+    for (int i = 0; i < filas; ++i) {
+        filasCabecera[i] = nullptr;
+    }
+
+    for (int j = 0; j < columnas; ++j) {
+        columnasCabecera[j] = nullptr;
+    }
 }
+
 
 MatrizDispersa::~MatrizDispersa() {
     eliminarNodos();
@@ -21,22 +32,36 @@ void MatrizDispersa::setValor(int fila, int columna, const std::string& valor) {
         return;
     }
 
+    // No modificar la cabecera
+    if (fila == 0 || columna == 0) {
+        std::cerr << "Error: No se puede modificar la fila 0 o columna 0." << std::endl;
+        return;
+    }
+
+    Nodo* actual = filasCabecera[fila];
+    while (actual && actual->columna < columna) {
+        actual = actual->siguienteColumna;
+    }
+
+    if (actual && actual->columna == columna) {
+        if (actual->esCabecera) {
+            std::cerr << "Error: No se puede modificar un nodo de cabecera." << std::endl;
+            return;
+        }
+        actual->valor = valor;
+        return;
+    }
+
     Nodo* nuevoNodo = new Nodo(fila, columna, valor);
 
-    // Insertar en la lista de filas
     if (!filasCabecera[fila]) {
         filasCabecera[fila] = nuevoNodo;
     } else {
-        Nodo* actual = filasCabecera[fila];
+        actual = filasCabecera[fila];
         Nodo* anterior = nullptr;
         while (actual && actual->columna < columna) {
             anterior = actual;
             actual = actual->siguienteColumna;
-        }
-        if (actual && actual->columna == columna) {
-            actual->valor = valor;
-            delete nuevoNodo;
-            return;
         }
         nuevoNodo->siguienteColumna = actual;
         if (anterior) {
@@ -46,20 +71,14 @@ void MatrizDispersa::setValor(int fila, int columna, const std::string& valor) {
         }
     }
 
-    // Insertar en la lista de columnas
     if (!columnasCabecera[columna]) {
         columnasCabecera[columna] = nuevoNodo;
     } else {
-        Nodo* actual = columnasCabecera[columna];
+        actual = columnasCabecera[columna];
         Nodo* anterior = nullptr;
         while (actual && actual->fila < fila) {
             anterior = actual;
             actual = actual->siguienteFila;
-        }
-        if (actual && actual->fila == fila) {
-            actual->valor = valor;
-            delete nuevoNodo;
-            return;
         }
         nuevoNodo->siguienteFila = actual;
         if (anterior) {
@@ -69,6 +88,26 @@ void MatrizDispersa::setValor(int fila, int columna, const std::string& valor) {
         }
     }
 }
+
+
+void MatrizDispersa::inicializarCabeceras() {
+    for (int i = 0; i < filas; ++i) {
+        // Inicializar la cabecera de fila
+        if (!filasCabecera[i]) {
+            filasCabecera[i] = new Nodo(i, -1, "Header");
+            filasCabecera[i]->esCabecera = true;
+        }
+    }
+
+    for (int j = 0; j < columnas; ++j) {
+        // Inicializar la cabecera de columna
+        if (!columnasCabecera[j]) {
+            columnasCabecera[j] = new Nodo(-1, j, "Header");
+            columnasCabecera[j]->esCabecera = true;
+        }
+    }
+}
+
 
 std::string MatrizDispersa::getValor(int fila, int columna) const {
     if (fila < 0 || fila >= filas || columna < 0 || columna >= columnas) {
@@ -96,12 +135,11 @@ void MatrizDispersa::eliminarNodos() {
         }
     }
 }
-
 void MatrizDispersa::marcarInterseccion(const std::string& usuario1, const std::string& usuario2) {
     int fila1 = -1, columna1 = -1;
     int fila2 = -1, columna2 = -1;
 
-    // Buscar las posiciones de los usuarios en las cabeceras
+    // Buscar las posiciones de los usuarios en las cabeceras de filas
     for (int i = 0; i < filas; ++i) {
         if (filasCabecera[i] && filasCabecera[i]->valor == usuario1) {
             fila1 = i;
@@ -111,6 +149,7 @@ void MatrizDispersa::marcarInterseccion(const std::string& usuario1, const std::
         }
     }
 
+    // Buscar las posiciones de los usuarios en las cabeceras de columnas
     for (int j = 0; j < columnas; ++j) {
         if (columnasCabecera[j] && columnasCabecera[j]->valor == usuario1) {
             columna1 = j;
@@ -120,14 +159,23 @@ void MatrizDispersa::marcarInterseccion(const std::string& usuario1, const std::
         }
     }
 
-    // Marcar la intersección con un "1"
-    if (fila1 != -1 && columna2 != -1) {
+    // Verificar que los usuarios hayan sido encontrados en la matriz
+    if (fila1 == -1 || columna1 == -1 || fila2 == -1 || columna2 == -1) {
+        std::cerr << "Uno de los usuarios no fue encontrado en la matriz." << std::endl;
+        return;
+    }
+
+    // Crear la relación de usuario1 con usuario2 (en (fila1, columna2))
+    if (!filasCabecera[fila1]->esCabecera && !columnasCabecera[columna2]->esCabecera) {
         setValor(fila1, columna2, "1");
     }
-    if (fila2 != -1 && columna1 != -1) {
+
+    // Crear la relación de usuario2 con usuario1 (en (fila2, columna1))
+    if (!filasCabecera[fila2]->esCabecera && !columnasCabecera[columna1]->esCabecera) {
         setValor(fila2, columna1, "1");
     }
 }
+
 
 void MatrizDispersa::generarReporte(const std::string& nombreArchivo) const {
     // Crear la carpeta de salida si no existe
@@ -196,3 +244,51 @@ void MatrizDispersa::generarReporte(const std::string& nombreArchivo) const {
     }
 }
 
+void MatrizDispersa::mostrarAmigos(const std::string& usuario) const {
+    int fila = -1;
+    int columna = -1;
+
+    // Buscar la posición del usuario en las cabeceras
+    for (int i = 0; i < filas; ++i) {
+        if (filasCabecera[i] && filasCabecera[i]->valor == usuario) {
+            fila = i;
+            break;
+        }
+    }
+
+    for (int j = 0; j < columnas; ++j) {
+        if (columnasCabecera[j] && columnasCabecera[j]->valor == usuario) {
+            columna = j;
+            break;
+        }
+    }
+
+    if (fila == -1 && columna == -1) {
+        qDebug() << "Usuario no encontrado en la matriz.";
+        return;
+    }
+
+    qDebug() << "Amigos de" << QString::fromStdString(usuario) << ":";
+
+    // Mostrar amigos en la fila
+    if (fila != -1) {
+        Nodo* actual = filasCabecera[fila];
+        while (actual) {
+            if (actual->valor == "1") {
+                qDebug() << QString::fromStdString(columnasCabecera[actual->columna]->valor);
+            }
+            actual = actual->siguienteColumna;
+        }
+    }
+
+    // Mostrar amigos en la columna
+    if (columna != -1) {
+        Nodo* actual = columnasCabecera[columna];
+        while (actual) {
+            if (actual->valor == "1") {
+                qDebug() << QString::fromStdString(filasCabecera[actual->fila]->valor);
+            }
+            actual = actual->siguienteFila;
+        }
+    }
+}

@@ -2,6 +2,8 @@
 #define USUARIO_H
 
 #include <string>
+#include "listaenviados.h"
+#include "pila.h"
 
 class Usuario {
 private:
@@ -10,6 +12,8 @@ private:
     std::string fechaNacimiento;
     std::string correoElectronico;
     std::string contrasena;
+    ListaEnviados listaEnviados; // Agregar la lista enlazada
+    Pila pila; // Agregar la pila
 
 public:
     // Constructor
@@ -29,9 +33,9 @@ public:
     void setCorreoElectronico(const std::string& correoElectronico);
     void setContrasena(const std::string& contrasena);
 
-    // Métodos para agregar las estructuras de datos más adelante
-    // void agregarListaEnlazadaSimple();
-    // void agregarPila();
+    // Métodos para acceder a las estructuras de datos
+    ListaEnviados& getListaEnviados();
+    Pila& getPila();
 };
 
 #endif // USUARIO_H

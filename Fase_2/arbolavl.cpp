@@ -1,5 +1,6 @@
 #include "arbolavl.h"
 #include <algorithm>
+#include <QTableWidget> // Incluir QTableWidget
 
 // Obtener la altura de un nodo
 int ArbolAVL::obtenerAltura(NodoAVL* nodo) {
@@ -207,7 +208,6 @@ void ArbolAVL::preOrden(NodoAVL* nodo) {
         qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
         qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
         qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
-        qDebug() << "Contraseña:" << QString::fromStdString(usuario->getContrasena());
         qDebug() << "-----------------------------";
         preOrden(nodo->izquierda);
         preOrden(nodo->derecha);
@@ -223,11 +223,11 @@ void ArbolAVL::enOrden(NodoAVL* nodo) {
         qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
         qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
         qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
-        qDebug() << "Contraseña:" << QString::fromStdString(usuario->getContrasena());
         qDebug() << "-----------------------------";
         enOrden(nodo->derecha); // Visitar subárbol derecho
     }
 }
+
 std::string ArbolAVL::mostrarUsuario(const std::string& correoElectronico) {
     NodoAVL* nodo = buscarNodo(raiz, correoElectronico);
     if (nodo != nullptr) {
@@ -235,13 +235,32 @@ std::string ArbolAVL::mostrarUsuario(const std::string& correoElectronico) {
         std::string info = "Nombre: " + usuario->getNombres() + "\n" +
                            "Apellido: " + usuario->getApellidos() + "\n" +
                            "Fecha de Nacimiento: " + usuario->getFechaNacimiento() + "\n" +
-                           "Correo Electrónico: " + usuario->getCorreoElectronico() + "\n" +
-                           "Contraseña: " + usuario->getContrasena();
+                           "Correo Electrónico: " + usuario->getCorreoElectronico();
         return info; // Usuario encontrado
     } else {
         return ""; // Usuario no encontrado
     }
 }
+
+void ArbolAVL::enTable(NodoAVL* nodo, QTableWidget* table) {
+    if (nodo != nullptr) {
+        enTable(nodo->izquierda, table); // Visitar subárbol izquierdo
+        Usuario* usuario = nodo->usuario;
+
+        // Crear una nueva fila en la tabla
+        int row = table->rowCount();
+        table->insertRow(row);
+
+        // Agregar los datos del usuario a la fila
+        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(usuario->getNombres())));
+        table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(usuario->getApellidos())));
+        table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(usuario->getFechaNacimiento())));
+        table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(usuario->getCorreoElectronico())));
+
+        enTable(nodo->derecha, table); // Visitar subárbol derecho
+    }
+}
+
 // Obtener la raíz del árbol
 NodoAVL* ArbolAVL::getRaiz() {
     return raiz;

@@ -1,10 +1,8 @@
 #include "usuario.h"
 
-// Constructor
 Usuario::Usuario(const std::string& nombres, const std::string& apellidos, const std::string& fechaNacimiento, const std::string& correoElectronico, const std::string& contrasena)
     : nombres(nombres), apellidos(apellidos), fechaNacimiento(fechaNacimiento), correoElectronico(correoElectronico), contrasena(contrasena) {}
 
-// Getters
 std::string Usuario::getNombres() const {
     return nombres;
 }
@@ -25,7 +23,6 @@ std::string Usuario::getContrasena() const {
     return contrasena;
 }
 
-// Setters
 void Usuario::setNombres(const std::string& nombres) {
     this->nombres = nombres;
 }
@@ -44,4 +41,12 @@ void Usuario::setCorreoElectronico(const std::string& correoElectronico) {
 
 void Usuario::setContrasena(const std::string& contrasena) {
     this->contrasena = contrasena;
+}
+
+ListaEnviados& Usuario::getListaEnviados() {
+    return listaEnviados;
+}
+
+Pila& Usuario::getPila() {
+    return pila;
 }
