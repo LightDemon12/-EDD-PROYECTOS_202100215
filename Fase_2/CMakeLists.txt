@@ -31,6 +31,24 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         nodosolicitud.h nodosolicitud.cpp
         listaenviados.h listaenviados.cpp
         pila.h pila.cpp
+        amistad.h amistad.cpp
+        amistades.h amistades.cpp
+        relaciones.h relaciones.cpp
+        listarelaciones.h listarelaciones.cpp
+
+        admin.h admin.cpp admin.ui
+
+
+
+
+
+        cargamasivausuarios.h cargamasivausuarios.cpp
+        cargamasivasolicitudes.h cargamasivasolicitudes.cpp
+        cargamasivapublicaciones.h cargamasivapublicaciones.cpp
+        nodob.h nodob.cpp
+        arbolb.h arbolb.cpp
+        nodolista.h nodolista.cpp
+        listadoble.h listadoble.cpp
 
 
 

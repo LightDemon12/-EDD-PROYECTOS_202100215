@@ -5,12 +5,14 @@
 #include <QMessageBox> // Incluir QMessageBox
 #include "matriz.h"
 
-Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& email, MatrizDispersa* matriz) :
-    QDialog(parent), // Cambiar a QDialog
+Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble):
+    QDialog(parent),
     ui(new Ui::Feed),
-    arbol(arbol), // Inicializar el puntero al árbol AVL
-    currentUserEmail(email), // Inicializar el correo electrónico del usuario actual
-    matriz(matriz) // Inicializar el puntero a MatrizDispersa
+    arbol(arbol),
+      currentUserEmail(currentUserEmail),
+    matriz(matriz),
+    listaRelaciones(listaRelaciones), // Inicializar el puntero a la lista de relaciones
+    listaDoble(listaDoble) // Inicializar el puntero a ListaDoble
 
 {
     ui->setupUi(this);
@@ -235,8 +237,7 @@ void Feed::on_ButtonPila_clicked()
     // Mostrar los datos de la pila del usuario actual en la tabla
     usuarioActual->getPila().mostrarEnTabla(ui->tablepila);
 
-    // Mostrar los amigos del usuario actual usando la matriz dispersa
-    matriz->mostrarAmigos(currentUserEmail.toStdString());
+
 }
 
 void Feed::on_ButtonCancelar_clicked()
@@ -401,7 +402,6 @@ void Feed::on_ButtonAceptar_clicked()
 
     Usuario* usuarioActual = nodoActual->usuario;
 
-
     // Obtener el emisor del nodo en la pila
     std::string emisor = usuarioActual->getPila().obtenerEmisorPorIndice(indice);
 
@@ -417,19 +417,34 @@ void Feed::on_ButtonAceptar_clicked()
 
     Usuario* usuarioEmisor = nodoEmisor->usuario;
 
-
     // Eliminar el nodo de la lista de enviados del emisor
     usuarioEmisor->getListaEnviados().eliminar(indice);
 
-    // Marcar la intersección en la matriz dispersa
-    //matriz->marcarInterseccion(currentUserEmail.toStdString(), emisor);
+    // Agregar el usuario actual a la lista de relaciones del emisor
+    Relaciones* relacionEmisor = listaRelaciones->buscar(emisor);
+    if (relacionEmisor == nullptr) {
+        listaRelaciones->agregar(emisor);
+        relacionEmisor = listaRelaciones->buscar(emisor);
+    }
+    relacionEmisor->amistades.agregar(currentUserEmail.toStdString());
 
-    // Generar el reporte de la matriz dispersa
-    //matriz->generarReporte("matriz_usuarios.dot");
+    // Agregar el emisor a la lista de relaciones del usuario actual
+    Relaciones* relacionActual = listaRelaciones->buscar(currentUserEmail.toStdString());
+    if (relacionActual == nullptr) {
+        listaRelaciones->agregar(currentUserEmail.toStdString());
+        relacionActual = listaRelaciones->buscar(currentUserEmail.toStdString());
+    }
+    relacionActual->amistades.agregar(emisor);
 
     // Actualizar las tablas correspondientes
     usuarioActual->getPila().mostrarEnTabla(ui->tablepila);
     usuarioEmisor->getListaEnviados().mostrarEnTabla(ui->tableenviados);
+
+    // Mostrar las listas de relaciones
+    qDebug() << "Lista de relaciones del usuario actual:";
+    relacionActual->amistades.mostrar();
+    //qDebug() << "Lista de relaciones del emisor:";
+    //relacionEmisor->amistades.mostrar();
 
     // Mostrar mensaje de confirmación
     QMessageBox::information(this, "Solicitud Aceptada", "La solicitud ha sido aceptada exitosamente.");

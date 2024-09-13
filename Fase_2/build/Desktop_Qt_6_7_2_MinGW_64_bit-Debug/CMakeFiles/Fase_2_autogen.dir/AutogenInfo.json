@@ -257,9 +257,51 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/admin.h",
+			"MU",
+			"EWIEGA46WW/moc_admin.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistad.h",
+			"MU",
+			"EWIEGA46WW/moc_amistad.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistades.h",
+			"MU",
+			"EWIEGA46WW/moc_amistades.cpp",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h",
 			"MU",
 			"EWIEGA46WW/moc_arbolavl.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolb.h",
+			"MU",
+			"EWIEGA46WW/moc_arbolb.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivapublicaciones.h",
+			"MU",
+			"EWIEGA46WW/moc_cargamasivapublicaciones.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivasolicitudes.h",
+			"MU",
+			"EWIEGA46WW/moc_cargamasivasolicitudes.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivausuarios.h",
+			"MU",
+			"EWIEGA46WW/moc_cargamasivausuarios.cpp",
 			null
 		],
 		[
@@ -269,9 +311,21 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listadoble.h",
+			"MU",
+			"EWIEGA46WW/moc_listadoble.cpp",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listaenviados.h",
 			"MU",
 			"EWIEGA46WW/moc_listaenviados.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listarelaciones.h",
+			"MU",
+			"EWIEGA46WW/moc_listarelaciones.cpp",
 			null
 		],
 		[
@@ -284,6 +338,18 @@
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h",
 			"MU",
 			"EWIEGA46WW/moc_matriz.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodob.h",
+			"MU",
+			"EWIEGA46WW/moc_nodob.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.h",
+			"MU",
+			"EWIEGA46WW/moc_nodolista.cpp",
 			null
 		],
 		[
@@ -302,6 +368,12 @@
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.h",
 			"MU",
 			"EWIEGA46WW/moc_registro.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/relaciones.h",
+			"MU",
+			"EWIEGA46WW/moc_relaciones.cpp",
 			null
 		],
 		[
@@ -383,7 +455,42 @@
 	"SOURCES" : 
 	[
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/admin.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistad.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistades.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolb.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivapublicaciones.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivasolicitudes.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivausuarios.cpp",
 			"MU",
 			null
 		],
@@ -393,7 +500,17 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listadoble.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listaenviados.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/listarelaciones.cpp",
 			"MU",
 			null
 		],
@@ -413,6 +530,16 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodob.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodosolicitud.cpp",
 			"MU",
 			null
@@ -424,6 +551,11 @@
 		],
 		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/relaciones.cpp",
 			"MU",
 			null
 		],

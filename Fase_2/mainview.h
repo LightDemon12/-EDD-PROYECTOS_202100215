@@ -7,6 +7,9 @@
 #include "matriz.h"
 #include <QMessageBox>
 #include "feed.h" // Incluir la cabecera de la nueva ventana Feed
+#include "admin.h" // Incluir la cabecera de Admin
+#include "listarelaciones.h"
+#include "listadoble.h"
 
 // Forward declaration
 class Registro;
@@ -32,10 +35,13 @@ private slots:
 private:
     Ui::MainView *ui;
     Registro *registro;
+    Admin *adminWindow; // Puntero a la ventana Admin
     Feed *feed; // Declarar un puntero a la ventana Feed
     ArbolAVL arbol;
     MatrizDispersa matriz;
+    ListaRelaciones listaRelaciones; // Declarar listaRelaciones
     QString currentUserEmail; // Variable para almacenar el correo electrónico del usuario actual
+    ListaDoble listaDoble; // Declarar la lista doblemente enlazada
 
 };
 

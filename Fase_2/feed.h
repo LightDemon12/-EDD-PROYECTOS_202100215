@@ -6,6 +6,9 @@
 #include "pila.h"
 #include "listaenviados.h"
 #include "matriz.h"
+#include "listarelaciones.h" // Incluir la cabecera de ListaRelaciones
+#include "listadoble.h"
+
 
 namespace Ui {
 class Feed;
@@ -16,7 +19,7 @@ class Feed : public QDialog
     Q_OBJECT
 
 public:
-    explicit Feed(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, const QString& email = "", MatrizDispersa* matriz = nullptr);
+    explicit Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble);
     ~Feed();
     void setCurrentUserEmail(const QString& email); // Declarar el método para actualizar el correo electrónico del usuario actual
 
@@ -52,6 +55,9 @@ private:
     QString currentUserEmail; // Variable para almacenar el correo electrónico del usuario actual
     Pila pila; // Agregar la pila
     ListaEnviados listaEnviados; // Agregar la lista enlazada
+    ListaRelaciones* listaRelaciones; // Cambiar a puntero
+    ListaDoble* listaDoble; // Puntero a ListaDoble
+
 
 };
 

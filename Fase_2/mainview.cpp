@@ -2,6 +2,7 @@
 #include "ui_mainview.h"
 #include "registro.h"
 #include "feed.h" // Incluir la cabecera de la nueva ventana Feed
+#include "admin.h" // Incluir la cabecera de la ventana Admin
 #include <QDebug>
 #include "arbolavl.h"
 
@@ -9,8 +10,11 @@ MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainView)
     , registro(nullptr)
-    , feed(nullptr) // Inicializar el puntero a la ventana Feed
-    , matriz(100, 100) // Inicializar la matriz con 100 filas y 100 columnas
+    , feed(nullptr)
+    , matriz(100, 100)
+    , listaRelaciones()
+    , listaDoble() // Inicializar listaDoble
+    , adminWindow(nullptr)
 {
     ui->setupUi(this);
     qDebug() << "MainView window created";
@@ -42,48 +46,55 @@ void MainView::on_Registro_clicked()
     this->hide();
     qDebug() << "MainView window hidden";
 }
+
 void MainView::on_Inicio_clicked()
 {
     qDebug() << "Inicio button clicked";
 
-    // Obtener los datos de los QLineEdit
     QString correo = ui->LineCorreo->text();
     QString contrasena = ui->LineContra->text();
 
-    // Verificar si algún campo está vacío
     if (correo.isEmpty() || contrasena.isEmpty()) {
         QMessageBox::warning(this, "Error", "Todos los campos deben estar llenos.");
         return;
     }
 
-    // Verificar si el correo y la contraseña coinciden con "admin"
     if (correo == "admin" && contrasena == "admin") {
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión de administrador exitoso.");
+
+        if (!adminWindow) {
+            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble);
+            qDebug() << "Admin window instantiated";
+        }
+
+        adminWindow->show();
+        adminWindow->raise();
+        adminWindow->activateWindow();
+        qDebug() << "Admin window shown";
+
+        this->hide();
+        qDebug() << "MainView window hidden";
+
         return;
     }
 
-    // Verificar si el correo y la contraseña coinciden en el árbol AVL
     if (arbol.buscarUsuario(correo.toStdString(), contrasena.toStdString())) {
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión exitoso.");
 
-        // Almacenar el correo electrónico del usuario actual
         currentUserEmail = correo;
 
-        // Crear la ventana Feed si no existe
         if (!feed) {
-            feed = new Feed(this, &arbol, currentUserEmail, &matriz); // Pasar el puntero de MainView, el árbol AVL, el correo electrónico y la matriz
+            feed = new Feed(this, &arbol, currentUserEmail, &matriz, &listaRelaciones, &listaDoble);
             qDebug() << "Feed window instantiated";
         } else {
-            feed->setCurrentUserEmail(currentUserEmail); // Actualizar el correo electrónico del usuario actual en la ventana Feed
+            feed->setCurrentUserEmail(currentUserEmail);
         }
 
-        // Mostrar la ventana Feed
         feed->show();
-        feed->raise(); // Asegurarse de que la ventana esté en el frente
-        feed->activateWindow(); // Asegurarse de que la ventana esté activa
+        feed->raise();
+        feed->activateWindow();
         qDebug() << "Feed window shown";
 
-        // Ocultar la ventana principal
         this->hide();
         qDebug() << "MainView window hidden";
     } else {
