@@ -287,6 +287,12 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolbinariocompleto.h",
+			"MU",
+			"EWIEGA46WW/moc_arbolbinariocompleto.cpp",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivapublicaciones.h",
 			"MU",
 			"EWIEGA46WW/moc_cargamasivapublicaciones.cpp",
@@ -347,6 +353,12 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodobinariocompleto.h",
+			"MU",
+			"EWIEGA46WW/moc_nodobinariocompleto.cpp",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.h",
 			"MU",
 			"EWIEGA46WW/moc_nodolista.cpp",
@@ -380,6 +392,12 @@
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h",
 			"MU",
 			"EWIEGA46WW/moc_usuario.cpp",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.h",
+			"MU",
+			"EWIEGA46WW/moc_ventana.cpp",
 			null
 		]
 	],
@@ -480,6 +498,11 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolbinariocompleto.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivapublicaciones.cpp",
 			"MU",
 			null
@@ -535,6 +558,11 @@
 			null
 		],
 		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodobinariocompleto.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.cpp",
 			"MU",
 			null
@@ -561,6 +589,11 @@
 		],
 		[
 			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.cpp",
 			"MU",
 			null
 		]

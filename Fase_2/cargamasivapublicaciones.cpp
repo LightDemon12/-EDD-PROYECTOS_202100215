@@ -68,6 +68,10 @@ void CargaMasivaPublicaciones::cargarDesdeJson(const QString& rutaArchivo) {
             // Insertar el comentario en el árbol B de comentarios
             nodoPublicacion->comentarios.insertar(correoComentario.toStdString(), comentario.toStdString(), fechaComentario.toStdString(), horaComentario.toStdString());
         }
+
+        // Imprimir la estructura del árbol B de comentarios
+        qDebug() << "Estructura del árbol B de comentarios para la publicación de" << correo << ":";
+        nodoPublicacion->comentarios.imprimirArbol();
     }
 
     qDebug() << "Carga de publicaciones completada.";

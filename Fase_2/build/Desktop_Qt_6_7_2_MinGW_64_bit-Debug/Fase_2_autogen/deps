@@ -10,6 +10,8 @@ Fase_2_autogen/timestamp: \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolb.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolb.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolbinariocompleto.cpp \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolbinariocompleto.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
@@ -36,6 +38,8 @@ Fase_2_autogen/timestamp: \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/matriz.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodob.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodob.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodobinariocompleto.cpp \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodobinariocompleto.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodolista.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/nodosolicitud.cpp \
@@ -48,6 +52,8 @@ Fase_2_autogen/timestamp: \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/relaciones.h \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.cpp \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.cpp \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.h \
 	E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
 	E:/QT/6.7.2/mingw_64/include/QtCore/QString \
 	E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
@@ -207,6 +213,7 @@ Fase_2_autogen/timestamp: \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QLineEdit \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
+	E:/QT/6.7.2/mingw_64/include/QtWidgets/QTableWidget \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 	E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemview.h \
@@ -642,4 +649,5 @@ Fase_2_autogen/timestamp: \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/feed.ui \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/mainview.ui \
 	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/registro.ui \
+	C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.ui \
 	E:/QT/Tools/CMake_64/bin/cmake.exe

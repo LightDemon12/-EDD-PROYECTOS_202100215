@@ -4,15 +4,19 @@
 #include <QDebug>
 #include <QMessageBox> // Incluir QMessageBox
 #include "matriz.h"
+#include "ventana.h" // Incluir la cabecera de la nueva ventana
 
-Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble):
+Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto):
     QDialog(parent),
     ui(new Ui::Feed),
     arbol(arbol),
-      currentUserEmail(currentUserEmail),
+    currentUserEmail(currentUserEmail),
     matriz(matriz),
     listaRelaciones(listaRelaciones), // Inicializar el puntero a la lista de relaciones
-    listaDoble(listaDoble) // Inicializar el puntero a ListaDoble
+    listaDoble(listaDoble), // Inicializar el puntero a ListaDoble
+    ventana(nullptr), // Inicializar la nueva ventana
+    arbolBinarioCompleto(arbolBinarioCompleto) // Inicializa el árbol binario completo
+
 
 {
     ui->setupUi(this);
@@ -448,4 +452,15 @@ void Feed::on_ButtonAceptar_clicked()
 
     // Mostrar mensaje de confirmación
     QMessageBox::information(this, "Solicitud Aceptada", "La solicitud ha sido aceptada exitosamente.");
+}
+
+void Feed::on_ButtonPublicaciones_clicked()
+{
+    if (!ventana) {
+        ventana = new class ventana(this, arbol, currentUserEmail, matriz, listaRelaciones, listaDoble, arbolBinarioCompleto); // Pasa el puntero de arbolBinarioCompleto
+    }
+
+    ventana->show();
+    ventana->raise();
+    ventana->activateWindow();
 }

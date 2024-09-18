@@ -10,6 +10,7 @@
 #include "admin.h" // Incluir la cabecera de Admin
 #include "listarelaciones.h"
 #include "listadoble.h"
+#include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
 
 // Forward declaration
 class Registro;
@@ -42,6 +43,7 @@ private:
     ListaRelaciones listaRelaciones; // Declarar listaRelaciones
     QString currentUserEmail; // Variable para almacenar el correo electrónico del usuario actual
     ListaDoble listaDoble; // Declarar la lista doblemente enlazada
+    ArbolBinarioCompleto arbolBinarioCompleto; // Inicializa el árbol binario completo
 
 };
 

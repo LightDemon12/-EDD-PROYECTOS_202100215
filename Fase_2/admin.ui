@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="ButtonCU">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>130</y>
+     <x>20</x>
+     <y>10</y>
      <width>91</width>
      <height>24</height>
     </rect>
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="ButtonCS">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>130</y>
+     <x>120</x>
+     <y>10</y>
      <width>101</width>
      <height>24</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QPushButton" name="ButtonCPlu">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>130</y>
+     <x>230</x>
+     <y>10</y>
      <width>131</width>
      <height>24</height>
     </rect>
@@ -52,17 +52,17 @@
     <string>Carga publicaciones </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="ButtonCerrar">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>20</y>
+     <x>560</x>
+     <y>10</y>
      <width>80</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Cerrar Sesion</string>
    </property>
   </widget>
  </widget>

@@ -49,6 +49,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         arbolb.h arbolb.cpp
         nodolista.h nodolista.cpp
         listadoble.h listadoble.cpp
+        ventana.h ventana.cpp ventana.ui
+        nodobinariocompleto.h nodobinariocompleto.cpp
+        arbolbinariocompleto.h arbolbinariocompleto.cpp
+
+
+
 
 
 

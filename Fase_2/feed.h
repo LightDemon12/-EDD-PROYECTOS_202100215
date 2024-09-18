@@ -8,6 +8,8 @@
 #include "matriz.h"
 #include "listarelaciones.h" // Incluir la cabecera de ListaRelaciones
 #include "listadoble.h"
+#include "ventana.h" // Incluir la cabecera de la nueva ventana
+#include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
 
 
 namespace Ui {
@@ -19,7 +21,7 @@ class Feed : public QDialog
     Q_OBJECT
 
 public:
-    explicit Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble);
+    explicit Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble,ArbolBinarioCompleto* arbolBinarioCompleto = nullptr);
     ~Feed();
     void setCurrentUserEmail(const QString& email); // Declarar el método para actualizar el correo electrónico del usuario actual
 
@@ -48,6 +50,8 @@ private slots:
 
     void on_ButtonAceptar_clicked();
 
+    void on_ButtonPublicaciones_clicked();
+
 private:
     Ui::Feed *ui;
     ArbolAVL* arbol; // Puntero al árbol AVL
@@ -57,6 +61,8 @@ private:
     ListaEnviados listaEnviados; // Agregar la lista enlazada
     ListaRelaciones* listaRelaciones; // Cambiar a puntero
     ListaDoble* listaDoble; // Puntero a ListaDoble
+    ventana *ventana; // Declarar un puntero a la nueva ventana
+    ArbolBinarioCompleto* arbolBinarioCompleto; // Referencia al árbol binario completo
 
 
 };

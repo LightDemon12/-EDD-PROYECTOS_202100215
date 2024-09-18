@@ -76,3 +76,23 @@ void ListaDoble::liberarMemoria() {
     }
     cola = nullptr;
 }
+
+void ListaDoble::pasarAlArbolBinarioPorFecha(ArbolBinarioCompleto& arbol, const std::string& fecha) {
+    NodoLista* actual = cabeza;
+    while (actual != nullptr) {
+        if (actual->fecha == fecha) {
+            arbol.insertar(actual->correo, actual->contenido, actual->fecha, actual->hora, actual->pathimagen);
+        }
+        actual = actual->siguiente;
+    }
+}
+NodoLista* ListaDoble::buscar(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora) {
+    NodoLista* actual = cabeza;
+    while (actual != nullptr) {
+        if (actual->correo == correo && actual->contenido == contenido && actual->fecha == fecha && actual->hora == hora) {
+            return actual;
+        }
+        actual = actual->siguiente;
+    }
+    return nullptr;
+}

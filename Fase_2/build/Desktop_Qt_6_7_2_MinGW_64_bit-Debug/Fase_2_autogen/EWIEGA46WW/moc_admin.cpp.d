@@ -1,10 +1,14 @@
 C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/EWIEGA46WW/moc_admin.cpp: C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/admin.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Fase_2_autogen/moc_predefs.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ArbolB.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ArbolBinarioCompleto.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/NodoBinarioCompleto.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/NodoSolicitud.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistad.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/amistades.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolavl.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolb.h \
+  C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/arbolbinariocompleto.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivapublicaciones.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivasolicitudes.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/cargamasivausuarios.h \
@@ -166,6 +170,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QDialog \
+  E:/QT/6.7.2/mingw_64/include/QtWidgets/QTableWidget \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \

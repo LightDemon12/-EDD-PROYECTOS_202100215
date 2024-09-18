@@ -9,6 +9,7 @@
 #include "listarelaciones.h"
 #include "listadoble.h"
 #include "cargamasivapublicaciones.h"
+#include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
 
 
 namespace Ui {
@@ -20,7 +21,7 @@ class Admin : public QDialog
     Q_OBJECT
 
 public:
-    explicit Admin(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MatrizDispersa* matriz = nullptr, ListaRelaciones* listaRelaciones = nullptr, ListaDoble* listaDoble = nullptr);
+    explicit Admin(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MatrizDispersa* matriz = nullptr, ListaRelaciones* listaRelaciones = nullptr, ListaDoble* listaDoble = nullptr, ArbolBinarioCompleto* arbolBinarioCompleto = nullptr);
     ~Admin();
 
 private slots:
@@ -31,6 +32,8 @@ private slots:
 
     void on_ButtonCPlu_clicked();
 
+    void on_ButtonCerrar_clicked();
+
 private:
     Ui::Admin *ui;
     ArbolAVL* arbol;
@@ -40,6 +43,7 @@ private:
     ListaRelaciones* listaRelaciones; // Agregar puntero a ListaRelaciones
     ListaDoble* listaDoble; // Agregar puntero a ListaDoble
     CargaMasivaPublicaciones* cargaMasivaPublicaciones; // Agregar puntero a CargaMasivaPublicaciones
+    ArbolBinarioCompleto* arbolBinarioCompleto; // Agregar puntero a ArbolBinarioCompleto
 
 
 };

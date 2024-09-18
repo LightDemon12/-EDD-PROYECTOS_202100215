@@ -5,13 +5,15 @@
 #include "mainview.h" // Incluir la declaración completa de MainView
 
 
-Admin::Admin(QWidget *parent, ArbolAVL* arbol, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble) :
+Admin::Admin(QWidget *parent, ArbolAVL* arbol, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto) :
     QDialog(parent),
     ui(new Ui::Admin),
     arbol(arbol),
     matriz(matriz),
     listaRelaciones(listaRelaciones),
-    listaDoble(listaDoble)
+    listaDoble(listaDoble),
+    arbolBinarioCompleto(arbolBinarioCompleto) // Inicializa el árbol binario completo
+
 {
     ui->setupUi(this);
     cargaMasivaUsuarios = new CargaMasivaUsuarios(arbol);
@@ -75,3 +77,11 @@ void Admin::on_ButtonCPlu_clicked()
 
     listaDoble->mostrar();
 }
+
+void Admin::on_ButtonCerrar_clicked()
+{
+    // Cerrar la ventana Feed y abrir la ventana MainView
+    this->close();
+    qobject_cast<MainView*>(parent())->show();
+}
+

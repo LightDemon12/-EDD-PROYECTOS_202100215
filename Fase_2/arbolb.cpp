@@ -53,3 +53,52 @@ void ArbolB::mostrar(NodoB* nodo, int nivel) {
         }
     }
 }
+
+void ArbolB::imprimirArbol() {
+    if (raiz != nullptr) {
+        imprimirNodo(raiz, 0);
+    }
+}
+
+void ArbolB::imprimirNodo(NodoB* nodo, int nivel) {
+    if (nodo == nullptr) return;
+
+    std::cout << "Nivel " << nivel << ": ";
+    for (int i = 0; i < nodo->numClaves; ++i) {
+        std::cout << "(" << nodo->correos[i] << ", " << nodo->contenidos[i] << ", " << nodo->fechas[i] << ", " << nodo->horas[i] << ") ";
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i <= nodo->numClaves; ++i) {
+        imprimirNodo(nodo->hijos[i], nivel + 1);
+    }
+}
+
+void ArbolB::imprimirComentarios(NodoB* nodo) {
+    if (nodo == nullptr) {
+        std::cout << "Nodo de publicación es nullptr." << std::endl;
+        return;
+    }
+
+    std::cout << "Comentarios:" << std::endl;
+    imprimirNodo(nodo, 0);
+}
+
+void ArbolB::mostrarEnTabla(QTableWidget* tableWidget) {
+    tableWidget->setRowCount(0); // Limpia la tabla
+    int row = 0;
+    mostrarEnTabla(raiz, tableWidget, row);
+}
+
+void ArbolB::mostrarEnTabla(NodoB* nodo, QTableWidget* tableWidget, int& row) {
+    if (nodo != nullptr) {
+        for (int i = 0; i < nodo->numClaves; i++) {
+            tableWidget->insertRow(row);
+            tableWidget->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(nodo->contenidos[i])));
+            row++;
+        }
+        for (int i = 0; i <= nodo->numClaves; i++) {
+            mostrarEnTabla(nodo->hijos[i], tableWidget, row);
+        }
+    }
+}

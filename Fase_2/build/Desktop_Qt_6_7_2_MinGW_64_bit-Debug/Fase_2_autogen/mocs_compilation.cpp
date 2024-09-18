@@ -3,3 +3,4 @@
 #include "EWIEGA46WW/moc_feed.cpp"
 #include "EWIEGA46WW/moc_mainview.cpp"
 #include "EWIEGA46WW/moc_registro.cpp"
+#include "EWIEGA46WW/moc_ventana.cpp"

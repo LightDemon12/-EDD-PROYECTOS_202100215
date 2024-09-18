@@ -5,6 +5,7 @@
 #include "admin.h" // Incluir la cabecera de la ventana Admin
 #include <QDebug>
 #include "arbolavl.h"
+#include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
 
 MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
@@ -14,10 +15,13 @@ MainView::MainView(QWidget *parent)
     , matriz(100, 100)
     , listaRelaciones()
     , listaDoble() // Inicializar listaDoble
-    , adminWindow(nullptr)
+    , adminWindow(nullptr),
+    arbolBinarioCompleto() // Inicializa el árbol binario completo
+
 {
     ui->setupUi(this);
     qDebug() << "MainView window created";
+
 }
 
 MainView::~MainView()
@@ -63,7 +67,7 @@ void MainView::on_Inicio_clicked()
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión de administrador exitoso.");
 
         if (!adminWindow) {
-            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble);
+            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto);
             qDebug() << "Admin window instantiated";
         }
 
@@ -84,7 +88,7 @@ void MainView::on_Inicio_clicked()
         currentUserEmail = correo;
 
         if (!feed) {
-            feed = new Feed(this, &arbol, currentUserEmail, &matriz, &listaRelaciones, &listaDoble);
+            feed = new Feed(this, &arbol, currentUserEmail, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto); // Pasar el puntero del árbol binario completo
             qDebug() << "Feed window instantiated";
         } else {
             feed->setCurrentUserEmail(currentUserEmail);
