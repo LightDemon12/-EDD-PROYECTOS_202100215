@@ -1,6 +1,10 @@
 #include "ArbolBinarioCompleto.h"
 #include <QTableWidget>
 #include <QTableWidgetItem>
+#include <fstream>
+#include <stdexcept>
+#include <unordered_set>
+#include <sstream>
 
 ArbolBinarioCompleto::ArbolBinarioCompleto() : raiz(nullptr) {}
 
@@ -88,4 +92,111 @@ NodoBinarioCompleto* ArbolBinarioCompleto::buscarPorIndice(NodoBinarioCompleto* 
     currentIndex++;
 
     return buscarPorIndice(nodo->derecho, currentIndex, targetIndex);
+}
+
+void ArbolBinarioCompleto::mostrarInordenLimitado(QTableWidget* tableWidget, int limite) {
+    int contador = 0;
+    tableWidget->setRowCount(0); // Limpiar la tabla
+    mostrarInordenLimitado(raiz, tableWidget, contador, limite);
+}
+
+void ArbolBinarioCompleto::mostrarInordenLimitado(NodoBinarioCompleto* nodo, QTableWidget* tableWidget, int& contador, int limite) {
+    if (nodo != nullptr && contador < limite) {
+        mostrarInordenLimitado(nodo->izquierdo, tableWidget, contador, limite);
+        if (contador < limite) {
+            int row = tableWidget->rowCount();
+            tableWidget->insertRow(row);
+            tableWidget->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(nodo->correo)));
+            tableWidget->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(nodo->contenido)));
+            tableWidget->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(nodo->fecha)));
+            tableWidget->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(nodo->hora)));
+            tableWidget->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(nodo->pathimagen)));
+            contador++;
+        }
+        mostrarInordenLimitado(nodo->derecho, tableWidget, contador, limite);
+    }
+}
+
+void ArbolBinarioCompleto::mostrarPreordenLimitado(QTableWidget* tableWidget, int limite) {
+    int contador = 0;
+    tableWidget->setRowCount(0); // Limpiar la tabla
+    mostrarPreordenLimitado(raiz, tableWidget, contador, limite);
+}
+
+void ArbolBinarioCompleto::mostrarPreordenLimitado(NodoBinarioCompleto* nodo, QTableWidget* tableWidget, int& contador, int limite) {
+    if (nodo != nullptr && contador < limite) {
+        if (contador < limite) {
+            int row = tableWidget->rowCount();
+            tableWidget->insertRow(row);
+            tableWidget->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(nodo->correo)));
+            tableWidget->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(nodo->contenido)));
+            tableWidget->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(nodo->fecha)));
+            tableWidget->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(nodo->hora)));
+            tableWidget->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(nodo->pathimagen)));
+            contador++;
+        }
+        mostrarPreordenLimitado(nodo->izquierdo, tableWidget, contador, limite);
+        mostrarPreordenLimitado(nodo->derecho, tableWidget, contador, limite);
+    }
+}
+
+void ArbolBinarioCompleto::mostrarPostordenLimitado(QTableWidget* tableWidget, int limite) {
+    int contador = 0;
+    tableWidget->setRowCount(0); // Limpiar la tabla
+    mostrarPostordenLimitado(raiz, tableWidget, contador, limite);
+}
+
+void ArbolBinarioCompleto::mostrarPostordenLimitado(NodoBinarioCompleto* nodo, QTableWidget* tableWidget, int& contador, int limite) {
+    if (nodo != nullptr && contador < limite) {
+        mostrarPostordenLimitado(nodo->izquierdo, tableWidget, contador, limite);
+        mostrarPostordenLimitado(nodo->derecho, tableWidget, contador, limite);
+        if (contador < limite) {
+            int row = tableWidget->rowCount();
+            tableWidget->insertRow(row);
+            tableWidget->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(nodo->correo)));
+            tableWidget->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(nodo->contenido)));
+            tableWidget->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(nodo->fecha)));
+            tableWidget->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(nodo->hora)));
+            tableWidget->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(nodo->pathimagen)));
+            contador++;
+        }
+    }
+}
+
+void ArbolBinarioCompleto::graficarArbol(const std::string& nombreArchivo) {
+    std::ofstream archivo(nombreArchivo);
+    if (!archivo.is_open()) {
+        throw std::runtime_error("No se pudo abrir el archivo para escribir el gráfico.");
+    }
+
+    archivo << "digraph G {\n";
+    archivo << "node [shape=record];\n";
+    archivo << "root [label=\"Raíz\", shape=none];\n"; // Nodo raíz
+    if (raiz != nullptr) {
+        archivo << "root -> \"" << raiz << "\";\n";
+        graficarNodo(raiz, archivo);
+    }
+    archivo << "}\n";
+
+    archivo.close();
+}
+
+void ArbolBinarioCompleto::graficarNodo(NodoBinarioCompleto* nodo, std::ofstream& archivo) {
+    if (nodo != nullptr) {
+        // Nodo de la fecha general
+        archivo << "\"" << nodo << "_fecha\" [label=\"Fecha: " << nodo->fecha << "\", shape=ellipse];\n";
+        archivo << "\"" << nodo << "_fecha\" -> \"" << nodo << "\";\n";
+
+        // Nodo con la información del nodo
+        archivo << "\"" << nodo << "\" [label=\"<f0> " << nodo->correo << "\\n" << nodo->contenido << "\\n" << nodo->hora << "\"];\n";
+
+        if (nodo->izquierdo != nullptr) {
+            archivo << "\"" << nodo << "\":f0 -> \"" << nodo->izquierdo << "\":f0;\n";
+            graficarNodo(nodo->izquierdo, archivo);
+        }
+        if (nodo->derecho != nullptr) {
+            archivo << "\"" << nodo << "\":f0 -> \"" << nodo->derecho << "\":f0;\n";
+            graficarNodo(nodo->derecho, archivo);
+        }
+    }
 }

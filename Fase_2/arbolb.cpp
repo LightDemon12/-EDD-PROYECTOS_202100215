@@ -102,3 +102,22 @@ void ArbolB::mostrarEnTabla(NodoB* nodo, QTableWidget* tableWidget, int& row) {
         }
     }
 }
+
+int ArbolB::contarComentarios() const {
+    return contarComentariosRecursivo(raiz);
+}
+
+int ArbolB::contarComentariosRecursivo(NodoB* nodo) const {
+    if (nodo == nullptr) {
+        return 0;
+    }
+
+    int conteo = nodo->numClaves; // Contar las claves en el nodo actual
+
+    // Contar los comentarios en los hijos del nodo
+    for (int i = 0; i <= nodo->numClaves; ++i) {
+        conteo += contarComentariosRecursivo(nodo->hijos[i]);
+    }
+
+    return conteo;
+}

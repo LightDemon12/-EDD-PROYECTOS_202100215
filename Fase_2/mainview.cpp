@@ -63,7 +63,7 @@ void MainView::on_Inicio_clicked()
         return;
     }
 
-    if (correo == "admin" && contrasena == "admin") {
+    if (correo == "admin@gmail.com" && contrasena == "EDD2S2024") {
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión de administrador exitoso.");
 
         if (!adminWindow) {

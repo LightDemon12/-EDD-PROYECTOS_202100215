@@ -33,6 +33,18 @@ private slots:
 
     void on_ButtonComen_clicked();
 
+    void on_ButtonOrden_clicked();
+
+    void on_ButtonPreorden_clicked();
+
+    void on_ButtonPostorden_clicked();
+
+    void on_ButtonTop_clicked();
+
+    void on_ButtonGraficar_clicked();
+
+    void on_ButtonMostrarTopPublicaciones_clicked();
+
 private:
     Ui::ventana *ui;
     ArbolAVL* arbol;

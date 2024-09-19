@@ -4,6 +4,7 @@
 #include <QDateTime>
 #include <QFileDialog>
 #include <QPixmap>
+#include <cstdlib> // Para std::system
 
 ventana::ventana(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto) :
     QDialog(parent),
@@ -37,7 +38,9 @@ ventana::~ventana()
 
 void ventana::on_ButtonRegresar_clicked()
 {
-        this->close();
+    // Llamar al método eliminarTodosLosNodos de ArbolBinarioCompleto
+    arbolBinarioCompleto->eliminarTodosLosNodos();
+    this->close();
 }
 
 void ventana::on_ButtonCrear_clicked()
@@ -168,3 +171,100 @@ void ventana::on_ButtonComen_clicked()
     // Limpiar el QLineEdit de comentario
     ui->Comentar->clear();
 }
+
+void ventana::on_ButtonOrden_clicked()
+{
+    int limite = ui->lineEditLimite->text().toInt();
+    arbolBinarioCompleto->mostrarInordenLimitado(ui->tablepubli, limite);
+    ui->tablepubli->resizeColumnsToContents();
+}
+
+
+void ventana::on_ButtonPreorden_clicked()
+{
+    int limite = ui->lineEditLimite->text().toInt();
+    arbolBinarioCompleto->mostrarPreordenLimitado(ui->tablepubli, limite);
+    ui->tablepubli->resizeColumnsToContents();
+}
+
+
+void ventana::on_ButtonPostorden_clicked()
+{
+    int limite = ui->lineEditLimite->text().toInt();
+    arbolBinarioCompleto->mostrarPostordenLimitado(ui->tablepubli, limite);
+    ui->tablepubli->resizeColumnsToContents();
+}
+
+
+void ventana::on_ButtonTop_clicked()
+{
+    if (listaDoble == nullptr) {
+        QMessageBox::warning(this, "Error", "La lista doblemente enlazada no está inicializada.");
+        return;
+    }
+
+    int topN = 5; // Número de fechas a mostrar
+    auto topFechas = listaDoble->obtenerTopFechasConMasPublicaciones(topN);
+
+    QString mensaje = "Top " + QString::number(topN) + " fechas con más publicaciones:\n";
+    for (const auto& fecha : topFechas) {
+        mensaje += QString::fromStdString(fecha.first) + ": " + QString::number(fecha.second) + " publicaciones\n";
+    }
+
+    QMessageBox::information(this, "Top Fechas", mensaje);
+
+}
+
+
+void ventana::on_ButtonGraficar_clicked()
+{
+    if (arbolBinarioCompleto == nullptr) {
+        QMessageBox::warning(this, "Error", "El árbol binario no está inicializado.");
+        return;
+    }
+
+    try {
+        std::string nombreArchivo = "arbol.dot";
+        arbolBinarioCompleto->graficarArbol(nombreArchivo);
+
+        // Comando para generar la imagen del gráfico usando Graphviz
+        std::string comando = "dot -Tpng " + nombreArchivo + " -o arbol.png";
+        int resultado = std::system(comando.c_str());
+
+        if (resultado == 0) {
+            // Cargar la imagen en un QPixmap
+            QPixmap pixmap("arbol.png");
+            if (!pixmap.isNull()) {
+                // Establecer el QPixmap en el QLabel
+                ui->labelGrafico->setPixmap(pixmap);
+                ui->labelGrafico->setScaledContents(true); // Escalar la imagen para que se ajuste al QLabel
+                QMessageBox::information(this, "Éxito", "El árbol binario ha sido graficado exitosamente en arbol.png.");
+            } else {
+                QMessageBox::warning(this, "Error", "No se pudo cargar la imagen generada.");
+            }
+        } else {
+            QMessageBox::warning(this, "Error", "Hubo un error al intentar graficar el árbol binario.");
+        }
+    } catch (const std::exception& e) {
+        QMessageBox::critical(this, "Error", e.what());
+    }
+}
+
+void ventana::on_ButtonMostrarTopPublicaciones_clicked()
+{
+    if (listaDoble == nullptr) {
+        QMessageBox::warning(this, "Error", "La lista doblemente enlazada no está inicializada.");
+        return;
+    }
+
+    int topN = 3; // Número de publicaciones a mostrar
+    auto topPublicaciones = listaDoble->obtenerTopPublicacionesConMasComentarios(topN);
+
+    QString mensaje = "Top " + QString::number(topN) + " publicaciones con más comentarios:\n";
+    for (const auto& publicacion : topPublicaciones) {
+        mensaje += "Correo: " + QString::fromStdString(publicacion->correo) + ", Contenido: " + QString::fromStdString(publicacion->contenido) + ", Fecha: " + QString::fromStdString(publicacion->fecha) + ", Hora: " + QString::fromStdString(publicacion->hora) + ", Comentarios: " + QString::number(publicacion->comentarios.contarComentarios()) + "\n";
+    }
+
+    QMessageBox::information(this, "Top Publicaciones", mensaje);
+}
+

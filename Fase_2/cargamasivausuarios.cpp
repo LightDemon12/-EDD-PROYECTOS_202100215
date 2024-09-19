@@ -35,5 +35,5 @@ void CargaMasivaUsuarios::cargarDesdeJson(const QString& rutaArchivo) {
     }
 
     // Mostrar los usuarios del árbol AVL
-    arbol->enOrden(arbol->getRaiz());
+    arbol->enOrdenConsola(arbol->getRaiz());
 }

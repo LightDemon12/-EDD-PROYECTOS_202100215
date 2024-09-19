@@ -1,6 +1,7 @@
 #include "listadoble.h"
 #include <iostream>
 #include <QDebug>
+#include <fstream>
 
 ListaDoble::ListaDoble() : cabeza(nullptr), cola(nullptr) {}
 
@@ -86,6 +87,7 @@ void ListaDoble::pasarAlArbolBinarioPorFecha(ArbolBinarioCompleto& arbol, const 
         actual = actual->siguiente;
     }
 }
+
 NodoLista* ListaDoble::buscar(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora) {
     NodoLista* actual = cabeza;
     while (actual != nullptr) {
@@ -95,4 +97,82 @@ NodoLista* ListaDoble::buscar(const std::string& correo, const std::string& cont
         actual = actual->siguiente;
     }
     return nullptr;
+}
+
+std::vector<std::pair<std::string, int>> ListaDoble::obtenerTopFechasConMasPublicaciones(int topN) {
+    std::vector<std::pair<std::string, int>> conteo;
+    NodoLista* actual = cabeza;
+
+    while (actual != nullptr) {
+        auto it = std::find_if(conteo.begin(), conteo.end(), [&actual](const std::pair<std::string, int>& element) {
+            return element.first == actual->fecha;
+        });
+
+        if (it != conteo.end()) {
+            it->second += 1;
+        } else {
+            conteo.push_back(std::make_pair(actual->fecha, 1));
+        }
+
+        actual = actual->siguiente;
+    }
+
+    std::sort(conteo.begin(), conteo.end(), [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
+        return a.second < b.second; // Ordenar en orden ascendente
+    });
+
+    if (conteo.size() > topN) {
+        conteo.resize(topN);
+    }
+
+    return conteo;
+}
+
+std::vector<NodoLista*> ListaDoble::obtenerTopPublicacionesConMasComentarios(int topN) {
+    std::vector<NodoLista*> publicaciones;
+    NodoLista* actual = cabeza;
+
+    while (actual != nullptr) {
+        publicaciones.push_back(actual);
+        actual = actual->siguiente;
+    }
+
+    std::sort(publicaciones.begin(), publicaciones.end(), [](NodoLista* a, NodoLista* b) {
+        return a->comentarios.contarComentarios() > b->comentarios.contarComentarios(); // Ordenar en orden descendente
+    });
+
+    if (publicaciones.size() > topN) {
+        publicaciones.resize(topN);
+    }
+
+    return publicaciones;
+}
+
+void ListaDoble::graficarListaDoble(const std::string& nombreArchivo) {
+    std::ofstream archivo(nombreArchivo);
+    archivo << "digraph G {" << std::endl;
+    archivo << "node [shape=record];" << std::endl;
+    graficarListaDobleRecursivo(cabeza, archivo);
+    archivo << "}" << std::endl;
+    archivo.close();
+
+    // Generar la imagen utilizando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o " + nombreArchivo + ".png";
+    system(comando.c_str());
+}
+
+void ListaDoble::graficarListaDobleRecursivo(NodoLista* nodo, std::ofstream& archivo) {
+    if (nodo != nullptr) {
+        archivo << "nodo" << nodo << " [label=\"{<f0> |<f1> Correo: " << nodo->correo
+                << " | Contenido: " << nodo->contenido
+                << " | Fecha: " << nodo->fecha
+                << " | Hora: " << nodo->hora
+                << " | Path Imagen: " << nodo->pathimagen
+                << " |<f2> }\"];" << std::endl;
+        if (nodo->siguiente != nullptr) {
+            archivo << "nodo" << nodo << ":f2 -> nodo" << nodo->siguiente << ";" << std::endl;
+            archivo << "nodo" << nodo->siguiente << ":f0 -> nodo" << nodo << ";" << std::endl;
+            graficarListaDobleRecursivo(nodo->siguiente, archivo);
+        }
+    }
 }

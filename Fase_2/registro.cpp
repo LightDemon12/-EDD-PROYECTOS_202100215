@@ -53,7 +53,7 @@ void Registro::on_ButtonRegistro_clicked()
     contadorNodos++;
 
     qDebug() << "Usuarios en el árbol AVL (enOrden):";
-    arbol->enOrden(arbol->getRaiz());
+    arbol->enOrdenConsola(arbol->getRaiz());
 }
 
 void Registro::on_ButtonSalir_clicked()

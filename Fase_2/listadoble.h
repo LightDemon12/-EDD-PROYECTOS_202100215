@@ -4,6 +4,10 @@
 #include "nodolista.h"
 #include "arbolbinariocompleto.h"
 
+#include <string>
+#include <vector>
+
+
 class ListaDoble {
 public:
     ListaDoble();
@@ -18,6 +22,12 @@ public:
     // Método para obtener el último nodo insertado
     NodoLista* obtenerUltimoNodo() const;
     NodoLista* buscar(const std::string& correo, const std::string& contenido, const std::string& fecha, const std::string& hora);
+    std::vector<std::pair<std::string, int>> obtenerTopFechasConMasPublicaciones(int topN);
+    void contarPublicacionesPorFecha(std::vector<std::pair<std::string, int>>& conteo);
+    // Método para obtener las publicaciones con más comentarios
+    std::vector<NodoLista*> obtenerTopPublicacionesConMasComentarios(int topN);
+    void graficarListaDoble(const std::string& nombreArchivo);
+    void graficarListaDobleRecursivo(NodoLista* nodo, std::ofstream& archivo);
 
 private:
     NodoLista* cabeza;

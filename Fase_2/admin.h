@@ -34,6 +34,20 @@ private slots:
 
     void on_ButtonCerrar_clicked();
 
+    void on_ButtonAVL_clicked();
+
+    void on_ButtonAVL_2_clicked();
+
+    void on_ButtonenOrden_clicked();
+
+    void on_ButtonpostOrden_clicked();
+
+    void on_ButtonpreOrden_clicked();
+
+    void on_Buttonmostrar_clicked();
+
+    void on_ButonBuscar_clicked();
+
 private:
     Ui::Admin *ui;
     ArbolAVL* arbol;

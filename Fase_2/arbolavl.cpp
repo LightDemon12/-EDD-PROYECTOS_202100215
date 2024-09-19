@@ -1,6 +1,7 @@
 #include "arbolavl.h"
 #include <algorithm>
 #include <QTableWidget> // Incluir QTableWidget
+#include <fstream>
 
 // Obtener la altura de un nodo
 int ArbolAVL::obtenerAltura(NodoAVL* nodo) {
@@ -200,33 +201,7 @@ bool ArbolAVL::buscarUsuario(const std::string& correoElectronico, const std::st
     return false;
 }
 
-// Recorrido en preorden
-void ArbolAVL::preOrden(NodoAVL* nodo) {
-    if (nodo != nullptr) {
-        Usuario* usuario = nodo->usuario;
-        qDebug() << "Nombre:" << QString::fromStdString(usuario->getNombres());
-        qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
-        qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
-        qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
-        qDebug() << "-----------------------------";
-        preOrden(nodo->izquierda);
-        preOrden(nodo->derecha);
-    }
-}
 
-// Recorrido en orden
-void ArbolAVL::enOrden(NodoAVL* nodo) {
-    if (nodo != nullptr) {
-        enOrden(nodo->izquierda); // Visitar subárbol izquierdo
-        Usuario* usuario = nodo->usuario;
-        qDebug() << "Nombre:" << QString::fromStdString(usuario->getNombres());
-        qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
-        qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
-        qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
-        qDebug() << "-----------------------------";
-        enOrden(nodo->derecha); // Visitar subárbol derecho
-    }
-}
 
 std::string ArbolAVL::mostrarUsuario(const std::string& correoElectronico) {
     NodoAVL* nodo = buscarNodo(raiz, correoElectronico);
@@ -261,7 +236,95 @@ void ArbolAVL::enTable(NodoAVL* nodo, QTableWidget* table) {
     }
 }
 
-// Obtener la raíz del árbol
+// Recorrido en preorden
+void ArbolAVL::preOrden(NodoAVL* nodo, QTableWidget* table) {
+    if (nodo != nullptr) {
+        Usuario* usuario = nodo->usuario;
+        int row = table->rowCount();
+        table->insertRow(row);
+        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(usuario->getNombres())));
+        table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(usuario->getApellidos())));
+        table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(usuario->getFechaNacimiento())));
+        table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(usuario->getCorreoElectronico())));
+        preOrden(nodo->izquierda, table);
+        preOrden(nodo->derecha, table);
+    }
+}
+
+// Recorrido en orden
+void ArbolAVL::enOrden(NodoAVL* nodo, QTableWidget* table) {
+    if (nodo != nullptr) {
+        enOrden(nodo->izquierda, table); // Visitar subárbol izquierdo
+        Usuario* usuario = nodo->usuario;
+        int row = table->rowCount();
+        table->insertRow(row);
+        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(usuario->getNombres())));
+        table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(usuario->getApellidos())));
+        table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(usuario->getFechaNacimiento())));
+        table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(usuario->getCorreoElectronico())));
+        enOrden(nodo->derecha, table); // Visitar subárbol derecho
+    }
+}
+
+// Recorrido en postorden
+void ArbolAVL::postOrden(NodoAVL* nodo, QTableWidget* table) {
+    if (nodo != nullptr) {
+        postOrden(nodo->izquierda, table); // Visitar subárbol izquierdo
+        postOrden(nodo->derecha, table); // Visitar subárbol derecho
+        Usuario* usuario = nodo->usuario;
+        int row = table->rowCount();
+        table->insertRow(row);
+        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(usuario->getNombres())));
+        table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(usuario->getApellidos())));
+        table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(usuario->getFechaNacimiento())));
+        table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(usuario->getCorreoElectronico())));
+    }
+}
+// Recorrido en orden para consola
+void ArbolAVL::enOrdenConsola(NodoAVL* nodo) {
+    if (nodo != nullptr) {
+        enOrdenConsola(nodo->izquierda); // Visitar subárbol izquierdo
+        Usuario* usuario = nodo->usuario;
+        qDebug() << "Nombre:" << QString::fromStdString(usuario->getNombres());
+        qDebug() << "Apellido:" << QString::fromStdString(usuario->getApellidos());
+        qDebug() << "Fecha de Nacimiento:" << QString::fromStdString(usuario->getFechaNacimiento());
+        qDebug() << "Correo Electrónico:" << QString::fromStdString(usuario->getCorreoElectronico());
+        qDebug() << "-----------------------------";
+        enOrdenConsola(nodo->derecha); // Visitar subárbol derecho
+    }
+}
+// Método para obtener la raíz del árbol
 NodoAVL* ArbolAVL::getRaiz() {
     return raiz;
+}
+
+void ArbolAVL::graficarArbolAVL(const std::string& nombreArchivo) {
+    std::ofstream archivo(nombreArchivo);
+    archivo << "digraph G {" << std::endl;
+    archivo << "node [shape=record];" << std::endl;
+    graficarArbolAVLRecursivo(raiz, archivo);
+    archivo << "}" << std::endl;
+    archivo.close();
+
+    // Generar la imagen utilizando Graphviz
+    std::string comando = "dot -Tpng " + nombreArchivo + " -o " + nombreArchivo + ".png";
+    system(comando.c_str());
+}
+
+void ArbolAVL::graficarArbolAVLRecursivo(NodoAVL* nodo, std::ofstream& archivo) {
+    if (nodo != nullptr) {
+        archivo << "nodo" << nodo << " [label=\"{<f0> |<f1> Nombre: " << nodo->usuario->getNombres()
+        << " | Apellido: " << nodo->usuario->getApellidos()
+        << " | Fecha de Nacimiento: " << nodo->usuario->getFechaNacimiento()
+        << " | Correo: " << nodo->usuario->getCorreoElectronico()
+        << " |<f2> }\"];" << std::endl;
+        if (nodo->izquierda != nullptr) {
+            archivo << "nodo" << nodo << ":f0 -> nodo" << nodo->izquierda << ";" << std::endl;
+            graficarArbolAVLRecursivo(nodo->izquierda, archivo);
+        }
+        if (nodo->derecha != nullptr) {
+            archivo << "nodo" << nodo << ":f2 -> nodo" << nodo->derecha << ";" << std::endl;
+            graficarArbolAVLRecursivo(nodo->derecha, archivo);
+        }
+    }
 }

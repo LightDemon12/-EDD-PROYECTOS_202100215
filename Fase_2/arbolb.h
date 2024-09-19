@@ -14,6 +14,7 @@ public:
     void imprimirArbol();
     void imprimirComentarios(NodoB* nodo);
     void mostrarEnTabla(QTableWidget* tableWidget); // Nueva función para mostrar en QTableWidget
+    int contarComentarios() const;
 
 private:
     NodoB* raiz;
@@ -22,6 +23,7 @@ private:
     void mostrar(NodoB* nodo, int nivel);
     void imprimirNodo(NodoB* nodo, int nivel);
     void mostrarEnTabla(NodoB* nodo, QTableWidget* tableWidget, int& row); // Función auxiliar para mostrar en QTableWidget
+    int contarComentariosRecursivo(NodoB* nodo) const;
 
 };
 

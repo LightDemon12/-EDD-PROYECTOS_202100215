@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1305</width>
-    <height>654</height>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,18 +101,18 @@
   <widget class="QTableWidget" name="tablepubli">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>50</y>
+     <x>710</x>
+     <y>90</y>
      <width>521</width>
-     <height>181</height>
+     <height>121</height>
     </rect>
    </property>
   </widget>
   <widget class="QLineEdit" name="linepubli">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>240</y>
+     <x>710</x>
+     <y>220</y>
      <width>281</width>
      <height>24</height>
     </rect>
@@ -121,8 +121,8 @@
   <widget class="QPushButton" name="Buttonpubli">
    <property name="geometry">
     <rect>
-     <x>1020</x>
-     <y>240</y>
+     <x>1010</x>
+     <y>220</y>
      <width>131</width>
      <height>24</height>
     </rect>
@@ -135,19 +135,19 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>310</y>
-     <width>301</width>
-     <height>171</height>
+     <y>240</y>
+     <width>311</width>
+     <height>141</height>
     </rect>
    </property>
   </widget>
   <widget class="QLabel" name="labelpubli">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>300</y>
-     <width>341</width>
-     <height>161</height>
+     <x>20</x>
+     <y>390</y>
+     <width>541</width>
+     <height>181</height>
     </rect>
    </property>
    <property name="text">
@@ -157,18 +157,18 @@
   <widget class="QTableWidget" name="tablecomen">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>290</y>
+     <x>710</x>
+     <y>260</y>
      <width>521</width>
-     <height>192</height>
+     <height>121</height>
     </rect>
    </property>
   </widget>
   <widget class="QLineEdit" name="Comentar">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>490</y>
+     <x>710</x>
+     <y>390</y>
      <width>281</width>
      <height>24</height>
     </rect>
@@ -177,14 +177,115 @@
   <widget class="QPushButton" name="ButtonComen">
    <property name="geometry">
     <rect>
-     <x>1020</x>
-     <y>490</y>
+     <x>1000</x>
+     <y>390</y>
      <width>121</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
     <string>Comentar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonOrden">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>60</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Inorden</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonPreorden">
+   <property name="geometry">
+    <rect>
+     <x>970</x>
+     <y>60</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Preorden</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonPostorden">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>60</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Postorden</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditLimite">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>60</y>
+     <width>151</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonTop">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>620</y>
+     <width>241</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Top 3 Fechas con más publicaciones </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonGraficar">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>20</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Graficar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelGrafico">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>430</y>
+     <width>531</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonMostrarTopPublicaciones">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>650</y>
+     <width>241</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Top 3 publicaciones con más  comentarios</string>
    </property>
   </widget>
  </widget>
