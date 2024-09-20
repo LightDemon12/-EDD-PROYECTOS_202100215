@@ -1,16 +1,16 @@
 digraph G {
 node [shape=record];
-nodo0x1fe0b2e2a00 [label="{<f0> |<f1> Correo: carlos.gomez@example.com | Contenido: Este es el contenido de la publicación de Carlos. | Fecha: 2000-01-01 | Hora: 10:00 | Path Imagen:  |<f2> }"];
-nodo0x1fe0b2e2a00:f2 -> nodo0x1fe0b2e2d00;
-nodo0x1fe0b2e2d00:f0 -> nodo0x1fe0b2e2a00;
-nodo0x1fe0b2e2d00 [label="{<f0> |<f1> Correo: maria.lopez@example.com | Contenido: Este es el contenido de la publicación de Maria. | Fecha: 2000-01-01 | Hora: 11:00 | Path Imagen:  |<f2> }"];
-nodo0x1fe0b2e2d00:f2 -> nodo0x1fe0b2e3600;
-nodo0x1fe0b2e3600:f0 -> nodo0x1fe0b2e2d00;
-nodo0x1fe0b2e3600 [label="{<f0> |<f1> Correo: juan.martinez@example.com | Contenido: Este es el contenido de la publicación de Juan. | Fecha: 2000-01-01 | Hora: 12:00 | Path Imagen:  |<f2> }"];
-nodo0x1fe0b2e3600:f2 -> nodo0x1fe0b2e2dc0;
-nodo0x1fe0b2e2dc0:f0 -> nodo0x1fe0b2e3600;
-nodo0x1fe0b2e2dc0 [label="{<f0> |<f1> Correo: ana.hernandez@example.com | Contenido: Este es el contenido de la publicación de Ana. | Fecha: 2000-01-01 | Hora: 13:00 | Path Imagen:  |<f2> }"];
-nodo0x1fe0b2e2dc0:f2 -> nodo0x1fe0b2e3540;
-nodo0x1fe0b2e3540:f0 -> nodo0x1fe0b2e2dc0;
-nodo0x1fe0b2e3540 [label="{<f0> |<f1> Correo: luis.perez@example.com | Contenido: Este es el contenido de la publicación de Luis. | Fecha: 2000-01-01 | Hora: 14:00 | Path Imagen:  |<f2> }"];
+nodo0x1613a28af60 [label="{<f0> |<f1> Correo: carlos.gomez@example.com | Contenido: Este es el contenido de la publicación de Carlos. | Fecha: 2000-01-01 | Hora: 10:00 | Path Imagen:  |<f2> }"];
+nodo0x1613a28af60:f2 -> nodo0x1613a28ade0;
+nodo0x1613a28ade0:f0 -> nodo0x1613a28af60;
+nodo0x1613a28ade0 [label="{<f0> |<f1> Correo: maria.lopez@example.com | Contenido: Este es el contenido de la publicación de Maria. | Fecha: 2000-01-01 | Hora: 11:00 | Path Imagen:  |<f2> }"];
+nodo0x1613a28ade0:f2 -> nodo0x1613a28a660;
+nodo0x1613a28a660:f0 -> nodo0x1613a28ade0;
+nodo0x1613a28a660 [label="{<f0> |<f1> Correo: juan.martinez@example.com | Contenido: Este es el contenido de la publicación de Juan. | Fecha: 2000-01-01 | Hora: 12:00 | Path Imagen:  |<f2> }"];
+nodo0x1613a28a660:f2 -> nodo0x1613a28a4e0;
+nodo0x1613a28a4e0:f0 -> nodo0x1613a28a660;
+nodo0x1613a28a4e0 [label="{<f0> |<f1> Correo: ana.hernandez@example.com | Contenido: Este es el contenido de la publicación de Ana. | Fecha: 2000-01-01 | Hora: 13:00 | Path Imagen:  |<f2> }"];
+nodo0x1613a28a4e0:f2 -> nodo0x1613a28a360;
+nodo0x1613a28a360:f0 -> nodo0x1613a28a4e0;
+nodo0x1613a28a360 [label="{<f0> |<f1> Correo: luis.perez@example.com | Contenido: Este es el contenido de la publicación de Luis. | Fecha: 2000-01-01 | Hora: 14:00 | Path Imagen:  |<f2> }"];
 }
