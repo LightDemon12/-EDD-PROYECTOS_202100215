@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
+    <width>1301</width>
     <height>586</height>
    </rect>
   </property>
@@ -65,7 +65,7 @@
   <widget class="QPushButton" name="ButtonCerrar">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>1210</x>
      <y>0</y>
      <width>80</width>
      <height>24</height>
@@ -242,7 +242,7 @@
   <widget class="QPushButton" name="ButtonPublicaciones">
    <property name="geometry">
     <rect>
-     <x>720</x>
+     <x>1120</x>
      <y>0</y>
      <width>80</width>
      <height>24</height>
@@ -250,6 +250,16 @@
    </property>
    <property name="text">
     <string>Publicaciones</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>40</y>
+     <width>401</width>
+     <height>461</height>
+    </rect>
    </property>
   </widget>
  </widget>

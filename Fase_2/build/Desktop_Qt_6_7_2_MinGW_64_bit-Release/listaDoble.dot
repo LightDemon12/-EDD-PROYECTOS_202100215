@@ -1,0 +1,16 @@
+digraph G {
+node [shape=record];
+nodo0x1381f5d0320 [label="{<f0> |<f1> Correo: carlos.gomez@example.com | Contenido: Este es el contenido de la publicación de Carlos. | Fecha: 2000-01-01 | Hora: 10:00 | Path Imagen:  |<f2> }"];
+nodo0x1381f5d0320:f2 -> nodo0x1381f5d0860;
+nodo0x1381f5d0860:f0 -> nodo0x1381f5d0320;
+nodo0x1381f5d0860 [label="{<f0> |<f1> Correo: maria.lopez@example.com | Contenido: Este es el contenido de la publicación de Maria. | Fecha: 2000-01-01 | Hora: 11:00 | Path Imagen:  |<f2> }"];
+nodo0x1381f5d0860:f2 -> nodo0x1381f5d04a0;
+nodo0x1381f5d04a0:f0 -> nodo0x1381f5d0860;
+nodo0x1381f5d04a0 [label="{<f0> |<f1> Correo: juan.martinez@example.com | Contenido: Este es el contenido de la publicación de Juan. | Fecha: 2000-01-01 | Hora: 12:00 | Path Imagen:  |<f2> }"];
+nodo0x1381f5d04a0:f2 -> nodo0x1381f5cfde0;
+nodo0x1381f5cfde0:f0 -> nodo0x1381f5d04a0;
+nodo0x1381f5cfde0 [label="{<f0> |<f1> Correo: ana.hernandez@example.com | Contenido: Este es el contenido de la publicación de Ana. | Fecha: 2000-01-01 | Hora: 13:00 | Path Imagen:  |<f2> }"];
+nodo0x1381f5cfde0:f2 -> nodo0x1381f5cfc60;
+nodo0x1381f5cfc60:f0 -> nodo0x1381f5cfde0;
+nodo0x1381f5cfc60 [label="{<f0> |<f1> Correo: luis.perez@example.com | Contenido: Este es el contenido de la publicación de Luis. | Fecha: 2000-01-01 | Hora: 14:00 | Path Imagen:  |<f2> }"];
+}

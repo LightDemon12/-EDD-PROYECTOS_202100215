@@ -2,6 +2,9 @@
 #define ADMIN_H
 
 #include <QDialog>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
 #include "arbolavl.h"
 #include "matriz.h"
 #include "cargamasivausuarios.h"
@@ -10,6 +13,7 @@
 #include "listadoble.h"
 #include "cargamasivapublicaciones.h"
 #include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
+#include "Grafo.h" // Incluir la clase Grafo
 
 
 namespace Ui {
@@ -21,8 +25,10 @@ class Admin : public QDialog
     Q_OBJECT
 
 public:
-    explicit Admin(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MatrizDispersa* matriz = nullptr, ListaRelaciones* listaRelaciones = nullptr, ListaDoble* listaDoble = nullptr, ArbolBinarioCompleto* arbolBinarioCompleto = nullptr);
+    explicit Admin(QWidget *parent = nullptr, ArbolAVL* arbol = nullptr, MatrizDispersa* matriz = nullptr, ListaRelaciones* listaRelaciones = nullptr, ListaDoble* listaDoble = nullptr, ArbolBinarioCompleto* arbolBinarioCompleto = nullptr, Grafo* grafo = nullptr);
     ~Admin();
+protected:
+    void wheelEvent(QWheelEvent* event) override; // Sobrescribir el evento de la rueda del ratón
 
 private slots:
     void on_ButtonCU_clicked();
@@ -48,6 +54,10 @@ private slots:
 
     void on_ButonBuscar_clicked();
 
+    void on_ButtonGrafo_clicked();
+
+    void on_ButtonLista_clicked();
+
 private:
     Ui::Admin *ui;
     ArbolAVL* arbol;
@@ -58,7 +68,9 @@ private:
     ListaDoble* listaDoble; // Agregar puntero a ListaDoble
     CargaMasivaPublicaciones* cargaMasivaPublicaciones; // Agregar puntero a CargaMasivaPublicaciones
     ArbolBinarioCompleto* arbolBinarioCompleto; // Agregar puntero a ArbolBinarioCompleto
-
+    Grafo* grafo; // Agregar el grafo
+    QGraphicsScene* scene; // Agregar la escena gráfica
+    QGraphicsPixmapItem* pixmapItem; // Agregar el item del pixmap
 
 };
 

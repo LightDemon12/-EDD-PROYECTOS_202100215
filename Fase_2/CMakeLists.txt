@@ -52,6 +52,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ventana.h ventana.cpp ventana.ui
         nodobinariocompleto.h nodobinariocompleto.cpp
         arbolbinariocompleto.h arbolbinariocompleto.cpp
+        grafo.h grafo.cpp
 
 
 

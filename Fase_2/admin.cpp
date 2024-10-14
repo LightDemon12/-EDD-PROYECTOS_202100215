@@ -5,22 +5,32 @@
 #include "mainview.h" // Incluir la declaración completa de MainView
 #include <QPixmap>
 #include <fstream>
+#include "Grafo.h" // Incluir la clase Grafo
+#include <QWheelEvent>
 
 
-Admin::Admin(QWidget *parent, ArbolAVL* arbol, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto) :
+Admin::Admin(QWidget *parent, ArbolAVL* arbol, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto, Grafo* grafo) :
     QDialog(parent),
     ui(new Ui::Admin),
     arbol(arbol),
     matriz(matriz),
     listaRelaciones(listaRelaciones),
     listaDoble(listaDoble),
-    arbolBinarioCompleto(arbolBinarioCompleto) // Inicializa el árbol binario completo
-
+    arbolBinarioCompleto(arbolBinarioCompleto), // Inicializa el árbol binario completo
+    grafo(grafo), // Inicializa el grafo
+    scene(new QGraphicsScene(this)), // Inicializa la escena gráfica
+    pixmapItem(new QGraphicsPixmapItem()) // Inicializa el item del pixmap
 {
     ui->setupUi(this);
-    cargaMasivaUsuarios = new CargaMasivaUsuarios(arbol);
-    cargaMasivaSolicitudes = new CargaMasivaSolicitudes(arbol, listaRelaciones);
+    cargaMasivaUsuarios = new CargaMasivaUsuarios(arbol, grafo); // Inicializar cargaMasivaUsuarios
+    cargaMasivaSolicitudes = new CargaMasivaSolicitudes(arbol, listaRelaciones, grafo); // Inicializar cargaMasivaSolicitudes
     cargaMasivaPublicaciones = new CargaMasivaPublicaciones(listaDoble); // Inicializar cargaMasivaPublicaciones
+
+    // Configurar la vista gráfica
+    ui->graphicsView->setScene(scene);
+    scene->addItem(pixmapItem);
+    ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+    ui->graphicsView->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
 }
 Admin::~Admin()
 {
@@ -30,6 +40,15 @@ Admin::~Admin()
     delete cargaMasivaPublicaciones; // Liberar memoria
 }
 
+void Admin::wheelEvent(QWheelEvent* event)
+{
+    const double scaleFactor = 1.15;
+    if (event->angleDelta().y() > 0) {
+        ui->graphicsView->scale(scaleFactor, scaleFactor);
+    } else {
+        ui->graphicsView->scale(1.0 / scaleFactor, 1.0 / scaleFactor);
+    }
+}
 
 void Admin::on_ButtonCU_clicked()
 {
@@ -55,6 +74,7 @@ void Admin::on_ButtonCS_clicked()
     qDebug() << "Archivo seleccionado para carga masiva de solicitudes:" << rutaArchivo;
 
     cargaMasivaSolicitudes->cargarDesdeJson(rutaArchivo);
+
 }
 
 void Admin::on_pushButton_clicked()
@@ -136,14 +156,20 @@ void Admin::on_ButtonAVL_2_clicked()
     }
     archivo.close();
 
-    // Cargar la imagen generada en el QLabel
+    // Cargar la imagen generada en el QGraphicsView
     QPixmap pixmap(QString::fromStdString(nombreArchivo + ".png"));
     if (pixmap.isNull()) {
         qDebug() << "No se pudo cargar la imagen de la lista doblemente enlazada.";
         return;
     }
-    ui->labelLista->setPixmap(pixmap);
-    ui->labelLista->setScaledContents(true); // Ajustar la imagen al tamaño del QLabel
+
+    // Limpiar cualquier imagen que se esté mostrando en el QGraphicsView
+    ui->graphicsView->scene()->clear();
+
+    QGraphicsScene* scene = new QGraphicsScene(this);
+    scene->addPixmap(pixmap);
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio); // Ajustar la imagen al tamaño del QGraphicsView
 }
 
 void Admin::on_ButtonenOrden_clicked()
@@ -240,3 +266,49 @@ void Admin::on_ButonBuscar_clicked()
     }
 }
 
+
+void Admin::on_ButtonGrafo_clicked()
+{
+    // Llamar al método para generar la imagen del grafo
+    grafo->mostrarGrafo();
+
+    // Cargar la imagen generada en el QGraphicsView
+    QPixmap pixmap("grafo.png");
+    if (pixmap.isNull()) {
+        qDebug() << "No se pudo cargar la imagen del grafo.";
+        return;
+    }
+
+    // Limpiar cualquier imagen que se esté mostrando en el QGraphicsView
+    if (ui->graphicsView->scene()) {
+        ui->graphicsView->scene()->clear();
+    }
+
+    QGraphicsScene* scene = new QGraphicsScene(this);
+    scene->addPixmap(pixmap);
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio); // Ajustar la imagen al tamaño del QGraphicsView
+}
+
+void Admin::on_ButtonLista_clicked()
+{
+    // Llamar al método para generar la imagen de la lista de adyacencia
+    grafo->graficarListaAdyacencia("listaAdyacencia");
+
+    // Cargar la imagen generada en el QGraphicsView
+    QPixmap pixmap("listaAdyacencia.png");
+    if (pixmap.isNull()) {
+        qDebug() << "No se pudo cargar la imagen de la lista de adyacencia.";
+        return;
+    }
+
+    // Limpiar cualquier imagen que se esté mostrando en el QGraphicsView
+    if (ui->graphicsView->scene()) {
+        ui->graphicsView->scene()->clear();
+    }
+
+    QGraphicsScene* scene = new QGraphicsScene(this);
+    scene->addPixmap(pixmap);
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio); // Ajustar la imagen al tamaño del QGraphicsView
+}

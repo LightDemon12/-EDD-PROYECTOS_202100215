@@ -6,8 +6,8 @@
 
 using json = nlohmann::json;
 
-CargaMasivaSolicitudes::CargaMasivaSolicitudes(ArbolAVL* arbol, ListaRelaciones* listaDeRelaciones)
-    : arbol(arbol), listaDeRelaciones(listaDeRelaciones) {}
+CargaMasivaSolicitudes::CargaMasivaSolicitudes(ArbolAVL* arbol, ListaRelaciones* listaDeRelaciones, Grafo* grafo)
+    : arbol(arbol), listaDeRelaciones(listaDeRelaciones), grafo(grafo) {}
 
 void CargaMasivaSolicitudes::cargarDesdeJson(const QString& rutaArchivo) {
     qDebug() << "Iniciando carga masiva de solicitudes desde archivo:" << rutaArchivo;
@@ -100,6 +100,9 @@ void CargaMasivaSolicitudes::cargarDesdeJson(const QString& rutaArchivo) {
             // Agregar el usuario emisor a la lista de relaciones del receptor
             Relaciones* relacionReceptor = listaDeRelaciones->buscarOCrear(receptor.toStdString());
             relacionReceptor->amistades.agregar(emisor.toStdString());
+
+            // Agregar la arista en el grafo
+            grafo->agregarArista(emisor.toStdString(), receptor.toStdString());
 
             qDebug() << "Relación de amistad agregada entre" << emisor << "y" << receptor;
         }

@@ -1,0 +1,17 @@
+graph G {
+    "carlos.gomez@example.com";
+    "carlos.gomez@example.com" -- "ana.hernandez@example.com";
+    "carlos.gomez@example.com" -- "maria.lopez@example.com";
+    "maria.lopez@example.com";
+    "juan.martinez@example.com";
+    "ana.hernandez@example.com";
+    "luis.perez@example.com";
+    "luis.perez@example.com" -- "laura.ramirez@example.com";
+    "laura.ramirez@example.com";
+    "a";
+    "elena.torres@example.com";
+    "elena.torres@example.com" -- "miguel.rodriguez@example.com";
+    "miguel.rodriguez@example.com";
+    "miguel.rodriguez@example.com" -- "sofia.gonzalez@example.com";
+    "sofia.gonzalez@example.com";
+}

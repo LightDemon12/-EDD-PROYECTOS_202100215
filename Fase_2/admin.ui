@@ -104,19 +104,6 @@
     <string>Graficar Lista Doble</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelLista">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>621</width>
-     <height>711</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QTableWidget" name="tableOrden">
    <property name="geometry">
     <rect>
@@ -210,6 +197,42 @@
      <width>113</width>
      <height>24</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonGrafo">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>130</y>
+     <width>131</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> Gráfico de grafo</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>531</width>
+     <height>621</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ButtonLista">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>160</y>
+     <width>131</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lista de Adyacencia</string>
    </property>
   </widget>
  </widget>

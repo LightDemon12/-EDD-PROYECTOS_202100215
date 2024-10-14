@@ -1,0 +1,22 @@
+digraph G {
+node [shape=record];
+nodo0x138243840f0 [label="{<f0> |<f1> Nombre: Juan | Apellido: Martinez | Fecha de Nacimiento: 1992/02/17 | Correo: juan.martinez@example.com |<f2> }"];
+nodo0x138243840f0:f0 -> nodo0x138243841b0;
+nodo0x138243841b0 [label="{<f0> |<f1> Nombre: Ana | Apellido: Hernandez | Fecha de Nacimiento: 1995/11/30 | Correo: ana.hernandez@example.com |<f2> }"];
+nodo0x138243841b0:f0 -> nodo0x13824384150;
+nodo0x13824384150 [label="{<f0> |<f1> Nombre: Jose | Apellido: Garcia | Fecha de Nacimiento: 1991/07/14 | Correo: a |<f2> }"];
+nodo0x138243841b0:f2 -> nodo0x138243846f0;
+nodo0x138243846f0 [label="{<f0> |<f1> Nombre: Carlos | Apellido: Gomez | Fecha de Nacimiento: 1990/05/12 | Correo: carlos.gomez@example.com |<f2> }"];
+nodo0x138243846f0:f2 -> nodo0x1381f654fe0;
+nodo0x1381f654fe0 [label="{<f0> |<f1> Nombre: Elena | Apellido: Torres | Fecha de Nacimiento: 1987/12/22 | Correo: elena.torres@example.com |<f2> }"];
+nodo0x138243840f0:f2 -> nodo0x13824384060;
+nodo0x13824384060 [label="{<f0> |<f1> Nombre: Luis | Apellido: Perez | Fecha de Nacimiento: 1988/04/09 | Correo: luis.perez@example.com |<f2> }"];
+nodo0x13824384060:f0 -> nodo0x13824384480;
+nodo0x13824384480 [label="{<f0> |<f1> Nombre: Laura | Apellido: Ramirez | Fecha de Nacimiento: 1993/09/05 | Correo: laura.ramirez@example.com |<f2> }"];
+nodo0x13824384060:f2 -> nodo0x13824384390;
+nodo0x13824384390 [label="{<f0> |<f1> Nombre: Miguel | Apellido: Rodriguez | Fecha de Nacimiento: 1989/03/11 | Correo: miguel.rodriguez@example.com |<f2> }"];
+nodo0x13824384390:f0 -> nodo0x138243841e0;
+nodo0x138243841e0 [label="{<f0> |<f1> Nombre: Maria | Apellido: Lopez | Fecha de Nacimiento: 1985/08/23 | Correo: maria.lopez@example.com |<f2> }"];
+nodo0x13824384390:f2 -> nodo0x138243bd620;
+nodo0x138243bd620 [label="{<f0> |<f1> Nombre: Sofia | Apellido: Gonzalez | Fecha de Nacimiento: 1994/06/28 | Correo: sofia.gonzalez@example.com |<f2> }"];
+}

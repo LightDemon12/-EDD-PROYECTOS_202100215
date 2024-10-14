@@ -3,10 +3,11 @@
 #include <QFile>
 #include <QDebug>
 #include <QTextStream>
+#include <cstdlib> // Para system()
 
 using json = nlohmann::json;
 
-CargaMasivaUsuarios::CargaMasivaUsuarios(ArbolAVL* arbol) : arbol(arbol) {}
+CargaMasivaUsuarios::CargaMasivaUsuarios(ArbolAVL* arbol, Grafo* grafo) : arbol(arbol), grafo(grafo) {}
 
 void CargaMasivaUsuarios::cargarDesdeJson(const QString& rutaArchivo) {
     QFile archivo(rutaArchivo);
@@ -22,7 +23,7 @@ void CargaMasivaUsuarios::cargarDesdeJson(const QString& rutaArchivo) {
     // Parsear el contenido JSON
     json j = json::parse(contenido.toStdString());
 
-    // Iterar sobre los usuarios y agregarlos al árbol AVL
+    // Iterar sobre los usuarios y agregarlos al árbol AVL y al grafo
     for (const auto& usuarioJson : j) {
         QString nombres = QString::fromStdString(usuarioJson["nombres"]);
         QString apellidos = QString::fromStdString(usuarioJson["apellidos"]);
@@ -32,8 +33,11 @@ void CargaMasivaUsuarios::cargarDesdeJson(const QString& rutaArchivo) {
 
         Usuario* usuario = new Usuario(nombres.toStdString(), apellidos.toStdString(), fechaNacimiento.toStdString(), correo.toStdString(), contrasena.toStdString());
         arbol->insertar(usuario);
+        grafo->agregarVertice(correo.toStdString()); // Agregar el vértice al grafo
     }
 
     // Mostrar los usuarios del árbol AVL
     arbol->enOrdenConsola(arbol->getRaiz());
+
+
 }

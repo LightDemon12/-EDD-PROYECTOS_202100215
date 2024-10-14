@@ -6,6 +6,7 @@
 #include <QDebug>
 #include "arbolavl.h"
 #include "ArbolBinarioCompleto.h" // Incluye el archivo de cabecera del árbol binario completo
+#include "Grafo.h" // Incluir la clase Grafo
 
 MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
@@ -15,8 +16,9 @@ MainView::MainView(QWidget *parent)
     , matriz(100, 100)
     , listaRelaciones()
     , listaDoble() // Inicializar listaDoble
-    , adminWindow(nullptr),
-    arbolBinarioCompleto() // Inicializa el árbol binario completo
+    , adminWindow(nullptr)
+    , arbolBinarioCompleto() // Inicializa el árbol binario completo
+    , grafo(100) // Inicializa el grafo con capacidad para 100 vértices (ajusta según sea necesario)
 
 {
     ui->setupUi(this);
@@ -63,11 +65,11 @@ void MainView::on_Inicio_clicked()
         return;
     }
 
-    if (correo == "admin@gmail.com" && contrasena == "EDD2S2024") {
+    if (correo == "1" && contrasena == "1") {
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión de administrador exitoso.");
 
         if (!adminWindow) {
-            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto);
+            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto, & grafo);
             qDebug() << "Admin window instantiated";
         }
 
