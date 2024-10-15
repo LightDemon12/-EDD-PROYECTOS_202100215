@@ -75,6 +75,12 @@ void Admin::on_ButtonCS_clicked()
 
     cargaMasivaSolicitudes->cargarDesdeJson(rutaArchivo);
 
+    // Obtener sugerencias de amigos para el usuario con el correo "carlos.gomez@example.com"
+    auto sugerencias = grafo->sugerirAmigos("carlos.gomez@example.com");
+
+    // Mostrar las sugerencias en la consola
+    qDebug() << "Sugerencias de amigos para carlos.gomez@example.com:";
+    grafo->mostrarSugerencias(sugerencias);
 }
 
 void Admin::on_pushButton_clicked()
@@ -312,3 +318,9 @@ void Admin::on_ButtonLista_clicked()
     ui->graphicsView->setScene(scene);
     ui->graphicsView->fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio); // Ajustar la imagen al tamaño del QGraphicsView
 }
+
+void Admin::on_pushButton1_clicked()
+{
+
+}
+

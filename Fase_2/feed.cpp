@@ -5,8 +5,10 @@
 #include <QMessageBox> // Incluir QMessageBox
 #include "matriz.h"
 #include "ventana.h" // Incluir la cabecera de la nueva ventana
+#include <QGraphicsPixmapItem>
+#include <QPixmap>
 
-Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto):
+Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, MatrizDispersa* matriz, ListaRelaciones* listaRelaciones, ListaDoble* listaDoble, ArbolBinarioCompleto* arbolBinarioCompleto, Grafo* grafo):
     QDialog(parent),
     ui(new Ui::Feed),
     arbol(arbol),
@@ -15,7 +17,8 @@ Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, Ma
     listaRelaciones(listaRelaciones), // Inicializar el puntero a la lista de relaciones
     listaDoble(listaDoble), // Inicializar el puntero a ListaDoble
     ventana(nullptr), // Inicializar la nueva ventana
-    arbolBinarioCompleto(arbolBinarioCompleto) // Inicializa el árbol binario completo
+    arbolBinarioCompleto(arbolBinarioCompleto), // Inicializa el árbol binario completo
+    grafo(grafo)
 
 
 {
@@ -36,11 +39,24 @@ Feed::Feed(QWidget *parent, ArbolAVL* arbol, const QString& currentUserEmail, Ma
     ui->tablepila->setColumnCount(3);
     QStringList headerspila = {"Emisor", "Receptor", "Estado"};
     ui->tablepila->setHorizontalHeaderLabels(headersEnviados);
+    scene = new QGraphicsScene(this);
+    ui->graphicsViewfeed->setScene(scene);
+
 }
 
 Feed::~Feed()
 {
     delete ui;
+}
+
+void Feed::wheelEvent(QWheelEvent* event)
+{
+    const double scaleFactor = 1.15;
+    if (event->angleDelta().y() > 0) {
+        ui->graphicsViewfeed->scale(scaleFactor, scaleFactor);
+    } else {
+        ui->graphicsViewfeed->scale(1.0 / scaleFactor, 1.0 / scaleFactor);
+    }
 }
 
 void Feed::setCurrentUserEmail(const QString& email)
@@ -440,6 +456,9 @@ void Feed::on_ButtonAceptar_clicked()
     }
     relacionActual->amistades.agregar(emisor);
 
+    // Crear una arista en el grafo entre el emisor y el receptor
+    grafo->agregarArista(emisor, currentUserEmail.toStdString());
+
     // Actualizar las tablas correspondientes
     usuarioActual->getPila().mostrarEnTabla(ui->tablepila);
     usuarioEmisor->getListaEnviados().mostrarEnTabla(ui->tableenviados);
@@ -454,6 +473,7 @@ void Feed::on_ButtonAceptar_clicked()
     QMessageBox::information(this, "Solicitud Aceptada", "La solicitud ha sido aceptada exitosamente.");
 }
 
+
 void Feed::on_ButtonPublicaciones_clicked()
 {
     if (!ventana) {
@@ -463,4 +483,104 @@ void Feed::on_ButtonPublicaciones_clicked()
     ventana->show();
     ventana->raise();
     ventana->activateWindow();
+}
+
+void Feed::on_ButtonSugerenias_clicked()
+{
+    if (grafo == nullptr) {
+        QMessageBox::warning(this, "Error", "El grafo no está disponible.");
+        return;
+    }
+
+    // Obtener sugerencias de amigos para el usuario actual
+    auto sugerencias = grafo->sugerirAmigos(currentUserEmail.toStdString());
+
+    // Construir el mensaje con las sugerencias
+    QString info = "Sugerencias de amigos para " + currentUserEmail + ":\n";
+    qDebug() << "Generando sugerencias para:" << currentUserEmail;
+    for (const auto& par : sugerencias) {
+        info += "\nSugerencia: " + QString::fromStdString(par.first) + "\nAmigos en común:\n";
+        qDebug() << "Sugerencia:" << QString::fromStdString(par.first);
+        for (const auto& amigoEnComun : par.second) {
+            info += " - " + QString::fromStdString(amigoEnComun) + "\n";
+            qDebug() << "Amigo en común:" << QString::fromStdString(amigoEnComun);
+        }
+    }
+
+    // Mostrar las sugerencias en un QMessageBox
+    qDebug() << "Mostrando sugerencias en QMessageBox";
+    qDebug() << info;
+    QMessageBox::information(this, "Sugerencias de Amigos", info);
+
+    // Llamar a la función mostrarGrafoConColores con el currentUserEmail
+    grafo->mostrarGrafoConColores(currentUserEmail.toStdString());
+
+    // Limpiar el graphicsViewfeed
+    ui->graphicsViewfeed->scene()->clear();
+
+    // Cargar la imagen generada en el graphicsViewfeed
+    QPixmap pixmap("grafo_colores.png");
+    if (pixmap.isNull()) {
+        QMessageBox::warning(this, "Error", "No se pudo cargar la imagen del grafo.");
+        return;
+    }
+
+    QGraphicsScene* scene = new QGraphicsScene(this);
+    scene->addPixmap(pixmap);
+    ui->graphicsViewfeed->setScene(scene);
+    ui->graphicsViewfeed->fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio);
+}
+
+void Feed::on_Mostrar_clicked()
+{
+    qDebug() << "Mostrar button clicked";
+
+    // Buscar el nodo del usuario actual en el árbol AVL
+    NodoAVL* nodoActual = arbol->buscarNodo(arbol->getRaiz(), currentUserEmail.toStdString());
+    if (nodoActual == nullptr) {
+        QMessageBox::warning(this, "Error", "Usuario actual no encontrado.");
+        return;
+    }
+
+    Usuario* usuarioActual = nodoActual->usuario;
+
+    // Cargar los datos del usuario en los QLineEdit y QDateEdit correspondientes
+    ui->Mnombre->setText(QString::fromStdString(usuarioActual->getNombres()));
+    ui->Mapellido->setText(QString::fromStdString(usuarioActual->getApellidos()));
+    ui->Mcontra->setText(QString::fromStdString(usuarioActual->getContrasena()));
+
+    // Convertir la fecha de nacimiento a QDate y establecerla en QDateEdit
+    QString fechaNacimiento = QString::fromStdString(usuarioActual->getFechaNacimiento());
+    QDate date = QDate::fromString(fechaNacimiento, "dd/MM/yyyy");
+    if (date.isValid()) {
+        ui->Mfecha->setDate(date);
+    } else {
+        QMessageBox::warning(this, "Error", "Fecha de nacimiento inválida.");
+    }
+}
+
+void Feed::on_Actualizar_clicked()
+{
+    qDebug() << "Actualizar button clicked";
+
+    // Obtener los datos actualizados de los QLineEdit y QDateEdit
+    QString nuevosNombres = ui->Mnombre->text();
+    QString nuevosApellidos = ui->Mapellido->text();
+    QString nuevaContrasena = ui->Mcontra->text();
+    QString nuevaFechaNacimiento = ui->Mfecha->date().toString("dd/MM/yyyy");
+
+    // Verificar si los campos están vacíos
+    if (nuevosNombres.isEmpty() || nuevosApellidos.isEmpty() || nuevaContrasena.isEmpty() || nuevaFechaNacimiento.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Todos los campos deben estar llenos.");
+        return;
+    }
+
+    // Modificar los datos del usuario en el árbol AVL
+    bool exito = arbol->modificarUsuario(currentUserEmail.toStdString(), nuevosNombres.toStdString(), nuevosApellidos.toStdString(), nuevaFechaNacimiento.toStdString(), nuevaContrasena.toStdString());
+
+    if (exito) {
+        QMessageBox::information(this, "Actualización Exitosa", "Los datos del usuario han sido actualizados exitosamente.");
+    } else {
+        QMessageBox::warning(this, "Error", "No se pudo actualizar los datos del usuario.");
+    }
 }

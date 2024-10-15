@@ -46,6 +46,8 @@ public:
     NodoAVL* getRaiz();
     void graficarArbolAVLRecursivo(NodoAVL* nodo, std::ofstream& archivo);
     void graficarArbolAVL(const std::string& nombreArchivo);
+    bool modificarUsuario(const std::string& correoElectronico, const std::string& nuevosNombres, const std::string& nuevosApellidos, const std::string& nuevaFechaNacimiento, const std::string& nuevaContrasena);
+
 };
 
 #endif // ARBOLAVL_H

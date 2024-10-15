@@ -26,6 +26,11 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/usuario.h \
   C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/ventana.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/QDebug \
+  E:/QT/6.7.2/mingw_64/include/QtCore/QList \
+  E:/QT/6.7.2/mingw_64/include/QtCore/QObject \
+  E:/QT/6.7.2/mingw_64/include/QtCore/QRect \
+  E:/QT/6.7.2/mingw_64/include/QtCore/QSize \
+  E:/QT/6.7.2/mingw_64/include/QtCore/QSizeF \
   E:/QT/6.7.2/mingw_64/include/QtCore/QString \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/q20memory.h \
@@ -57,10 +62,16 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qdebug.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qendian.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qeventloop.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qflags.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qfloat16.h \
@@ -72,6 +83,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qhash.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qiodevice.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qitemselectionmodel.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qiterable.h \
@@ -89,6 +101,7 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qmetatype.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qminmax.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+  E:/QT/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qnumeric.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qobject.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
@@ -149,16 +162,24 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
   E:/QT/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/QTransform \
+  E:/QT/6.7.2/mingw_64/include/QtGui/QWheelEvent \
   E:/QT/6.7.2/mingw_64/include/QtGui/qaction.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qbitmap.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qbrush.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qcolor.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qcursor.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qevent.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qfont.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qicon.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qimage.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpainter.h \
@@ -167,10 +188,13 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qpen.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qpolygon.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qregion.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qrgb.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qscreen.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtextformat.h \
@@ -180,6 +204,8 @@ C:/Users/LightDemon12/Desktop/CODE/-EDD-PROYECTOS_202100215/Fase_2/build/Desktop
   E:/QT/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qvalidator.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+  E:/QT/6.7.2/mingw_64/include/QtGui/qvectornd.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   E:/QT/6.7.2/mingw_64/include/QtWidgets/QDialog \

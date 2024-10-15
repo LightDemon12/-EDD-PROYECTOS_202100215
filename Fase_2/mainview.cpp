@@ -34,13 +34,15 @@ void MainView::insertarUsuario(Usuario* usuario)
 {
     arbol.insertar(usuario);
 }
+
+
 void MainView::on_Registro_clicked()
 {
     qDebug() << "Registro button clicked";
 
     // Crear la ventana de registro si no existe
     if (!registro) {
-        registro = new Registro(nullptr, &arbol, this, &matriz); // Pasar el puntero de MainView y la matriz
+        registro = new Registro(nullptr, &arbol, this, &matriz, &grafo); // Pasar el puntero del grafo
         qDebug() << "Registro window instantiated";
     }
 
@@ -69,7 +71,7 @@ void MainView::on_Inicio_clicked()
         QMessageBox::information(this, "Inicio de Sesión", "Inicio de sesión de administrador exitoso.");
 
         if (!adminWindow) {
-            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto, & grafo);
+            adminWindow = new Admin(this, &arbol, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto, &grafo);
             qDebug() << "Admin window instantiated";
         }
 
@@ -90,7 +92,7 @@ void MainView::on_Inicio_clicked()
         currentUserEmail = correo;
 
         if (!feed) {
-            feed = new Feed(this, &arbol, currentUserEmail, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto); // Pasar el puntero del árbol binario completo
+            feed = new Feed(this, &arbol, currentUserEmail, &matriz, &listaRelaciones, &listaDoble, &arbolBinarioCompleto, &grafo); // Pasar el puntero del grafo
             qDebug() << "Feed window instantiated";
         } else {
             feed->setCurrentUserEmail(currentUserEmail);

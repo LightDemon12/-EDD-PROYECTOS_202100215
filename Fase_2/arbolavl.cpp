@@ -328,3 +328,18 @@ void ArbolAVL::graficarArbolAVLRecursivo(NodoAVL* nodo, std::ofstream& archivo) 
         }
     }
 }
+
+bool ArbolAVL::modificarUsuario(const std::string& correoElectronico, const std::string& nuevosNombres, const std::string& nuevosApellidos, const std::string& nuevaFechaNacimiento, const std::string& nuevaContrasena) {
+    NodoAVL* nodo = buscarNodo(raiz, correoElectronico);
+    if (nodo == nullptr) {
+        return false; // Usuario no encontrado
+    }
+
+    Usuario* usuario = nodo->usuario;
+    usuario->setNombres(nuevosNombres);
+    usuario->setApellidos(nuevosApellidos);
+    usuario->setFechaNacimiento(nuevaFechaNacimiento);
+    usuario->setContrasena(nuevaContrasena);
+
+    return true; // Modificación exitosa
+}

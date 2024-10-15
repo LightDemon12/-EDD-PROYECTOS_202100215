@@ -4,13 +4,15 @@
 #include <QMessageBox>
 #include <QDebug>
 
-Registro::Registro(QWidget *parent, ArbolAVL* arbol, MainView* mainView, MatrizDispersa* matriz)
+Registro::Registro(QWidget *parent, ArbolAVL* arbol, MainView* mainView, MatrizDispersa* matriz,Grafo* grafo)
     : QWidget(parent)
     , ui(new Ui::Registro)
     , arbol(arbol)
     , mainView(mainView)
     , matriz(matriz)
     , contadorNodos(0) // Inicializar el contador de nodos
+    , grafo(grafo) // Inicializar el puntero al grafo
+
 {
     ui->setupUi(this);
     qDebug() << "Registro window created";
@@ -52,8 +54,14 @@ void Registro::on_ButtonRegistro_clicked()
     matriz->setValor(fila, columna, correo.toStdString());
     contadorNodos++;
 
+    // Crear un vértice en el grafo con el correo del nuevo usuario
+    grafo->agregarVertice(correo.toStdString());
+
     qDebug() << "Usuarios en el árbol AVL (enOrden):";
     arbol->enOrdenConsola(arbol->getRaiz());
+
+    // Mostrar mensaje de confirmación
+    QMessageBox::information(this, "Registro Exitoso", "El usuario ha sido registrado exitosamente.");
 }
 
 void Registro::on_ButtonSalir_clicked()

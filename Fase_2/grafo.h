@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include <unordered_map>
 
 struct NodoAdyacencia {
     std::string correo;
@@ -33,7 +35,11 @@ public:
     void agregarVertice(const std::string& correo);
     void agregarArista(const std::string& correo1, const std::string& correo2);
     void mostrarGrafo() const;
-    void graficarListaAdyacencia(const std::string& nombreArchivo) const; // Nuevo método
+    void graficarListaAdyacencia(const std::string& nombreArchivo) const;
+    std::unordered_map<std::string, std::vector<std::string>> sugerirAmigos(const std::string& correo) const;
+    void mostrarSugerencias(const std::unordered_map<std::string, std::vector<std::string>>& sugerencias) const;
+    void mostrarGrafoConColores(const std::string& correo) const; // Nueva función
+
 };
 
 #endif // GRAFO_H

@@ -58,6 +58,8 @@ private slots:
 
     void on_ButtonLista_clicked();
 
+    void on_pushButton1_clicked();
+
 private:
     Ui::Admin *ui;
     ArbolAVL* arbol;

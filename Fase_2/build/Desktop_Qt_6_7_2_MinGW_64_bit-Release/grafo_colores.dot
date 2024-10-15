@@ -1,0 +1,3 @@
+graph G {
+    "a" [style=filled, fillcolor=green];
+}
