@@ -1,8 +1,10 @@
-# Social Structure - Fase 1 & Fase 2
+# Social Structure - Fase 1, Fase 2 & Fase 3
 
 ## Descripción del Proyecto
 
-**Social Structure** es una aplicación que simula una red social utilizando estructuras de datos no lineales. Este proyecto tiene múltiples fases, con la **Fase 1** centrada en la implementación básica de las estructuras de datos y funcionalidades esenciales, y la **Fase 2** enfocada en la adición de una interfaz gráfica de usuario (GUI) y mejoras en las funcionalidades.
+**Social Structure** es una aplicación que simula una red social utilizando estructuras de datos no lineales. Este proyecto tiene múltiples fases, con la **Fase 1** centrada en la implementación básica de las estructuras de datos y funcionalidades esenciales, la **Fase 2** enfocada en la adición de una interfaz gráfica de usuario (GUI), y la **Fase 3** destinada a mejorar la seguridad y la eficiencia de la aplicación.
+
+---
 
 ## Objetivos de la Fase 1
 
@@ -25,6 +27,20 @@
 - Implementar una GUI usando Qt para la interacción del usuario.
 - Integrar las estructuras de datos ya implementadas con la interfaz gráfica.
 - Mejorar el rendimiento del sistema mediante la optimización de las estructuras de datos y la adición de nuevas funcionalidades.
+
+---
+
+## Objetivos de la Fase 3
+
+### Objetivo General
+- Aplicar los conocimientos del curso Estructuras de Datos en el desarrollo de soluciones de software, enfocándose en la seguridad de la información del usuario.
+
+### Objetivos Específicos
+- Comprender y desarrollar distintos tipos de estructuras no lineales.
+- Implementar una aplicación de escritorio utilizando el lenguaje de programación C++.
+- Utilizar la herramienta Graphviz para graficar estructuras de datos no lineales.
+- Incorporar conceptos de blockchain para la seguridad de los datos de los usuarios.
+- Implementar algoritmos de grafos en la aplicación para optimizar el manejo de las relaciones de amistad.
 
 ---
 
@@ -58,7 +74,7 @@
 1. **Interfaz Gráfica (GUI)**
    - Se ha desarrollado una interfaz gráfica utilizando **Qt** que permite a los usuarios interactuar con el sistema de manera más intuitiva.
    - El sistema ahora cuenta con ventanas dedicadas para la administración, la gestión de publicaciones y la visualización de amigos.
-   
+
 2. **Gestión de Publicaciones**
    - Implementación de una ventana dedicada para la creación y visualización de publicaciones con imágenes.
    - Integración de un árbol binario para organizar las publicaciones por fecha.
@@ -68,6 +84,23 @@
    - Las publicaciones ahora se organizan utilizando un **árbol binario completo**, lo que mejora la eficiencia en la búsqueda y ordenación de publicaciones.
    - El sistema ha sido optimizado para manejar grandes volúmenes de datos de forma eficiente, manteniendo la responsividad en la interfaz gráfica.
 
+### Fase 3
+
+1. **Cambio de Estructura de Relaciones de Amistad**
+   - La matriz dispersa ha sido reemplazada por un **grafo no dirigido** utilizando una lista de adyacencia, para manejar las relaciones de amistad de forma más eficiente.
+   - Cada vértice en el grafo representa un usuario, y las aristas representan las relaciones de amistad entre ellos.
+
+2. **Sugerencias de Amistad**
+   - Implementación de un sistema de sugerencia de amigos basado en la exploración de las distancias en el grafo.
+   - Se recomienda a los usuarios que estén a una distancia de dos saltos (amigos de amigos) y se ponderan las sugerencias según la cantidad de amigos en común.
+
+3. **Modificación de Perfil**
+   - Los usuarios pueden ahora modificar sus datos personales como nombre, apellidos, fecha de nacimiento y contraseña desde la interfaz gráfica.
+
+4. **Seguridad y Blockchain**
+   - Incorporación de **conceptos de blockchain** para asegurar la integridad de los datos de los usuarios.
+   - Cada acción importante (como cambios de perfil o publicaciones) se almacena en una cadena de bloques, asegurando que los datos sean inmutables y estén protegidos contra manipulaciones.
+
 ---
 
 ## Estructuras de Datos
@@ -76,7 +109,7 @@
 - **Pila:** Almacena las solicitudes de amistad recibidas.
 - **Lista Doblemente Enlazada:** Almacena todas las publicaciones.
 - **Lista Circular Doblemente Enlazada:** Muestra el feed de publicaciones de un usuario.
-- **Matriz Dispersa:** Representa las relaciones de amistad entre usuarios.
+- **Grafo No Dirigido:** Reemplaza la matriz dispersa para representar las relaciones de amistad.
 - **Árbol Binario Completo:** Utilizado para la organización de publicaciones por fecha.
 - **Árbol B:** Implementado para almacenar y gestionar comentarios en publicaciones.
 
@@ -101,8 +134,14 @@
 5. **Publicaciones:**
    - Crea y visualiza publicaciones a través del menú de publicaciones en consola o utilizando la GUI, con la opción de agregar imágenes.
 
-6. **Carga Masiva:**
+6. **Modificación de Perfil:**
+   - Modifica tu nombre, apellidos, fecha de nacimiento o contraseña desde el menú de configuración de la interfaz gráfica.
+
+7. **Carga Masiva:**
    - Usa las opciones del administrador para cargar usuarios, solicitudes y publicaciones desde archivos JSON.
+
+8. **Sugerencias de Amistad:**
+   - Recibe recomendaciones de amigos basadas en el número de amigos en común y la distancia dentro del grafo de relaciones.
 
 ---
 
@@ -110,5 +149,6 @@
 
 - **Lenguaje de Programación:** C++
 - **Herramienta para Gráficos:** Graphviz, Qt
+- **Seguridad:** Blockchain
 - **IDE:** Clion
 - **Sistema Operativo:** Windows 10

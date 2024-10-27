@@ -285,7 +285,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Mostrar</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Actualizar">
@@ -298,7 +298,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Actualizar</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="Mnombre">
